@@ -1,0 +1,18 @@
+{
+  "name": "data-recov ee-forum",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "watch:css": "npx @tailwindcss/cli -i ./frontend/css/style.css -o ./frontend/css/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}

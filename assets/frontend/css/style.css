@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@theme {
+  --color-primary: #e11d48;
+  --color-secondary: #1e293b;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Yahan poori website ke basic HTML elements ki styling aati hai, jaise body, h1, p, a, button etc. */
+/* Ismein kya aayega?
+- Global font family
+- Default heading aur paragraph styles
+- Body background aur text color
+- Default link styles
+- CSS reset ya base-level styling */
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+
+/* Yahan aise CSS classes aati hain jo website mein baar-baar use hoti hain aur multiple CSS properties ko combine karti hain. */
+/* 
+- Primary aur secondary buttons
+- Cards
+- Form inputs
+- Badges aur labels
+- Navbar
+- Reusable section layouts */
+
+
+@layer components{
+  
+}
+
+/* Yahan chhoti, single-purpose custom classes aati hain, jo ek particular effect ya property apply karti hain. */
+
+/* Custom gradient text
+Special animations
+Custom shadows
+Custom scrollbar
+Special hover effects
+Unique positioning ya effects */
+
+@layer utilities{
+
+}
+
+
+
+
