@@ -4,207 +4,223 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Datarecovee Community</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" src="assets/frontend/js/main.js"></script>
   </head>
+
   <body>
-    <section class="relative overflow-hidden">
+    <header class="site-header sticky top-0 z-[100]">
       <div
-        class="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center lg:gap-14 lg:px-10 lg:py-24"
+        class="container flex items-center justify-between"
       >
-        <!-- Left: copy + CTA -->
-        <div>
-          <p class="mb-3 text-sm font-medium tracking-wide text-primary">
-            Welcome To Datarecovee,
-          </p>
-
-          <h1
-            class="max-w-xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+        <div
+          class="flex w-full items-center justify-between gap-6 xl:w-fit"
+        >
+          <button
+            type="button"
+            class="toggle-slide-btn block xl:hidden"
+            aria-label="Open menu"
           >
-            Community: Get Help &amp;
-            <span class="text-primary">Find Solutions</span>
-          </h1>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 512 512"
+              fill="#000"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m64 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32m384 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"
+              />
+            </svg>
+          </button>
 
-          <p class="mt-4 max-w-md text-base text-secondary/60">
-            Ask questions, find support, and connect with the community.
-          </p>
+          <a href="index.html" class="logo shrink-0">
+            <img
+              src="https://ask.datarecovee.com/storage/branding/logo/logo.svg"
+              width="180"
+              height="40"
+              alt="Data Recovee Community"
+              class="img-fluid h-auto w-[180px]"
+            />
+          </a>
 
-          <div class="mt-8 flex flex-wrap items-center gap-5">
-            <a
-              href="#ask"
-              class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md shadow-primary/20 transition hover:opacity-90"
+          <form
+            action="#"
+            role="search"
+            class="search-bar hidden w-[332px] items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] py-[4px] pr-2 pl-4 xl:flex"
+          >
+            <input
+              type="search"
+              name="s"
+              value=""
+              placeholder="Have A Questions? Ask..."
+              class="w-full text-sm text-gray-500 outline-none placeholder:text-gray-800"
+              required
+            />
+            <button
+              type="submit"
+              class="btn btn-secondary size-8 shrink-0 !p-0"
+              aria-label="Search"
             >
               <svg
-                class="size-4"
-                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
                 fill="none"
-                stroke="currentColor"
-                stroke-width="2"
+                stroke="#fff"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
               >
-                <path d="M12 20h9" />
-                <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
               </svg>
-              Ask a Questions
-            </a>
+            </button>
+          </form>
 
-            <div class="flex items-center gap-3">
-              <div class="flex -space-x-2">
-                <img
-                  class="size-9 rounded-full border-2 border-white object-cover"
-                  src="https://i.pravatar.cc/72?img=1"
-                  alt=""
-                />
-                <img
-                  class="size-9 rounded-full border-2 border-white object-cover"
-                  src="https://i.pravatar.cc/72?img=5"
-                  alt=""
-                />
-                <img
-                  class="size-9 rounded-full border-2 border-white object-cover"
-                  src="https://i.pravatar.cc/72?img=8"
-                  alt=""
-                />
-                <img
-                  class="size-9 rounded-full border-2 border-white object-cover"
-                  src="https://i.pravatar.cc/72?img=12"
-                  alt=""
-                />
-                <img
-                  class="size-9 rounded-full border-2 border-white object-cover"
-                  src="https://i.pravatar.cc/72?img=15"
-                  alt=""
-                />
-                <img
-                  class="size-9 rounded-full border-2 border-white object-cover"
-                  src="https://i.pravatar.cc/72?img=20"
-                  alt=""
-                />
-              </div>
-              <p class="text-sm font-semibold text-secondary">
-                Join Over 3000+ Users
-              </p>
-            </div>
-          </div>
-
-          <ul class="mt-12 flex flex-wrap gap-8 sm:gap-10">
-            <li class="flex items-center gap-3">
-              <span
-                class="grid size-11 place-items-center rounded-full bg-primary/10 text-primary"
+          <button
+            type="button"
+            class="search-btn btn btn-secondary size-8 shrink-0 !p-0 xl:hidden"
+            aria-label="Open search"
+          >
+            <span class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="#fff"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
               >
-                <svg
-                  class="size-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"
-                  />
-                </svg>
-              </span>
-              <span class="text-sm font-semibold leading-tight"
-                >Ask<br />Questions</span
-              >
-            </li>
-            <li class="flex items-center gap-3">
-              <span
-                class="grid size-11 place-items-center rounded-full bg-primary/10 text-primary"
-              >
-                <svg
-                  class="size-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M9 18h6" />
-                  <path d="M10 22h4" />
-                  <path
-                    d="M12 2a7 7 0 0 0-4 12c.6.6 1 1.4 1 2.2V17h6v-.8c0-.8.4-1.6 1-2.2A7 7 0 0 0 12 2z"
-                  />
-                </svg>
-              </span>
-              <span class="text-sm font-semibold leading-tight"
-                >Get<br />Solutions</span
-              >
-            </li>
-            <li class="flex items-center gap-3">
-              <span
-                class="grid size-11 place-items-center rounded-full bg-primary/10 text-primary"
-              >
-                <svg
-                  class="size-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </span>
-              <span class="text-sm font-semibold leading-tight"
-                >Connect<br />With Community</span
-              >
-            </li>
-          </ul>
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </span>
+          </button>
         </div>
 
-        <!-- Right: login card -->
-        <div class="w-full max-w-md justify-self-center lg:justify-self-end">
-          <div class="rounded-2xl bg-white p-8 shadow-xl shadow-secondary/5">
-            <h2 class="text-2xl font-bold text-secondary">Log In</h2>
-            <p class="mt-1 text-sm text-secondary/40">
-              Login to your account and check out the new messages.
+        <div class="hidden items-center gap-10 xl:flex">
+          <nav class="nav-head ml-auto" aria-label="Primary">
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="https://datarecovee.com/about-us/">About Us</a>
+              </li>
+              <li>
+                <a href="https://datarecovee.com/knowledge-base/"
+                  >Knowledge Base</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="flex gap-3">
+            <button
+              type="button"
+              class="openSignup cursor-pointer rounded-full bg-gray-100 px-5 py-2 text-[15px] font-medium text-gray-700 transition-colors hover:bg-gray-200"
+            >
+              Sign Up
+            </button>
+            <button type="button" class="openLogin btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+                />
+              </svg>
+              Log In
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-gradient-image">
+      <div class="container py-12">
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="mb-1 text-sm font-bold text-primary">
+              Welcome To Datarecovee,
             </p>
 
-            <form class="mt-8 space-y-4" action="#" method="post">
-              <label
-                class="flex items-center gap-3 rounded-xl bg-secondary/5 px-4 py-3"
-              >
-                <svg
-                  class="size-5 shrink-0 text-secondary/40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  class="w-full bg-transparent text-sm text-secondary outline-none placeholder:text-secondary/40"
-                />
-              </label>
+            <h1 class="max-w-xl text-[40px] font-bold">
+              Community: Get Help &amp;
+              <span class="text-primary">Find Solutions</span>
+            </h1>
 
-              <label
-                class="flex items-center gap-3 rounded-xl bg-secondary/5 px-4 py-3"
-              >
+            <p class="mt-4">
+              Ask questions, find support, and connect with the community.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center gap-5">
+              <a href="#ask" class="btn btn-fill">
                 <svg
-                  class="size-5 shrink-0 text-secondary/40"
+                  class="size-4"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <rect x="3" y="11" width="18" height="11" rx="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
                 </svg>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  class="w-full bg-transparent text-sm text-secondary outline-none placeholder:text-secondary/40"
-                />
-                <button
-                  type="button"
-                  class="text-secondary/40 hover:text-secondary"
-                  aria-label="Show password"
+                Ask a Questions
+              </a>
+
+              <div class="flex items-center gap-3">
+                <div class="flex -space-x-3">
+                  <img
+                    class="size-9 rounded-full border-2 border-white object-cover"
+                    src="https://i.pravatar.cc/72?img=1"
+                    alt=""
+                  />
+                  <img
+                    class="size-9 rounded-full border-2 border-white object-cover"
+                    src="https://i.pravatar.cc/72?img=5"
+                    alt=""
+                  />
+                  <img
+                    class="size-9 rounded-full border-2 border-white object-cover"
+                    src="https://i.pravatar.cc/72?img=8"
+                    alt=""
+                  />
+                  <img
+                    class="size-9 rounded-full border-2 border-white object-cover"
+                    src="https://i.pravatar.cc/72?img=12"
+                    alt=""
+                  />
+                  <img
+                    class="size-9 rounded-full border-2 border-white object-cover"
+                    src="https://i.pravatar.cc/72?img=15"
+                    alt=""
+                  />
+                  <img
+                    class="size-9 rounded-full border-2 border-white object-cover"
+                    src="https://i.pravatar.cc/72?img=20"
+                    alt=""
+                  />
+                </div>
+                <p class="text-sm font-bold">Join Over 3000+ Users</p>
+              </div>
+            </div>
+
+            <ul class="mt-12 flex flex-wrap gap-8 sm:gap-10">
+              <li class="flex items-center gap-3">
+                <span
+                  class="icon-circle grid size-11 place-items-center rounded-full text-primary"
                 >
                   <svg
                     class="size-5"
@@ -214,50 +230,2947 @@
                     stroke-width="2"
                   >
                     <path
-                      d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                      d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"
                     />
-                    <circle cx="12" cy="12" r="3" />
                   </svg>
-                </button>
-              </label>
-
-              <div class="flex items-center justify-between gap-4 pt-1">
-                <label class="flex items-center gap-2 text-sm text-secondary">
-                  <input
-                    type="checkbox"
-                    class="size-4 accent-primary"
-                    checked
-                  />
-                  Remember Me
-                </label>
-                <button
-                  type="submit"
-                  class="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+                </span>
+                <span class="text-sm"><strong>Ask</strong><br />Questions</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span
+                  class="icon-circle grid size-11 place-items-center rounded-full text-primary"
                 >
-                  Log In
-                </button>
-              </div>
-            </form>
+                  <svg
+                    class="size-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 18h6" />
+                    <path d="M10 22h4" />
+                    <path
+                      d="M12 2a7 7 0 0 0-4 12c.6.6 1 1.4 1 2.2V17h6v-.8c0-.8.4-1.6 1-2.2A7 7 0 0 0 12 2z"
+                    />
+                  </svg>
+                </span>
+                <span class="text-sm"><strong>Get</strong><br />Solutions</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span
+                  class="icon-circle grid size-11 place-items-center rounded-full text-primary"
+                >
+                  <svg
+                    class="size-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </span>
+                <span class="text-sm"
+                  ><strong>Connect</strong><br />With Community</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="lg:justify-self-end">
+              <div class="rounded-10 border border-border bg-white">
+                <div class="p-7 pb-0">
+                  <h2 class="mb-2 text-2xl font-bold">Log In</h2>
+                  <p class="mt-1 text-sm">
+                    Login to your account and check out the new messages.
+                  </p>
 
-            <div
-              class="mt-8 flex items-center justify-between gap-4 border-t border-secondary/10 pt-5 text-sm"
-            >
-              <a
-                href="#forgot"
-                class="font-medium text-primary underline underline-offset-2"
-              >
-                Forgot your password?
-              </a>
-              <a
-                href="#signup"
-                class="font-medium text-secondary/70 underline underline-offset-2"
-              >
-                Create New Account!
-              </a>
+                  <form class="mt-8 space-y-4" action="#" method="post">
+                    <label
+                      class="flex items-center gap-3 rounded-10 border border-border bg-[#F7F7F7] px-4 py-3"
+                    >
+                      <svg
+                        class="size-5 shrink-0 text-body"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                      </svg>
+                      <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        class="w-full bg-transparent text-sm text-body outline-none placeholder:text-body"
+                      />
+                    </label>
+
+                    <label
+                      class="flex items-center gap-3 rounded-10 border border-border bg-[#F7F7F7] px-4 py-3"
+                    >
+                      <svg
+                        class="size-5 shrink-0 text-body"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        class="w-full bg-transparent text-sm text-body outline-none placeholder:text-body"
+                      />
+                      <button
+                        type="button"
+                        class="text-body"
+                        aria-label="Show password"
+                      >
+                        <svg
+                          class="size-5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                    </label>
+
+                    <div class="flex items-center justify-between gap-4 pt-1">
+                      <label class="flex items-center gap-2 text-sm">
+                        <input
+                          type="checkbox"
+                          class="size-4 accent-primary"
+                          checked
+                        />
+                        Remember Me
+                      </label>
+                      <button type="submit" class="btn btn-fill">Log In</button>
+                    </div>
+                  </form>
+                </div>
+
+                <div
+                  class="mt-4 flex items-center justify-between gap-4 border-t border-border px-8 py-5 text-sm"
+                >
+                  <a
+                    href="#forgot"
+                    class="font-medium text-primary underline underline-offset-2"
+                  >
+                    Forgot your password?
+                  </a>
+                  <a
+                    href="#signup"
+                    class="font-medium text-body underline underline-offset-2"
+                  >
+                    Create New Account!
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="py-16">
+      <div class="container">
+        <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <h2 class="text-2xl font-bold">Community Groups</h2>
+
+          <div
+            class="flex flex-wrap gap-2"
+            role="tablist"
+            aria-label="Community groups filter"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="groups-grid"
+              data-tab="popular"
+              class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+            >
+              Popular
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="groups-grid"
+              data-tab="latest"
+              class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+            >
+              Latest
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="groups-grid"
+              data-tab="most-answered"
+              class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+            >
+              Most Answered
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="groups-grid"
+              data-tab="newest"
+              class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+            >
+              Newest
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="groups-grid"
+          role="tabpanel"
+          class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+        >
+          <!-- Backup & Storage -->
+          <a href="#backup-storage" class="group block" data-id="backup">
+            <div class="img-placeholder rounded-10">
+              <img
+                src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&h=400&fit=crop"
+                alt="Backup and storage devices"
+                class="transition duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="relative z-10 mx-3 -mt-14 rounded-10 border border-border bg-white p-[14px] transition"
+            >
+              <div class="mb-2 flex items-center gap-2.5">
+                <span
+                  class="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5" />
+                    <path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3" />
+                  </svg>
+                </span>
+                <h3 class="min-w-0 truncate text-sm font-bold">
+                  Backup &amp; Storages
+                </h3>
+              </div>
+              <div
+                class="flex items-center justify-between gap-2 border-t border-border pt-2"
+              >
+                <span class="flex items-center gap-1.5 text-[13px]">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.657 3.223c-.3-1.359-1.618-2.604-2.98-2.868C11.847.189 9.53-.015 8 .001 6.468-.016 4.153.189 3.323.355 1.96.619.643 1.865.343 3.223.17 4.048.002 5.17 0 6.703c.002 1.532.17 2.654.342 3.479.301 1.359 1.618 2.603 2.98 2.868.449.09 1.33.19 2.287.262q.163.255.353.543c.508.77.897 1.305 1.191 1.679.49.621 1.204.621 1.694 0 .294-.374.682-.91 1.19-1.679q.191-.288.353-.543c.958-.072 1.839-.173 2.287-.262 1.363-.265 2.68-1.51 2.98-2.868.172-.825.34-1.947.343-3.48-.002-1.532-.17-2.654-.342-3.479m-6.774 8.125a.52.52 0 0 1-.396.396c-.116.02-.273.038-.488.038s-.371-.018-.487-.038a.52.52 0 0 1-.396-.396 3 3 0 0 1-.038-.487c0-.215.018-.372.038-.488a.52.52 0 0 1 .396-.396A3 3 0 0 1 8 9.939c.215 0 .372.019.488.038.19.034.362.206.396.396.02.116.037.273.038.488 0 .214-.019.371-.038.487m1.903-5.119c-.242.342-.603.653-1.138.98-.677.418-.786.59-.786.925v.133a.865.865 0 0 1-1.727 0V7.96c0-.396.099-.732.303-1.027.197-.287.493-.541.932-.802.809-.476.957-.743.957-1.098 0-.445-.38-.734-.967-.734-.643 0-1.062.293-1.245.87a.914.914 0 0 1-.945.634.92.92 0 0 1-.814-1.197 2.8 2.8 0 0 1 1.092-1.477c.523-.357 1.185-.545 1.912-.545s1.456.24 1.974.678c.532.45.826 1.07.826 1.748 0 .465-.123.864-.374 1.22"
+                      fill="#737875"
+                    />
+                  </svg>
+                  <span data-count>100+ Questions</span>
+                </span>
+                <span
+                  class="grid size-8 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 6.468h12m-5.4 6 5.4-6-5.4-6"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Data Recovery -->
+          <a href="#data-recovery" class="group block" data-id="recovery">
+            <div class="img-placeholder rounded-10">
+              <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"
+                alt="Data recovery lab work"
+                class="transition duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="relative z-10 mx-3 -mt-14 rounded-10 border border-border bg-white p-[14px] transition"
+            >
+              <div class="mb-2 flex items-center gap-2.5">
+                <span
+                  class="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5" />
+                    <path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3" />
+                  </svg>
+                </span>
+                <h3 class="min-w-0 truncate text-sm font-bold">
+                  Data Recovery
+                </h3>
+              </div>
+              <div
+                class="flex items-center justify-between gap-2 border-t border-border pt-2"
+              >
+                <span class="flex items-center gap-1.5 text-[13px]">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.657 3.223c-.3-1.359-1.618-2.604-2.98-2.868C11.847.189 9.53-.015 8 .001 6.468-.016 4.153.189 3.323.355 1.96.619.643 1.865.343 3.223.17 4.048.002 5.17 0 6.703c.002 1.532.17 2.654.342 3.479.301 1.359 1.618 2.603 2.98 2.868.449.09 1.33.19 2.287.262q.163.255.353.543c.508.77.897 1.305 1.191 1.679.49.621 1.204.621 1.694 0 .294-.374.682-.91 1.19-1.679q.191-.288.353-.543c.958-.072 1.839-.173 2.287-.262 1.363-.265 2.68-1.51 2.98-2.868.172-.825.34-1.947.343-3.48-.002-1.532-.17-2.654-.342-3.479m-6.774 8.125a.52.52 0 0 1-.396.396c-.116.02-.273.038-.488.038s-.371-.018-.487-.038a.52.52 0 0 1-.396-.396 3 3 0 0 1-.038-.487c0-.215.018-.372.038-.488a.52.52 0 0 1 .396-.396A3 3 0 0 1 8 9.939c.215 0 .372.019.488.038.19.034.362.206.396.396.02.116.037.273.038.488 0 .214-.019.371-.038.487m1.903-5.119c-.242.342-.603.653-1.138.98-.677.418-.786.59-.786.925v.133a.865.865 0 0 1-1.727 0V7.96c0-.396.099-.732.303-1.027.197-.287.493-.541.932-.802.809-.476.957-.743.957-1.098 0-.445-.38-.734-.967-.734-.643 0-1.062.293-1.245.87a.914.914 0 0 1-.945.634.92.92 0 0 1-.814-1.197 2.8 2.8 0 0 1 1.092-1.477c.523-.357 1.185-.545 1.912-.545s1.456.24 1.974.678c.532.45.826 1.07.826 1.748 0 .465-.123.864-.374 1.22"
+                      fill="#737875"
+                    />
+                  </svg>
+                  <span data-count>100+ Questions</span>
+                </span>
+                <span
+                  class="grid size-8 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 6.468h12m-5.4 6 5.4-6-5.4-6"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Mac -->
+          <a href="#mac" class="group block" data-id="mac">
+            <div class="img-placeholder rounded-10">
+              <img
+                src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=400&fit=crop"
+                alt="Mac workspace"
+                class="transition duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="relative z-10 mx-3 -mt-14 rounded-10 border border-border bg-white p-[14px] transition"
+            >
+              <div class="mb-2 flex items-center gap-2.5">
+                <span
+                  class="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5" />
+                    <path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3" />
+                  </svg>
+                </span>
+                <h3 class="min-w-0 truncate text-sm font-bold">Mac</h3>
+              </div>
+              <div
+                class="flex items-center justify-between gap-2 border-t border-border pt-2"
+              >
+                <span class="flex items-center gap-1.5 text-[13px]">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.657 3.223c-.3-1.359-1.618-2.604-2.98-2.868C11.847.189 9.53-.015 8 .001 6.468-.016 4.153.189 3.323.355 1.96.619.643 1.865.343 3.223.17 4.048.002 5.17 0 6.703c.002 1.532.17 2.654.342 3.479.301 1.359 1.618 2.603 2.98 2.868.449.09 1.33.19 2.287.262q.163.255.353.543c.508.77.897 1.305 1.191 1.679.49.621 1.204.621 1.694 0 .294-.374.682-.91 1.19-1.679q.191-.288.353-.543c.958-.072 1.839-.173 2.287-.262 1.363-.265 2.68-1.51 2.98-2.868.172-.825.34-1.947.343-3.48-.002-1.532-.17-2.654-.342-3.479m-6.774 8.125a.52.52 0 0 1-.396.396c-.116.02-.273.038-.488.038s-.371-.018-.487-.038a.52.52 0 0 1-.396-.396 3 3 0 0 1-.038-.487c0-.215.018-.372.038-.488a.52.52 0 0 1 .396-.396A3 3 0 0 1 8 9.939c.215 0 .372.019.488.038.19.034.362.206.396.396.02.116.037.273.038.488 0 .214-.019.371-.038.487m1.903-5.119c-.242.342-.603.653-1.138.98-.677.418-.786.59-.786.925v.133a.865.865 0 0 1-1.727 0V7.96c0-.396.099-.732.303-1.027.197-.287.493-.541.932-.802.809-.476.957-.743.957-1.098 0-.445-.38-.734-.967-.734-.643 0-1.062.293-1.245.87a.914.914 0 0 1-.945.634.92.92 0 0 1-.814-1.197 2.8 2.8 0 0 1 1.092-1.477c.523-.357 1.185-.545 1.912-.545s1.456.24 1.974.678c.532.45.826 1.07.826 1.748 0 .465-.123.864-.374 1.22"
+                      fill="#737875"
+                    />
+                  </svg>
+                  <span data-count>100+ Questions</span>
+                </span>
+                <span
+                  class="grid size-8 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 6.468h12m-5.4 6 5.4-6-5.4-6"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- iPhone -->
+          <a href="#iphone" class="group block" data-id="iphone">
+            <div class="img-placeholder rounded-10">
+              <img
+                src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600&h=400&fit=crop"
+                alt="iPhone on desk"
+                class="transition duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="relative z-10 mx-3 -mt-14 rounded-10 border border-border bg-white p-[14px] transition"
+            >
+              <div class="mb-2 flex items-center gap-2.5">
+                <span
+                  class="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5" />
+                    <path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3" />
+                  </svg>
+                </span>
+                <h3 class="min-w-0 truncate text-sm font-bold">iPhone</h3>
+              </div>
+              <div
+                class="flex items-center justify-between gap-2 border-t border-border pt-2"
+              >
+                <span class="flex items-center gap-1.5 text-[13px]">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.657 3.223c-.3-1.359-1.618-2.604-2.98-2.868C11.847.189 9.53-.015 8 .001 6.468-.016 4.153.189 3.323.355 1.96.619.643 1.865.343 3.223.17 4.048.002 5.17 0 6.703c.002 1.532.17 2.654.342 3.479.301 1.359 1.618 2.603 2.98 2.868.449.09 1.33.19 2.287.262q.163.255.353.543c.508.77.897 1.305 1.191 1.679.49.621 1.204.621 1.694 0 .294-.374.682-.91 1.19-1.679q.191-.288.353-.543c.958-.072 1.839-.173 2.287-.262 1.363-.265 2.68-1.51 2.98-2.868.172-.825.34-1.947.343-3.48-.002-1.532-.17-2.654-.342-3.479m-6.774 8.125a.52.52 0 0 1-.396.396c-.116.02-.273.038-.488.038s-.371-.018-.487-.038a.52.52 0 0 1-.396-.396 3 3 0 0 1-.038-.487c0-.215.018-.372.038-.488a.52.52 0 0 1 .396-.396A3 3 0 0 1 8 9.939c.215 0 .372.019.488.038.19.034.362.206.396.396.02.116.037.273.038.488 0 .214-.019.371-.038.487m1.903-5.119c-.242.342-.603.653-1.138.98-.677.418-.786.59-.786.925v.133a.865.865 0 0 1-1.727 0V7.96c0-.396.099-.732.303-1.027.197-.287.493-.541.932-.802.809-.476.957-.743.957-1.098 0-.445-.38-.734-.967-.734-.643 0-1.062.293-1.245.87a.914.914 0 0 1-.945.634.92.92 0 0 1-.814-1.197 2.8 2.8 0 0 1 1.092-1.477c.523-.357 1.185-.545 1.912-.545s1.456.24 1.974.678c.532.45.826 1.07.826 1.748 0 .465-.123.864-.374 1.22"
+                      fill="#737875"
+                    />
+                  </svg>
+                  <span data-count>100+ Questions</span>
+                </span>
+                <span
+                  class="grid size-8 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 6.468h12m-5.4 6 5.4-6-5.4-6"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Windows -->
+          <a href="#windows" class="group block" data-id="windows">
+            <div class="img-placeholder rounded-10">
+              <img
+                src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=400&fit=crop"
+                alt="Windows laptop"
+                class="transition duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="relative z-10 mx-3 -mt-14 rounded-10 border border-border bg-white p-[14px] transition"
+            >
+              <div class="mb-2 flex items-center gap-2.5">
+                <span
+                  class="grid size-9 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5" />
+                    <path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3" />
+                  </svg>
+                </span>
+                <h3 class="min-w-0 truncate text-sm font-bold">Windows</h3>
+              </div>
+              <div
+                class="flex items-center justify-between gap-2 border-t border-border pt-2"
+              >
+                <span class="flex items-center gap-1.5 text-[13px]">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.657 3.223c-.3-1.359-1.618-2.604-2.98-2.868C11.847.189 9.53-.015 8 .001 6.468-.016 4.153.189 3.323.355 1.96.619.643 1.865.343 3.223.17 4.048.002 5.17 0 6.703c.002 1.532.17 2.654.342 3.479.301 1.359 1.618 2.603 2.98 2.868.449.09 1.33.19 2.287.262q.163.255.353.543c.508.77.897 1.305 1.191 1.679.49.621 1.204.621 1.694 0 .294-.374.682-.91 1.19-1.679q.191-.288.353-.543c.958-.072 1.839-.173 2.287-.262 1.363-.265 2.68-1.51 2.98-2.868.172-.825.34-1.947.343-3.48-.002-1.532-.17-2.654-.342-3.479m-6.774 8.125a.52.52 0 0 1-.396.396c-.116.02-.273.038-.488.038s-.371-.018-.487-.038a.52.52 0 0 1-.396-.396 3 3 0 0 1-.038-.487c0-.215.018-.372.038-.488a.52.52 0 0 1 .396-.396A3 3 0 0 1 8 9.939c.215 0 .372.019.488.038.19.034.362.206.396.396.02.116.037.273.038.488 0 .214-.019.371-.038.487m1.903-5.119c-.242.342-.603.653-1.138.98-.677.418-.786.59-.786.925v.133a.865.865 0 0 1-1.727 0V7.96c0-.396.099-.732.303-1.027.197-.287.493-.541.932-.802.809-.476.957-.743.957-1.098 0-.445-.38-.734-.967-.734-.643 0-1.062.293-1.245.87a.914.914 0 0 1-.945.634.92.92 0 0 1-.814-1.197 2.8 2.8 0 0 1 1.092-1.477c.523-.357 1.185-.545 1.912-.545s1.456.24 1.974.678c.532.45.826 1.07.826 1.748 0 .465-.123.864-.374 1.22"
+                      fill="#737875"
+                    />
+                  </svg>
+                  <span data-count>100+ Questions</span>
+                </span>
+                <span
+                  class="grid size-8 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 6.468h12m-5.4 6 5.4-6-5.4-6"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface py-16">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <aside class="space-y-4 lg:sticky lg:top-24 lg:self-start">
+              <a href="#start-discussion" class="btn btn-fill">
+                <svg
+                  class="size-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                </svg>
+                Start a Discussion
+              </a>
+
+              <nav class="mb-6" aria-label="Discussions">
+                <ul class="flex flex-col gap-1">
+                  <li>
+                    <a
+                      class="menu-item menu-item-active"
+                      href="#all"
+                      aria-current="page"
+                    >
+                      <span class="menu-item-icon">
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#home-icon)" fill="currentColor">
+                            <path
+                              d="m10 5.255 7.133 5.88q0 .012.006.037l.006.037v5.955a.76.76 0 0 1-.235.558.76.76 0 0 1-.559.236h-4.763v-4.764H8.412v4.764H3.649a.76.76 0 0 1-.559-.236.76.76 0 0 1-.236-.558v-5.955q0-.05.013-.074z"
+                            />
+                            <path
+                              d="m.138 9.795 2.717-2.257V2.476q0-.173.111-.285a.4.4 0 0 1 .286-.112h2.381q.174 0 .286.112t.111.285v2.42l3.027-2.531q.396-.324.943-.323.546 0 .943.323l8.92 7.43a.36.36 0 0 1 .136.267.4.4 0 0 1-.087.292l-.77.918a.42.42 0 0 1-.26.136.46.46 0 0 1-.298-.087L10 4.163l-8.584 7.158a.38.38 0 0 1-.261.087h-.037a.42.42 0 0 1-.26-.136l-.77-.918a.4.4 0 0 1-.087-.292.36.36 0 0 1 .137-.267"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="home-icon">
+                              <path fill="#fff" d="M20 0H0v20h20z" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">All Discussions</span>
+                    </a>
+                  </li>
+                  <li class="dropdown dropdown-accordion">
+                    <div
+                      class="menu-item dropdown-trigger"
+                      role="button"
+                      tabindex="0"
+                      aria-expanded="false"
+                      aria-controls="categories-menu"
+                    >
+                      <span class="menu-item-icon">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.59 1.38v4.83a1.38 1.38 0 0 1-1.38 1.38H1.38A1.38 1.38 0 0 1 0 6.21V1.38A1.38 1.38 0 0 1 1.38 0h4.83a1.38 1.38 0 0 1 1.38 1.38M15.87 0h-4.83a1.38 1.38 0 0 0-1.38 1.38v4.83a1.38 1.38 0 0 0 1.38 1.38h4.83a1.38 1.38 0 0 0 1.38-1.38V1.38A1.38 1.38 0 0 0 15.87 0M6.21 9.66H1.38A1.38 1.38 0 0 0 0 11.04v4.83a1.38 1.38 0 0 0 1.38 1.38h4.83a1.38 1.38 0 0 0 1.38-1.38v-4.83a1.38 1.38 0 0 0-1.38-1.38m7.245 0a3.795 3.795 0 1 0 0 7.59 3.795 3.795 0 0 0 0-7.59"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Categories</span>
+                      <svg
+                        class="dropdown-chevron ml-auto size-3.5 shrink-0 transition-transform"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div>
+                    <ul
+                      id="categories-menu"
+                      class="dropdown-menu menu-submenu hidden"
+                      role="list"
+                    >
+                      <li>
+                        <a
+                          class="menu-subitem"
+                          href="#backup-storage"
+                          data-value="backup"
+                          >Backup &amp; Storage</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="menu-subitem"
+                          href="#data-recovery"
+                          data-value="recovery"
+                          >Data Recovery</a
+                        >
+                      </li>
+                      <li>
+                        <a class="menu-subitem" href="#mac" data-value="mac"
+                          >Mac</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="menu-subitem"
+                          href="#iphone"
+                          data-value="iphone"
+                          >iPhone</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="menu-subitem"
+                          href="#windows"
+                          data-value="windows"
+                          >Windows</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#unanswered">
+                      <span class="menu-item-icon">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12.031 6.227a1.935 1.935 0 0 1-2.738 0 1.939 1.939 0 0 1 0-2.741 1.934 1.934 0 0 1 2.738 0 1.939 1.939 0 0 1 0 2.741M14.591 0H8.088c-.514 0-.607.224-1.096.736L2.152 5.562l7.814 7.814 4.854-4.839c.411-.411.703-.616.703-1.128V.926A.922.922 0 0 0 14.593 0m-4.614 4.171a.968.968 0 1 0 1.37 1.369.968.968 0 0 0-1.37-1.369M.589 7.119a2 2 0 0 0 0 2.836l4.98 4.967a2.018 2.018 0 0 0 2.845 0l.862-.86-7.814-7.814z"
+                          />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Unanswered</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#solved">
+                      <span class="menu-item-icon">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 6.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6m6 5a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v3h12z"
+                          />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Solved</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#guides">
+                      <span class="menu-item-icon">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14.582 6.729H10.62a3.38 3.38 0 0 0-2.765-2.766V0a7.314 7.314 0 0 1 6.728 6.729m0 1.125a7.31 7.31 0 0 1-6.728 6.728V10.62a3.38 3.38 0 0 0 2.765-2.765zm-14.58 0h3.963a3.38 3.38 0 0 0 2.764 2.765v3.963A7.31 7.31 0 0 1 0 7.854zm0-1.125A7.314 7.314 0 0 1 6.728 0v3.963A3.38 3.38 0 0 0 3.963 6.73H0z"
+                          />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label"
+                        >Guides &amp; Tutorials</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#support">
+                      <span class="menu-item-icon">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14.582 6.729H10.62a3.38 3.38 0 0 0-2.765-2.766V0a7.314 7.314 0 0 1 6.728 6.729m0 1.125a7.31 7.31 0 0 1-6.728 6.728V10.62a3.38 3.38 0 0 0 2.765-2.765zm-14.58 0h3.963a3.38 3.38 0 0 0 2.764 2.765v3.963A7.31 7.31 0 0 1 0 7.854zm0-1.125A7.314 7.314 0 0 1 6.728 0v3.963A3.38 3.38 0 0 0 3.963 6.73H0z"
+                          />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Product Support</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#news">
+                      <span class="menu-item-icon">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4 14h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v11a1 1 0 0 1-1 1Zm0 0a1 1 0 0 1-1-1V7"
+                          />
+                          <path d="M10 9H6M9 11H6M6 4h5v2H6V4Z" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label"
+                        >News &amp; Updates</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#rules">
+                      <span class="menu-item-icon">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9 2H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5L9 2Z"
+                          />
+                          <path d="M9 2v3h3M10 8H6M10 11H6M7 5H6" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Community Rules</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="space-y-4">
+              <form
+                class="flex flex-col gap-3 sm:flex-row"
+                action="#"
+                method="get"
+                role="search"
+              >
+                <label
+                  class="flex flex-1 items-center gap-3 rounded-full border border-border bg-white px-4 py-3"
+                >
+                  <svg
+                    class="size-5 shrink-0 text-body"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <input
+                    type="search"
+                    name="q"
+                    placeholder="Search discussions, questions, topics..."
+                    class="w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50"
+                  />
+                </label>
+
+                <div class="dropdown relative">
+                  <input
+                    type="hidden"
+                    name="sort"
+                    value="most-answered"
+                    class="dropdown-input"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-secondary dropdown-trigger"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                  >
+                    <span class="dropdown-label">Most Answered</span>
+                    <svg
+                      class="dropdown-chevron size-4 shrink-0 transition"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </button>
+
+                  <ul
+                    class="dropdown-menu absolute right-0 z-20 mt-2 hidden min-w-full overflow-hidden rounded-10 border border-border bg-white py-1"
+                    role="listbox"
+                  >
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-option"
+                        role="option"
+                        aria-selected="true"
+                        data-value="most-answered"
+                      >
+                        Most Answered
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-option"
+                        role="option"
+                        data-value="latest"
+                      >
+                        Latest
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-option"
+                        role="option"
+                        data-value="newest"
+                      >
+                        Newest
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-option"
+                        role="option"
+                        data-value="popular"
+                      >
+                        Popular
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </form>
+
+              <div
+                class="flex flex-wrap gap-2"
+                role="tablist"
+                aria-label="Discussion filters"
+              >
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  data-tab="all"
+                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                >
+                  All
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-tab="open"
+                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                >
+                  Open
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-tab="solved"
+                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                >
+                  Solved
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-tab="unanswered"
+                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                >
+                  Unanswered
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-tab="following"
+                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                >
+                  Following
+                </button>
+              </div>
+
+              <div id="recent" class="question-area space-y-4">
+                <!-- Card 1 -->
+                <article class="card flex gap-4">
+                  <div class="user-hover shrink-0 self-start">
+                    <a
+                      href="#member"
+                      class="relative block size-11"
+                      aria-label="View OC profile"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
+                        alt="OC"
+                        class="size-full rounded-full object-cover"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+                      />
+                      <span
+                        class="hidden size-full items-center justify-center rounded-full bg-[#7c3aed] text-sm font-bold leading-none text-white"
+                      >
+                        OC
+                      </span>
+                      <span
+                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                    <div class="user-card" role="tooltip">
+                      <div class="user-card__head">
+                        <a href="#member" class="user-card__avatar">
+                          <img
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
+                            alt=""
+                          />
+                        </a>
+                        <div class="user-card__meta">
+                          <a href="#member" class="user-card__name">oliver</a>
+                          <span class="user-card__badge">
+                            <svg
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path
+                                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                              />
+                              <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            Member
+                          </span>
+                          <p class="user-card__detail">
+                            <svg
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <rect
+                                x="3"
+                                y="4"
+                                width="18"
+                                height="18"
+                                rx="2"
+                              />
+                              <path d="M16 2v4M8 2v4M3 10h18" />
+                            </svg>
+                            Joined: Jan 14, 2023
+                          </p>
+                          <p class="user-card__detail">
+                            <svg
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <circle cx="12" cy="12" r="9" />
+                              <path d="M12 7v5l3 2" />
+                            </svg>
+                            Last seen: Jun 19, 2026
+                          </p>
+                        </div>
+                      </div>
+                      <div class="user-card__stats">
+                        <div class="user-card__stat">
+                          <span class="user-card__stat-text">
+                            <span class="user-card__stat-label">Messages</span>
+                            <span class="user-card__stat-value">66</span>
+                          </span>
+                        </div>
+                        <div class="user-card__stat">
+                          <span class="user-card__stat-text">
+                            <span class="user-card__stat-label"
+                              >Reaction score</span
+                            >
+                            <span class="user-card__stat-value">0</span>
+                          </span>
+                        </div>
+                        <div class="user-card__stat">
+                          <span class="user-card__stat-text">
+                            <span class="user-card__stat-label">Points</span>
+                            <span class="user-card__stat-value">6</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex min-w-0 w-full items-start gap-4">
+                    <div class="flex-1">
+                      <div
+                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
+                      >
+                        <a
+                          href="#ai"
+                          class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
+                          >AI</a
+                        >
+                        <a href="#member" class="font-bold"
+                          >@Oliver Carpenter</a
+                        >
+                        <span class="text-body/50">Jan 14, 2023</span>
+                        <span
+                          class="inline-flex items-center gap-1 font-medium text-success"
+                        >
+                          <svg
+                            class="size-3.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <path d="m9 11 3 3L22 4" />
+                          </svg>
+                          Solved
+                        </span>
+                      </div>
+
+                      <a
+                        href="#thread"
+                        class="mb-2 block w-fit text-lg font-bold transition-colors line-clamp-2 hover:text-primary hover:underline"
+                      >
+                        Do you think Bard will overtake ChatGPT?
+                      </a>
+                      <p class="mb-4 line-clamp-2 text-[15px]">
+                        Google's Bard demo drew mixed reactions, while ChatGPT
+                        keeps adding users. Which one wins on accuracy, speed,
+                        and developer tooling over...
+                      </p>
+
+                      <div class="mb-4 flex flex-wrap gap-2">
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >Optimize Iphone Storage</a
+                        >
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >Optimize Iphone Storage</a
+                        >
+                      </div>
+
+                      <div
+                        class="flex flex-wrap items-center gap-3 text-[15px]"
+                      >
+                        <button
+                          type="button"
+                          data-like
+                          aria-pressed="false"
+                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
+                        >
+                          <svg
+                            class="size-4 shrink-0 text-primary"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            data-like-icon
+                          >
+                            <path
+                              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                            />
+                          </svg>
+                          <span data-like-count>381</span>
+                        </button>
+                        <span class="inline-flex items-center gap-1 text-body">
+                          <svg
+                            class="size-4 shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                            />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                          10K
+                        </span>
+                        <div class="flex -space-x-2">
+                          <div
+                            class="user-hover relative z-0 shrink-0"
+                            data-user-card
+                            data-name="alex"
+                            data-initial="A"
+                            data-avatar-bg="#22c55e"
+                            data-avatar-color="#fff"
+                            data-joined="Mar 12, 2024"
+                            data-seen="Jun 18, 2026"
+                            data-messages="24"
+                            data-reactions="3"
+                            data-points="8"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              A
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-10 shrink-0"
+                            data-user-card
+                            data-name="oliver"
+                            data-initial="O"
+                            data-avatar="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                            data-joined="Jan 14, 2023"
+                            data-seen="Jun 19, 2026"
+                            data-messages="66"
+                            data-reactions="0"
+                            data-points="6"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              <img
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                                alt="A"
+                                class="size-full rounded-full object-cover"
+                                onerror="this.remove()"
+                              />
+                              <span class="absolute">A</span>
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-20 shrink-0"
+                            data-user-card
+                            data-name="chris"
+                            data-initial="C"
+                            data-avatar-bg="#ec4899"
+                            data-avatar-color="#fff"
+                            data-joined="May 02, 2024"
+                            data-seen="Jun 17, 2026"
+                            data-messages="19"
+                            data-reactions="5"
+                            data-points="11"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              C
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a
+                      href="#replies"
+                      class="group active flex shrink-0 flex-col items-center justify-center rounded-10 border border-border px-4 py-2 text-center transition-colors"
+                    >
+                      <span
+                        class="reply-count text-[20px] font-bold leading-none"
+                        >305</span
+                      >
+                      <span
+                        class="reply-label text-xs text-body/60 transition-colors"
+                        >replies</span
+                      >
+                    </a>
+                  </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card flex gap-4">
+                  <div
+                    class="user-hover shrink-0 self-start"
+                    data-user-card
+                    data-name="sara"
+                    data-initial="S"
+                    data-avatar-bg="#ea580c"
+                    data-avatar-color="#fff"
+                    data-joined="Feb 02, 2024"
+                    data-seen="Jun 19, 2026"
+                    data-messages="42"
+                    data-reactions="8"
+                    data-points="14"
+                  >
+                    <a
+                      href="#member"
+                      class="relative block size-11"
+                      aria-label="View Sara Khan profile"
+                    >
+                      <span
+                        class="flex size-full items-center justify-center rounded-full bg-[#ea580c] text-sm font-bold leading-none text-white"
+                      >
+                        SK
+                      </span>
+                      <span
+                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div class="flex min-w-0 w-full items-start gap-4">
+                    <div class="flex-1">
+                      <div
+                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
+                      >
+                        <a
+                          href="#ai"
+                          class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
+                          >AI</a
+                        >
+                        <a href="#member" class="font-bold">@Sara Khan</a>
+                        <span class="text-body/50">Feb 02, 2024</span>
+                        <span
+                          class="inline-flex items-center gap-1 font-medium text-success"
+                        >
+                          <svg
+                            class="size-3.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <path d="m9 11 3 3L22 4" />
+                          </svg>
+                          Solved
+                        </span>
+                      </div>
+
+                      <a
+                        href="#thread"
+                        class="mb-2 block w-fit text-lg font-bold transition-colors line-clamp-2 hover:text-primary hover:underline"
+                      >
+                        How to recover deleted photos from iPhone after update?
+                      </a>
+                      <p class="mb-4 line-clamp-2 text-[15px]">
+                        After updating to the latest iOS, my Camera Roll is
+                        missing hundreds of photos. Tried iCloud and Finder
+                        restore but nothing came back. Any reliable...
+                      </p>
+
+                      <div class="mb-4 flex flex-wrap gap-2">
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >iPhone Recovery</a
+                        >
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >Photo Restore</a
+                        >
+                      </div>
+
+                      <div
+                        class="flex flex-wrap items-center gap-3 text-[15px]"
+                      >
+                        <button
+                          type="button"
+                          data-like
+                          aria-pressed="false"
+                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
+                        >
+                          <svg
+                            class="size-4 shrink-0 text-primary"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            data-like-icon
+                          >
+                            <path
+                              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                            />
+                          </svg>
+                          <span data-like-count>214</span>
+                        </button>
+                        <span class="inline-flex items-center gap-1 text-body">
+                          <svg
+                            class="size-4 shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                            />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                          6.2K
+                        </span>
+                        <div class="flex -space-x-2">
+                          <div
+                            class="user-hover relative z-0 shrink-0"
+                            data-user-card
+                            data-name="alex"
+                            data-initial="A"
+                            data-avatar-bg="#22c55e"
+                            data-avatar-color="#fff"
+                            data-joined="Mar 12, 2024"
+                            data-seen="Jun 18, 2026"
+                            data-messages="24"
+                            data-reactions="3"
+                            data-points="8"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              A
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-10 shrink-0"
+                            data-user-card
+                            data-name="oliver"
+                            data-initial="O"
+                            data-avatar="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                            data-joined="Jan 14, 2023"
+                            data-seen="Jun 19, 2026"
+                            data-messages="66"
+                            data-reactions="0"
+                            data-points="6"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              <img
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                                alt="A"
+                                class="size-full rounded-full object-cover"
+                                onerror="this.remove()"
+                              />
+                              <span class="absolute">A</span>
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-20 shrink-0"
+                            data-user-card
+                            data-name="chris"
+                            data-initial="C"
+                            data-avatar-bg="#ec4899"
+                            data-avatar-color="#fff"
+                            data-joined="May 02, 2024"
+                            data-seen="Jun 17, 2026"
+                            data-messages="19"
+                            data-reactions="5"
+                            data-points="11"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              C
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a
+                      href="#replies"
+                      class="group active flex shrink-0 flex-col items-center justify-center rounded-10 border border-border px-4 py-2 text-center transition-colors"
+                    >
+                      <span
+                        class="reply-count text-[20px] font-bold leading-none"
+                        >128</span
+                      >
+                      <span
+                        class="reply-label text-xs text-body/60 transition-colors"
+                        >replies</span
+                      >
+                    </a>
+                  </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card flex gap-4">
+                  <div
+                    class="user-hover shrink-0 self-start"
+                    data-user-card
+                    data-name="marcus"
+                    data-initial="M"
+                    data-avatar-bg="#2563eb"
+                    data-avatar-color="#fff"
+                    data-joined="Mar 18, 2024"
+                    data-seen="Jun 18, 2026"
+                    data-messages="31"
+                    data-reactions="5"
+                    data-points="11"
+                  >
+                    <a
+                      href="#member"
+                      class="relative block size-11"
+                      aria-label="View Marcus Reed profile"
+                    >
+                      <span
+                        class="flex size-full items-center justify-center rounded-full bg-[#2563eb] text-sm font-bold leading-none text-white"
+                      >
+                        MR
+                      </span>
+                      <span
+                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div class="flex min-w-0 w-full items-start gap-4">
+                    <div class="flex-1">
+                      <div
+                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
+                      >
+                        <a
+                          href="#ai"
+                          class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
+                          >AI</a
+                        >
+                        <a href="#member" class="font-bold">@Marcus Reed</a>
+                        <span class="text-body/50">Mar 18, 2024</span>
+                      </div>
+
+                      <a
+                        href="#thread"
+                        class="mb-2 block w-fit text-lg font-bold transition-colors line-clamp-2 hover:text-primary hover:underline"
+                      >
+                        Best way to back up Mac before clean install?
+                      </a>
+                      <p class="mb-4 line-clamp-2 text-[15px]">
+                        Planning a clean macOS install on my M2 MacBook. Want a
+                        full local backup of apps, documents, and Time Machine
+                        alternatives that actually work...
+                      </p>
+
+                      <div class="mb-4 flex flex-wrap gap-2">
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >Mac Backup</a
+                        >
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >Time Machine</a
+                        >
+                      </div>
+
+                      <div
+                        class="flex flex-wrap items-center gap-3 text-[15px]"
+                      >
+                        <button
+                          type="button"
+                          data-like
+                          aria-pressed="false"
+                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
+                        >
+                          <svg
+                            class="size-4 shrink-0 text-primary"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            data-like-icon
+                          >
+                            <path
+                              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                            />
+                          </svg>
+                          <span data-like-count>97</span>
+                        </button>
+                        <span class="inline-flex items-center gap-1 text-body">
+                          <svg
+                            class="size-4 shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                            />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                          3.1K
+                        </span>
+                        <div class="flex -space-x-2">
+                          <div
+                            class="user-hover relative z-0 shrink-0"
+                            data-user-card
+                            data-name="alex"
+                            data-initial="A"
+                            data-avatar-bg="#22c55e"
+                            data-avatar-color="#fff"
+                            data-joined="Mar 12, 2024"
+                            data-seen="Jun 18, 2026"
+                            data-messages="24"
+                            data-reactions="3"
+                            data-points="8"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              A
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-10 shrink-0"
+                            data-user-card
+                            data-name="oliver"
+                            data-initial="O"
+                            data-avatar="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                            data-joined="Jan 14, 2023"
+                            data-seen="Jun 19, 2026"
+                            data-messages="66"
+                            data-reactions="0"
+                            data-points="6"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              <img
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                                alt="A"
+                                class="size-full rounded-full object-cover"
+                                onerror="this.remove()"
+                              />
+                              <span class="absolute">A</span>
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-20 shrink-0"
+                            data-user-card
+                            data-name="chris"
+                            data-initial="C"
+                            data-avatar-bg="#ec4899"
+                            data-avatar-color="#fff"
+                            data-joined="May 02, 2024"
+                            data-seen="Jun 17, 2026"
+                            data-messages="19"
+                            data-reactions="5"
+                            data-points="11"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              C
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a
+                      href="#replies"
+                      class="group flex shrink-0 flex-col items-center justify-center rounded-10 border border-border px-4 py-2 text-center transition-colors"
+                    >
+                      <span
+                        class="reply-count text-[20px] font-bold leading-none"
+                        >0</span
+                      >
+                      <span
+                        class="reply-label text-xs text-body/60 transition-colors"
+                        >replies</span
+                      >
+                    </a>
+                  </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card flex gap-4">
+                  <div
+                    class="user-hover shrink-0 self-start"
+                    data-user-card
+                    data-name="ava"
+                    data-initial="A"
+                    data-avatar-bg="#db2777"
+                    data-avatar-color="#fff"
+                    data-joined="Apr 09, 2024"
+                    data-seen="Jun 17, 2026"
+                    data-messages="58"
+                    data-reactions="15"
+                    data-points="22"
+                  >
+                    <a
+                      href="#member"
+                      class="relative block size-11"
+                      aria-label="View Ava Lopez profile"
+                    >
+                      <span
+                        class="flex size-full items-center justify-center rounded-full bg-[#db2777] text-sm font-bold leading-none text-white"
+                      >
+                        AL
+                      </span>
+                      <span
+                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div class="flex min-w-0 w-full items-start gap-4">
+                    <div class="flex-1">
+                      <div
+                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
+                      >
+                        <a
+                          href="#ai"
+                          class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
+                          >AI</a
+                        >
+                        <a href="#member" class="font-bold">@Ava Lopez</a>
+                        <span class="text-body/50">Apr 09, 2024</span>
+                        <span
+                          class="inline-flex items-center gap-1 font-medium text-success"
+                        >
+                          <svg
+                            class="size-3.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <path d="m9 11 3 3L22 4" />
+                          </svg>
+                          Solved
+                        </span>
+                      </div>
+
+                      <a
+                        href="#thread"
+                        class="mb-2 block w-fit text-lg font-bold transition-colors line-clamp-2 hover:text-primary hover:underline"
+                      >
+                        Windows PC won't boot after sudden power loss — data
+                        safe?
+                      </a>
+                      <p class="mb-4 line-clamp-2 text-[15px]">
+                        Disk shows up in BIOS but Windows repair keeps failing.
+                        Need to know if files on the internal SSD can still be
+                        recovered before formatting...
+                      </p>
+
+                      <div class="mb-4 flex flex-wrap gap-2">
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >Windows Recovery</a
+                        >
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >SSD Data</a
+                        >
+                      </div>
+
+                      <div
+                        class="flex flex-wrap items-center gap-3 text-[15px]"
+                      >
+                        <button
+                          type="button"
+                          data-like
+                          aria-pressed="false"
+                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
+                        >
+                          <svg
+                            class="size-4 shrink-0 text-primary"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            data-like-icon
+                          >
+                            <path
+                              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                            />
+                          </svg>
+                          <span data-like-count>452</span>
+                        </button>
+                        <span class="inline-flex items-center gap-1 text-body">
+                          <svg
+                            class="size-4 shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                            />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                          12K
+                        </span>
+                        <div class="flex -space-x-2">
+                          <div
+                            class="user-hover relative z-0 shrink-0"
+                            data-user-card
+                            data-name="alex"
+                            data-initial="A"
+                            data-avatar-bg="#22c55e"
+                            data-avatar-color="#fff"
+                            data-joined="Mar 12, 2024"
+                            data-seen="Jun 18, 2026"
+                            data-messages="24"
+                            data-reactions="3"
+                            data-points="8"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              A
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-10 shrink-0"
+                            data-user-card
+                            data-name="oliver"
+                            data-initial="O"
+                            data-avatar="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                            data-joined="Jan 14, 2023"
+                            data-seen="Jun 19, 2026"
+                            data-messages="66"
+                            data-reactions="0"
+                            data-points="6"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              <img
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                                alt="A"
+                                class="size-full rounded-full object-cover"
+                                onerror="this.remove()"
+                              />
+                              <span class="absolute">A</span>
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-20 shrink-0"
+                            data-user-card
+                            data-name="chris"
+                            data-initial="C"
+                            data-avatar-bg="#ec4899"
+                            data-avatar-color="#fff"
+                            data-joined="May 02, 2024"
+                            data-seen="Jun 17, 2026"
+                            data-messages="19"
+                            data-reactions="5"
+                            data-points="11"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              C
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a
+                      href="#replies"
+                      class="group active flex shrink-0 flex-col items-center justify-center rounded-10 border border-border px-4 py-2 text-center transition-colors"
+                    >
+                      <span
+                        class="reply-count text-[20px] font-bold leading-none"
+                        >189</span
+                      >
+                      <span
+                        class="reply-label text-xs text-body/60 transition-colors"
+                        >replies</span
+                      >
+                    </a>
+                  </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="card flex gap-4">
+                  <div
+                    class="user-hover shrink-0 self-start"
+                    data-user-card
+                    data-name="jordan"
+                    data-initial="J"
+                    data-avatar-bg="#0d9488"
+                    data-avatar-color="#fff"
+                    data-joined="May 21, 2024"
+                    data-seen="Jun 16, 2026"
+                    data-messages="27"
+                    data-reactions="3"
+                    data-points="9"
+                  >
+                    <a
+                      href="#member"
+                      class="relative block size-11"
+                      aria-label="View Jordan Park profile"
+                    >
+                      <span
+                        class="flex size-full items-center justify-center rounded-full bg-[#0d9488] text-sm font-bold leading-none text-white"
+                      >
+                        JP
+                      </span>
+                      <span
+                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div class="flex min-w-0 w-full items-start gap-4">
+                    <div class="flex-1">
+                      <div
+                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
+                      >
+                        <a
+                          href="#ai"
+                          class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
+                          >AI</a
+                        >
+                        <a href="#member" class="font-bold">@Jordan Park</a>
+                        <span class="text-body/50">May 21, 2024</span>
+                      </div>
+
+                      <a
+                        href="#thread"
+                        class="mb-2 block w-fit text-lg font-bold transition-colors line-clamp-2 hover:text-primary hover:underline"
+                      >
+                        External hard drive not recognized on Windows 11
+                      </a>
+                      <p class="mb-4 line-clamp-2 text-[15px]">
+                        Seagate 2TB drive spins up but never shows in File
+                        Explorer. Device Manager lists it with a warning.
+                        Looking for safe recovery steps before...
+                      </p>
+
+                      <div class="mb-4 flex flex-wrap gap-2">
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >Hard Drive</a
+                        >
+                        <a
+                          href="#tag"
+                          class="tag-chip rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-body"
+                          >Windows 11</a
+                        >
+                      </div>
+
+                      <div
+                        class="flex flex-wrap items-center gap-3 text-[15px]"
+                      >
+                        <button
+                          type="button"
+                          data-like
+                          aria-pressed="false"
+                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
+                        >
+                          <svg
+                            class="size-4 shrink-0 text-primary"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            data-like-icon
+                          >
+                            <path
+                              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                            />
+                          </svg>
+                          <span data-like-count>168</span>
+                        </button>
+                        <span class="inline-flex items-center gap-1 text-body">
+                          <svg
+                            class="size-4 shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                            />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                          4.8K
+                        </span>
+                        
+                        <div class="flex -space-x-2">
+                          <div
+                            class="user-hover relative z-0 shrink-0"
+                            data-user-card
+                            data-name="alex"
+                            data-initial="A"
+                            data-avatar-bg="#22c55e"
+                            data-avatar-color="#fff"
+                            data-joined="Mar 12, 2024"
+                            data-seen="Jun 18, 2026"
+                            data-messages="24"
+                            data-reactions="3"
+                            data-points="8"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              A
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-10 shrink-0"
+                            data-user-card
+                            data-name="oliver"
+                            data-initial="O"
+                            data-avatar="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                            data-joined="Jan 14, 2023"
+                            data-seen="Jun 19, 2026"
+                            data-messages="66"
+                            data-reactions="0"
+                            data-points="6"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              <img
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
+                                alt="A"
+                                class="size-full rounded-full object-cover"
+                                onerror="this.remove()"
+                              />
+                              <span class="absolute">A</span>
+                            </a>
+                          </div>
+
+                          <div
+                            class="user-hover relative z-20 shrink-0"
+                            data-user-card
+                            data-name="chris"
+                            data-initial="C"
+                            data-avatar-bg="#ec4899"
+                            data-avatar-color="#fff"
+                            data-joined="May 02, 2024"
+                            data-seen="Jun 17, 2026"
+                            data-messages="19"
+                            data-reactions="5"
+                            data-points="11"
+                          >
+                            <a
+                              href="#member"
+                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              aria-label="View member profile"
+                            >
+                              C
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a
+                      href="#replies"
+                      class="group active flex shrink-0 flex-col items-center justify-center rounded-10 border border-border px-4 py-2 text-center transition-colors"
+                    >
+                      <span
+                        class="reply-count text-[20px] font-bold leading-none"
+                        >92</span
+                      >
+                      <span
+                        class="reply-label text-xs text-body/60 transition-colors"
+                        >replies</span
+                      >
+                    </a>
+                  </div>
+                </article>
+
+                <button type="button" class="btn-load-more mx-auto">
+                  Load More
+                  <svg
+                    class="btn-load-more__spinner"
+                    width="19"
+                    height="19"
+                    viewBox="0 0 19 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <g clip-path="url(#load-more-clip)" fill="currentColor">
+                      <path
+                        d="M3.869 3.002a1.6 1.6 0 0 0-.68.509c-.322.475-.337 1.15-.033 1.592.06.081.486.527.954.987.954.946 1.032.998 1.533 1.028.608.033 1.098-.268 1.365-.84.086-.18.1-.259.1-.563 0-.575-.037-.635-1.087-1.681-1.024-1.02-1.102-1.073-1.64-1.091-.245-.011-.36.004-.512.06m1.513 8.868c-.308.097-.49.245-1.377 1.143-1.08 1.091-1.09 1.106-1.09 1.7 0 .345.007.39.122.62.226.464.649.738 1.18.764.33.019.59-.044.83-.2.071-.045.528-.479 1.01-.969 1.058-1.061 1.088-1.11 1.088-1.7 0-.33-.012-.396-.104-.593-.242-.52-.702-.802-1.284-.794a2 2 0 0 0-.375.03m7.432.07c-.805.29-1.172 1.173-.812 1.96.081.174.248.367.924 1.046.452.456.89.876.972.931.252.178.486.245.824.242.27 0 .33-.015.582-.138.713-.352.991-1.154.65-1.878-.097-.207-.227-.36-.973-1.11-1.016-1.023-1.117-1.09-1.655-1.109-.24-.01-.367.004-.512.056M8.99.831a1.39 1.39 0 0 0-.843.936c-.082.322-.082 2.549.003 2.835.156.523.59.913 1.121 1.002.616.1 1.258-.241 1.525-.817l.097-.204.01-1.299c.016-1.265.012-1.306-.07-1.57a1.48 1.48 0 0 0-.727-.842C9.794.72 9.323.705 8.99.832M1.707 8.16c-.56.179-.92.646-.958 1.24-.033.542.193.995.646 1.291.316.208.468.227 1.889.212l1.299-.011.234-.119c.757-.39 1.02-1.265.6-1.993a1.3 1.3 0 0 0-.834-.634c-.342-.086-2.587-.074-2.876.015m12.699-.015c-.53.163-.909.571-1.002 1.083a1.37 1.37 0 0 0 .208 1.036c.16.24.342.4.62.537l.185.09h2.784l.248-.123c.553-.27.835-.75.802-1.358-.015-.245-.041-.345-.138-.534a1.4 1.4 0 0 0-.938-.75c-.253-.056-2.576-.045-2.769.019m-5.333 5.303a1.17 1.17 0 0 0-.523.308c-.212.2-.312.356-.39.612-.063.197-.07.353-.07 1.433 0 1.258.015 1.41.167 1.729.093.193.386.467.638.597.3.152.731.175 1.061.056.357-.13.553-.286.754-.605.178-.278.2-.464.2-1.777 0-1.136-.004-1.236-.078-1.448a1.25 1.25 0 0 0-.382-.6c-.252-.238-.505-.335-.894-.346-.2-.008-.394.011-.483.04"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="load-more-clip">
+                        <path fill="#fff" d="M0 0h19v19H0z" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <aside class="space-y-4 lg:sticky lg:top-24 lg:self-start">
+              <div class="card p-5">
+                <div class="mb-4 flex items-center justify-between gap-2">
+                  <h3 class="text-sm font-bold">Online Users</h3>
+                  <span class="text-xs font-medium text-success"
+                    >• 24 Online</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <div
+                    class="user-hover user-hover--right shrink-0"
+                    data-user-card
+                    data-name="alex"
+                    data-initial="A"
+                    data-avatar="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop"
+                    data-joined="Mar 12, 2024"
+                    data-seen="Online now"
+                    data-messages="88"
+                    data-reactions="14"
+                    data-points="32"
+                    data-profile="/users/ak"
+                  >
+                    <a href="/users/ak" class="relative inline-block">
+                      <img
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop"
+                        alt="AK"
+                        class="size-10 rounded-full object-cover"
+                      />
+                      <span
+                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div
+                    class="user-hover user-hover--right shrink-0"
+                    data-user-card
+                    data-name="akash"
+                    data-initial="A"
+                    data-avatar-bg="#f97316"
+                    data-avatar-color="#fff"
+                    data-joined="Jan 08, 2024"
+                    data-seen="Online now"
+                    data-messages="54"
+                    data-reactions="9"
+                    data-points="21"
+                    data-profile="/users/ak"
+                  >
+                    <a href="/users/ak" class="relative inline-block">
+                      <span
+                        class="grid size-10 place-items-center rounded-full bg-[#f97316] text-xs font-bold text-white"
+                      >
+                        AK
+                      </span>
+                      <span
+                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div
+                    class="user-hover user-hover--right shrink-0"
+                    data-user-card
+                    data-name="oliver"
+                    data-initial="O"
+                    data-avatar-bg="#7c3aed"
+                    data-avatar-color="#fff"
+                    data-joined="Jan 14, 2023"
+                    data-seen="Online now"
+                    data-messages="66"
+                    data-reactions="0"
+                    data-points="6"
+                    data-profile="/users/oc"
+                  >
+                    <a
+                      href="/users/oc"
+                      class="relative inline-block"
+                      aria-label="View OC profile"
+                    >
+                      <img
+                        src="/images/users/oc.jpg"
+                        alt="OC"
+                        class="size-10 rounded-full object-cover"
+                        onerror="
+                          this.style.display = 'none';
+                          this.nextElementSibling.style.display = 'grid';
+                        "
+                      />
+                      <span
+                        class="hidden size-10 place-items-center rounded-full bg-[#7c3aed] text-xs font-bold text-white"
+                        >OC</span
+                      >
+                      <span
+                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div
+                    class="user-hover user-hover--right shrink-0"
+                    data-user-card
+                    data-name="tara"
+                    data-initial="T"
+                    data-avatar-bg="#06b6d4"
+                    data-avatar-color="#fff"
+                    data-joined="Feb 20, 2024"
+                    data-seen="Online now"
+                    data-messages="41"
+                    data-reactions="7"
+                    data-points="18"
+                    data-profile="/users/tr"
+                  >
+                    <a
+                      href="/users/tr"
+                      class="relative inline-block"
+                      aria-label="View TR profile"
+                    >
+                      <img
+                        src="/images/users/tr.jpg"
+                        alt="TR"
+                        class="size-10 rounded-full object-cover"
+                        onerror="
+                          this.style.display = 'none';
+                          this.nextElementSibling.style.display = 'grid';
+                        "
+                      />
+                      <span
+                        class="hidden size-10 place-items-center rounded-full bg-[#06b6d4] text-xs font-bold text-white"
+                        >TR</span
+                      >
+                      <span
+                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div
+                    class="user-hover user-hover--right shrink-0"
+                    data-user-card
+                    data-name="priya"
+                    data-initial="P"
+                    data-avatar-bg="#ec4899"
+                    data-avatar-color="#fff"
+                    data-joined="Apr 03, 2024"
+                    data-seen="Online now"
+                    data-messages="73"
+                    data-reactions="11"
+                    data-points="27"
+                    data-profile="/users/ps"
+                  >
+                    <a
+                      href="/users/ps"
+                      class="relative inline-block"
+                      aria-label="View PS profile"
+                    >
+                      <img
+                        src="/images/users/ps.jpg"
+                        alt="PS"
+                        class="size-10 rounded-full object-cover"
+                        onerror="
+                          this.style.display = 'none';
+                          this.nextElementSibling.style.display = 'grid';
+                        "
+                      />
+                      <span
+                        class="hidden size-10 place-items-center rounded-full bg-[#ec4899] text-xs font-bold text-white"
+                        >PS</span
+                      >
+                      <span
+                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div
+                    class="user-hover user-hover--right shrink-0"
+                    data-user-card
+                    data-name="mike"
+                    data-initial="M"
+                    data-avatar-bg="#3b82f6"
+                    data-avatar-color="#fff"
+                    data-joined="May 15, 2024"
+                    data-seen="Online now"
+                    data-messages="29"
+                    data-reactions="4"
+                    data-points="12"
+                    data-profile="/users/mj"
+                  >
+                    <a
+                      href="/users/mj"
+                      class="relative inline-block"
+                      aria-label="View MJ profile"
+                    >
+                      <img
+                        src="/images/users/mj.jpg"
+                        alt="MJ"
+                        class="size-10 rounded-full object-cover"
+                        onerror="
+                          this.style.display = 'none';
+                          this.nextElementSibling.style.display = 'grid';
+                        "
+                      />
+                      <span
+                        class="hidden size-10 place-items-center rounded-full bg-[#3b82f6] text-xs font-bold text-white"
+                        >MJ</span
+                      >
+                      <span
+                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div
+                    class="user-hover user-hover--right shrink-0"
+                    data-user-card
+                    data-name="lisa"
+                    data-initial="L"
+                    data-avatar-bg="#eab308"
+                    data-avatar-color="#fff"
+                    data-joined="Jun 01, 2024"
+                    data-seen="Online now"
+                    data-messages="36"
+                    data-reactions="6"
+                    data-points="15"
+                    data-profile="/users/lp"
+                  >
+                    <a
+                      href="/users/lp"
+                      class="relative inline-block"
+                      aria-label="View LP profile"
+                    >
+                      <img
+                        src="/images/users/lp.jpg"
+                        alt="LP"
+                        class="size-10 rounded-full object-cover"
+                        onerror="
+                          this.style.display = 'none';
+                          this.nextElementSibling.style.display = 'grid';
+                        "
+                      />
+                      <span
+                        class="hidden size-10 place-items-center rounded-full bg-[#eab308] text-xs font-bold text-white"
+                        >LP</span
+                      >
+                      <span
+                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <div
+                    class="user-hover user-hover--right shrink-0"
+                    data-user-card
+                    data-name="ryan"
+                    data-initial="R"
+                    data-avatar-bg="#22c55e"
+                    data-avatar-color="#fff"
+                    data-joined="Jul 11, 2024"
+                    data-seen="Online now"
+                    data-messages="47"
+                    data-reactions="8"
+                    data-points="19"
+                    data-profile="/users/rs"
+                  >
+                    <a
+                      href="/users/rs"
+                      class="relative inline-block"
+                      aria-label="View RS profile"
+                    >
+                      <img
+                        src="/images/users/rs.jpg"
+                        alt="RS"
+                        class="size-10 rounded-full object-cover"
+                        onerror="
+                          this.style.display = 'none';
+                          this.nextElementSibling.style.display = 'grid';
+                        "
+                      />
+                      <span
+                        class="hidden size-10 place-items-center rounded-full bg-[#22c55e] text-xs font-bold text-white"
+                        >RS</span
+                      >
+                      <span
+                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
+                      ></span>
+                    </a>
+                  </div>
+
+                  <span
+                    class="grid size-10 place-items-center rounded-full bg-surface text-xs font-bold"
+                    >+12</span
+                  >
+                </div>
+              </div>
+
+              <div class="card p-5">
+                <h3 class="mb-4 text-sm font-bold">Forum Stats</h3>
+                <div class="grid grid-cols-2 gap-3">
+                  <div
+                    class="flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3"
+                  >
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[#2563eb]"
+                    >
+                      <svg
+                        class="size-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
+                    </span>
+                    <div class="min-w-0">
+                      <p class="text-sm font-bold leading-tight">49.9K</p>
+                      <p class="text-[11px] leading-tight">
+                        Members
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3"
+                  >
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dcfce7] text-[#16a34a]"
+                    >
+                      <svg
+                        class="size-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                        />
+                        <path d="M14 2v6h6" />
+                        <path d="M16 13H8" />
+                        <path d="M16 17H8" />
+                        <path d="M10 9H8" />
+                      </svg>
+                    </span>
+                    <div class="min-w-0">
+                      <p class="text-sm font-bold leading-tight">205.9K</p>
+                      <p class="text-[11px] leading-tight">
+                        Questions
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3"
+                  >
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-full bg-[#ffedd5] text-[#ea580c]"
+                    >
+                      <svg
+                        class="size-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                        />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </span>
+                    <div class="min-w-0">
+                      <p class="text-sm font-bold leading-tight">49.9K</p>
+                      <p class="text-[11px] leading-tight">
+                      Viewers
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3"
+                  >
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-full bg-[#f3e8ff] text-[#9333ea]"
+                    >
+                      <svg
+                        class="size-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"
+                        />
+                        <circle
+                          cx="9"
+                          cy="11"
+                          r="0.8"
+                          fill="currentColor"
+                          stroke="none"
+                        />
+                        <circle
+                          cx="12"
+                          cy="11"
+                          r="0.8"
+                          fill="currentColor"
+                          stroke="none"
+                        />
+                        <circle
+                          cx="15"
+                          cy="11"
+                          r="0.8"
+                          fill="currentColor"
+                          stroke="none"
+                        />
+                      </svg>
+                    </span>
+                    <div class="min-w-0">
+                      <p class="text-sm font-bold leading-tight">120.4K</p>
+                      <p class="text-[11px] leading-tight">
+                        Replies
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-5">
+                <h3 class="mb-4 text-sm font-bold">Top Posters This Month</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3">
+                    <span
+                      class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                    >
+                      1
+                    </span>
+                    <div
+                      class="user-hover user-hover--right shrink-0"
+                      data-user-card
+                      data-name="gregDander"
+                      data-initial="G"
+                      data-avatar="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces"
+                      data-joined="Nov 02, 2022"
+                      data-seen="Online now"
+                      data-messages="171"
+                      data-reactions="48"
+                      data-points="92"
+                      data-profile="/users/gregdander"
+                    >
+                      <a
+                        href="/users/gregdander"
+                        class="relative grid size-10 place-items-center"
+                        aria-label="View gregDander profile"
+                      >
+                        <img
+                          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces"
+                          alt="gregDander"
+                          class="size-10 rounded-full object-cover"
+                          onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'"
+                        />
+                        <span
+                          class="hidden size-10 place-items-center rounded-full bg-[#f97316] text-xs font-bold text-white"
+                        >
+                          GR
+                        </span>
+                      </a>
+                    </div>
+                    <a
+                      href="/users/gregdander"
+                      class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                    >
+                      <p class="truncate text-sm font-bold">gregDander</p>
+                      <p class="text-xs text-body/60">171 posts</p>
+                    </a>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span
+                      class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                      >2</span
+                    >
+                    <div
+                      class="user-hover user-hover--right shrink-0"
+                      data-user-card
+                      data-name="Kiarav"
+                      data-initial="K"
+                      data-avatar-bg="#ef4444"
+                      data-avatar-color="#fff"
+                      data-joined="Jan 18, 2023"
+                      data-seen="Online now"
+                      data-messages="139"
+                      data-reactions="31"
+                      data-points="64"
+                    >
+                      <a
+                        href="#member"
+                        class="grid size-10 place-items-center rounded-full bg-[#ef4444] text-xs font-bold text-white"
+                        aria-label="View Kiarav profile"
+                        >KI</a
+                      >
+                    </div>
+                    <a
+                      href="#member"
+                      class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                    >
+                      <p class="truncate text-sm font-bold">Kiarav</p>
+                      <p class="text-xs text-body/60">139 posts</p>
+                    </a>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span
+                      class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                      >3</span
+                    >
+                    <div
+                      class="user-hover user-hover--right shrink-0"
+                      data-user-card
+                      data-name="WanderingTrader"
+                      data-initial="W"
+                      data-avatar-bg="#06b6d4"
+                      data-avatar-color="#fff"
+                      data-joined="Mar 05, 2023"
+                      data-seen="Jun 19, 2026"
+                      data-messages="120"
+                      data-reactions="22"
+                      data-points="51"
+                    >
+                      <a
+                        href="#member"
+                        class="grid size-10 place-items-center rounded-full bg-[#06b6d4] text-xs font-bold text-white"
+                        aria-label="View WanderingTrader profile"
+                        >WA</a
+                      >
+                    </div>
+                    <a
+                      href="#member"
+                      class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                    >
+                      <p class="truncate text-sm font-bold">WanderingTrader</p>
+                      <p class="text-xs text-body/60">120 posts</p>
+                    </a>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span
+                      class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                      >4</span
+                    >
+                    <div
+                      class="user-hover user-hover--right shrink-0"
+                      data-user-card
+                      data-name="JochenSantiago"
+                      data-initial="J"
+                      data-avatar-bg="#7c3aed"
+                      data-avatar-color="#fff"
+                      data-joined="Aug 21, 2023"
+                      data-seen="Jun 18, 2026"
+                      data-messages="76"
+                      data-reactions="12"
+                      data-points="33"
+                    >
+                      <a
+                        href="#member"
+                        class="grid size-10 place-items-center rounded-full bg-[#7c3aed] text-xs font-bold text-white"
+                        aria-label="View JochenSantiago profile"
+                        >JO</a
+                      >
+                    </div>
+                    <a
+                      href="#member"
+                      class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                    >
+                      <p class="truncate text-sm font-bold">JochenSantiago</p>
+                      <p class="text-xs text-body/60">76 posts</p>
+                    </a>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span
+                      class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                      >5</span
+                    >
+                    <div
+                      class="user-hover user-hover--right shrink-0"
+                      data-user-card
+                      data-name="Chris_Joseph_PNip"
+                      data-initial="C"
+                      data-avatar-bg="#14b8a6"
+                      data-avatar-color="#fff"
+                      data-joined="Oct 09, 2023"
+                      data-seen="Jun 17, 2026"
+                      data-messages="74"
+                      data-reactions="10"
+                      data-points="29"
+                    >
+                      <a
+                        href="#member"
+                        class="grid size-10 place-items-center rounded-full bg-[#14b8a6] text-xs font-bold text-white"
+                        aria-label="View Chris_Joseph_PNip profile"
+                        >CH</a
+                      >
+                    </div>
+                    <a
+                      href="#member"
+                      class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                    >
+                      <p class="truncate text-sm font-bold">Chris_Joseph_PNip</p>
+                      <p class="text-xs text-body/60">74 posts</p>
+                    </a>
+                  </li>
+                </ul>
+                <a
+                  href="#top-posters"
+                  class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition hover:opacity-80"
+                >
+                  View all
+                  <svg
+                    class="size-3.5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-footer text-white">
+      <div class="container py-14 lg:py-16">
+        <div class="footer-layout row">
+          <!-- Find your Topic -->
+          <div class="footer-col col-lg-5">
+            <div class="footer-title">Find your Topic</div>
+            <div class="footer-topics">
+              <a href="#backup-storage" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 10H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7h.01M7 17h.01" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h3m-3 10h3" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                <span>Backup &amp; Storage</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#mac" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 3h-11A1.5 1.5 0 0 0 5 4.5v10A1.5 1.5 0 0 0 6.5 16h11a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 17.5 3M3 20h18l-2-4H5z" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 18h4" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Mac</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#iphone" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2H9a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 5h4" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19h4" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Iphone</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#general" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.999 11a8 8 0 0 1-8 8h-6l-4 3v-6a8 8 0 0 1-1-4V9a7 7 0 0 1 7-7h5a7 7 0 0 1 7 7z" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10h.01M12 10h.01M17 10h.01" stroke="#f05258" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>General Discussion</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#windows" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 4 8-1v8H3zm0 9h8v8l-8-1zm10 0h8v10l-8-1z" stroke="#d9d9d9"/><path d="m13 3 8-1v9h-8z" stroke="#f05258"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></svg>
+                <span>Windows</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#productivity" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 7 1 1 2-2m-3 6 1 1 2-2m-3 6 1 1 2-2" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 7h4m-4 5h4m-4 5h4" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Digital Productivity</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Explore -->
+          <div class="footer-col col-lg-5">
+            <div class="footer-title">Explore Datarecove</div>
+            <ul class="footer-list">
+              <li>
+                <a href="#about" class="footer-link" title="About Us"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#privacy" class="footer-link" title="Privacy Policy"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#categories" class="footer-link" title="Categories"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a href="#terms" class="footer-link" title="Terms of Use"
+                  >Terms of Use</a
+                >
+              </li>
+              <li>
+                <a href="#popular" class="footer-link" title="Popular Questions"
+                  >Popular Questions</a
+                >
+              </li>
+              <li>
+                <a href="#faqs" class="footer-link" title="Help & Faqs"
+                  >Help &amp; Faqs</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="footer-link" title="Contact Us"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#rules" class="footer-link" title="Community Rules"
+                  >Community Rules</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social -->
+          <div class="footer-col footer-socials col-lg-2">
+            <a href="#instagram" class="footer-social">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.002 3.898A4.095 4.095 0 0 0 3.9 8a4.095 4.095 0 0 0 4.102 4.102A4.095 4.095 0 0 0 12.103 8a4.095 4.095 0 0 0-4.101-4.102m0 6.769A2.67 2.67 0 0 1 5.335 8a2.67 2.67 0 0 1 2.667-2.667A2.67 2.67 0 0 1 10.668 8c0 1.47-1.2 2.667-2.666 2.667m5.225-6.937a.954.954 0 0 1-.956.957.957.957 0 1 1 .957-.957m2.717.971c-.06-1.282-.354-2.417-1.292-3.352C13.717.413 12.582.12 11.3.056c-1.32-.075-5.28-.075-6.6 0-1.278.06-2.413.354-3.352 1.29C.41 2.28.12 3.415.056 4.697c-.075 1.32-.075 5.28 0 6.6.06 1.283.354 2.418 1.292 3.353.94.936 2.07 1.229 3.352 1.293 1.32.075 5.28.075 6.6 0 1.281-.06 2.416-.354 3.352-1.293.935-.935 1.228-2.07 1.292-3.352.075-1.321.075-5.277 0-6.598m-1.706 8.015a2.7 2.7 0 0 1-1.521 1.521c-1.053.418-3.552.322-4.715.322-1.164 0-3.666.092-4.715-.322a2.7 2.7 0 0 1-1.521-1.52C1.348 11.662 1.445 9.163 1.445 8s-.093-3.667.321-4.716a2.7 2.7 0 0 1 1.52-1.521c1.054-.418 3.552-.322 4.716-.322 1.163 0 3.666-.092 4.715.322a2.7 2.7 0 0 1 1.52 1.52c.418 1.054.322 3.553.322 4.717s.096 3.667-.321 4.716" fill="#fff"/></svg>
+              instagram
+            </a>
+            <a href="#linkedin" class="footer-social">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.582 16H.264V5.318h3.318zM1.922 3.86C.86 3.86 0 2.982 0 1.921a1.921 1.921 0 0 1 3.842 0c0 1.06-.86 1.94-1.92 1.94M15.996 16h-3.31v-5.2c0-1.24-.025-2.829-1.725-2.829-1.725 0-1.989 1.347-1.989 2.74V16H5.66V5.318h3.182v1.457h.046c.443-.84 1.525-1.725 3.139-1.725C15.383 5.05 16 7.26 16 10.132V16z" fill="#fff"/></svg>
+              Linkedin
+            </a>
+            <a href="#x" class="footer-social">
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.704 0h2.475L9.773 6.264l6.36 8.524h-4.978L7.253 9.62l-4.46 5.17H.316l5.781-6.702L0 0h5.104l3.523 4.724zm-.87 13.288h1.371L4.357 1.422H2.885z" fill="#fff"/></svg>
+              X.com
+            </a>
+            <a href="#facebook" class="footer-social">
+              <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.744 9.023 9.23 6.12H6.196V4.236c0-.794.423-1.568 1.782-1.568h1.38V.196S8.106 0 6.909 0C4.411 0 2.777 1.39 2.777 3.908V6.12H0v2.903h2.777v7.018h3.419V9.023z" fill="#fff"/></svg>
+              facebook
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10">
+        <div
+          class="container py-5">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="site-logo">
+                <a href="https://datarecovee.com/">
+                  <img
+                    src="./assets/images/logo-white.svg"
+                    alt="logo"
+                    width="100%"
+                    height="100%"
+                    class="img-fluid"
+                    aria-label="logo"
+                  />
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-6">
+              <p class="text-sm text-white/60 text-end">
+                © 2026 <span class="text-primary">Datarecovee</span>. All Rights
+                Reserved.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
