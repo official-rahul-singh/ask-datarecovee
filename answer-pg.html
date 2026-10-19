@@ -148,8 +148,8 @@
       </div>
     </header>
 
-    <main class="answer-page py-10">
-      <div class="container">
+    <main>
+      <div class="container py-10">
         <ul
           class="p-breadcrumbs mb-6"
           itemscope
@@ -259,7 +259,12 @@
                   tabindex="0"
                   aria-label="View attached screenshot"
                 >
-                  Attached screenshot — click to enlarge
+                  <img
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=640&fit=crop"
+                    alt="Attached screenshot"
+                    loading="lazy"
+                    onerror="this.closest('.attachment-box')?.remove()"
+                  />
                 </div>
 
                 <div
@@ -304,7 +309,7 @@
               </article>
 
               <!-- Leave a reply -->
-              <section class="card">
+              <section class="card leave-reply">
                 <h2 class="mb-1 text-xl font-bold text-[#0f172a]">
                   Leave A Reply
                 </h2>
@@ -312,98 +317,15 @@
                   No answers yet. Be the first to reply.
                 </p>
 
-                <form action="#" method="post" class="space-y-4">
-                  <div class="reply-editor">
-                    <div class="reply-editor__toolbar">
-                      <select class="reply-editor__select" aria-label="Format">
-                        <option>Paragraph</option>
-                        <option>Heading 2</option>
-                        <option>Heading 3</option>
-                      </select>
-                      <button
-                        type="button"
-                        class="reply-editor__tool"
-                        aria-label="Bold"
-                      >
-                        <strong>B</strong>
-                      </button>
-                      <button
-                        type="button"
-                        class="reply-editor__tool"
-                        aria-label="Italic"
-                      >
-                        <em>I</em>
-                      </button>
-                      <button
-                        type="button"
-                        class="reply-editor__tool"
-                        aria-label="Bullet list"
-                      >
-                        <svg
-                          class="size-4"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        >
-                          <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
-                        </svg>
-                      </button>
-                      <button
-                        type="button"
-                        class="reply-editor__tool"
-                        aria-label="Numbered list"
-                      >
-                        <svg
-                          class="size-4"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        >
-                          <path d="M10 6h11M10 12h11M10 18h11M4 6h1v4M4 10h2M6 18H4c0-1 2-2 2-3s-1-1.5-2-1" />
-                        </svg>
-                      </button>
-                      <button
-                        type="button"
-                        class="reply-editor__tool"
-                        aria-label="Undo"
-                      >
-                        <svg
-                          class="size-4"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        >
-                          <path d="M3 7v6h6" />
-                          <path d="M3 13a9 9 0 1 0 3-7.7L3 7" />
-                        </svg>
-                      </button>
-                      <button
-                        type="button"
-                        class="reply-editor__tool"
-                        aria-label="Redo"
-                      >
-                        <svg
-                          class="size-4"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        >
-                          <path d="M21 7v6h-6" />
-                          <path d="M21 13a9 9 0 1 1-3-7.7L21 7" />
-                        </svg>
-                      </button>
-                    </div>
+                <form action="#" method="post" class="leave-reply__form">
+                  <div class="reply-editor-shell">
                     <textarea
-                      class="reply-editor__body"
+                      id="answer-editor"
                       name="answer"
-                      placeholder="Write a clear answer. Explain why it works."
+                      class="js-ckeditor"
                     ></textarea>
                   </div>
-                  <button type="submit" class="btn btn-secondary">
+                  <button type="submit" class="btn btn-secondary leave-reply__submit">
                     Submit Answer
                   </button>
                 </form>
@@ -481,7 +403,7 @@
                 <div class="px-6">
                   <!-- Answer 1 -->
                   <article class="answer-item">
-                    <div class="mb-3 flex flex-wrap items-center gap-2 text-sm">
+                    <div class="answer-item__row">
                       <div
                         class="user-hover shrink-0"
                         data-user-card
@@ -501,104 +423,54 @@
                           aria-label="View Emil kumar profile"
                         >
                           <span class="avatar__initials">E</span>
+                          <span class="avatar__status" aria-label="Online"></span>
                         </a>
                       </div>
-                      <a href="#member" class="font-bold">Emil kumar</a>
-                      <span class="text-body/50">Jan 14, 2023</span>
-                      <span class="accepted-badge">
-                        <svg
-                          class="size-3.5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2.5"
-                        >
-                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                          <path d="m9 11 3 3L22 4" />
-                        </svg>
-                        Accepted answer
-                      </span>
-                    </div>
-                    <p
-                      class="mb-2 inline-flex items-center gap-1 text-sm text-body/60"
-                    >
-                      <svg
-                        class="size-3.5 shrink-0"
-                        width="12"
-                        height="11"
-                        viewBox="0 0 12 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                      Reply to
-                      <a href="#member" class="font-medium text-body"
-                        >@Oliver Carpenter</a
-                      >
-                    </p>
-                    <p class="mb-4 text-[15px]">
-                      Google's Bard demo drew mixed reactions, while ChatGPT
-                      keeps adding users. Which one wins on accuracy, speed, and
-                      developer tooling over the next year depends on ecosystem
-                      and model updates.
-                    </p>
-                    <div class="flex flex-wrap items-center gap-4 text-[15px]">
-                      <span
-                        class="like-btn"
-                        data-like
-                        role="button"
-                        tabindex="0"
-                        aria-pressed="false"
-                      >
-                        <svg
-                          class="like-btn__icon"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          data-like-icon
-                        >
-                          <path
-                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                          />
-                        </svg>
-                        <b data-like-count>381</b>
-                      </span>
-                      <span
-                        class="reply-btn"
-                        data-reply
-                        data-reply-to="Emil kumar"
-                        role="button"
-                        tabindex="0"
-                        aria-expanded="false"
-                      >
-                        <svg
-                          class="reply-btn__icon"
-                          width="16"
-                          height="15"
-                          viewBox="0 0 16 15"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.637.317.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z"
-                            fill="#e11f26"
-                          />
-                        </svg>
-                        Reply
-                      </span>
+                      <div class="answer-item__main">
+                        <div class="answer-item__head">
+                          <a href="#member" class="answer-item__name">Emil kumar</a>
+                          <span class="answer-item__date">Jan 14, 2023</span>
+                          <span class="accepted-badge">
+                            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <path d="m9 11 3 3L22 4" />
+                            </svg>
+                            Accepted answer
+                          </span>
+                        </div>
+                        <a href="#member" class="answer-reply-to">
+                          <svg class="answer-reply-to__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z" fill="currentColor" />
+                          </svg>
+                          Oliver Carpenter
+                        </a>
+                        <p class="answer-item__text">
+                          Google's Bard demo drew mixed reactions, while ChatGPT
+                          keeps adding users. Which one wins on accuracy, speed,
+                          and developer tooling over the next year depends on
+                          ecosystem and model updates.
+                        </p>
+                        <div class="answer-item__actions">
+                          <span class="like-btn" data-like role="button" tabindex="0" aria-pressed="false">
+                            <svg class="like-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-like-icon>
+                              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            <b data-like-count>381</b>
+                          </span>
+                          <span class="reply-btn" data-reply data-reply-to="Emil kumar" role="button" tabindex="0" aria-expanded="false">
+                            <svg class="reply-btn__icon" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.637.317.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z" fill="#e11f26" />
+                            </svg>
+                            Reply
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </article>
 
                   <!-- Nested reply -->
                   <article class="answer-item answer-item--nested">
-                    <div class="mb-3 flex flex-wrap items-center gap-2 text-sm">
+                    <div class="answer-item__row">
                       <div
                         class="user-hover shrink-0"
                         data-user-card
@@ -615,80 +487,109 @@
                         <a
                           href="#member"
                           class="avatar size-9 bg-[#86efac] text-xs text-[#166534]"
-                          aria-label="View Chris J_Joseph profile"
+                          aria-label="View ChrisJ_Joseph profile"
                         >
                           <span class="avatar__initials">C</span>
+                          <span class="avatar__status" aria-label="Online"></span>
                         </a>
                       </div>
-                      <a href="#member" class="font-bold">Chris J_Joseph</a>
-                      <span class="text-body/50">Jan 14, 2023</span>
-                    </div>
-                    <p
-                      class="mb-2 inline-flex items-center gap-1 text-sm text-body/60"
-                    >
-                      <svg
-                        class="size-3.5 shrink-0"
-                        width="12"
-                        height="11"
-                        viewBox="0 0 12 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                      Reply to
-                      <a href="#member" class="font-medium text-body"
-                        >@Emil kumar</a
-                      >
-                    </p>
-                    <p class="mb-4 text-[15px]">
-                      Agreed — ChatGPT still leads on plugins and day-to-day
-                      coding help, but Bard can catch up if Google wires Search
-                      grounding more tightly.
-                    </p>
-                    <div class="flex flex-wrap items-center gap-4 text-[15px]">
-                      <span
-                        class="like-btn"
-                        data-like
-                        role="button"
-                        tabindex="0"
-                        aria-pressed="false"
-                      >
-                        <svg
-                          class="like-btn__icon"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          data-like-icon
-                        >
-                          <path
-                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                          />
-                        </svg>
-                        <b data-like-count>42</b>
-                      </span>
-                      <span
-                        class="reply-btn"
-                        data-reply
-                        data-reply-to="Chris J_Joseph"
-                        role="button"
-                        tabindex="0"
-                        aria-expanded="false"
-                      >
-                      <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.637.317.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z" fill="#e11f26"/></svg>
-                        Reply
-                      </span>
+                      <div class="answer-item__main">
+                        <div class="answer-item__head">
+                          <a href="#member" class="answer-item__name">ChrisJ_Joseph</a>
+                          <span class="answer-item__date">Jan 14, 2023</span>
+                        </div>
+                        <a href="#member" class="answer-reply-to">
+                          <svg class="answer-reply-to__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z" fill="currentColor" />
+                          </svg>
+                          Oliver Carpenter
+                        </a>
+                        <p class="answer-item__text">
+                          Google's Bard demo drew mixed reactions, while ChatGPT
+                          keeps adding users. Which one wins on accuracy, speec
+                          and developer tooling over...
+                        </p>
+                        <div class="answer-item__actions">
+                          <span class="like-btn" data-like role="button" tabindex="0" aria-pressed="false">
+                            <svg class="like-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-like-icon>
+                              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            <b data-like-count>381</b>
+                          </span>
+                          <span class="reply-btn" data-reply data-reply-to="ChrisJ_Joseph" role="button" tabindex="0" aria-expanded="false">
+                            <svg class="reply-btn__icon" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.637.317.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z" fill="#e11f26" />
+                            </svg>
+                            Reply
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </article>
 
+                  <!-- Nested reply 2 -->
+                  <article class="answer-item answer-item--nested answer-item--nested-2">
+                    <div class="answer-item__row">
+                      <div
+                        class="user-hover shrink-0"
+                        data-user-card
+                        data-name="ava"
+                        data-initial="A"
+                        data-avatar-bg="#db2777"
+                        data-avatar-color="#fff"
+                        data-joined="Apr 09, 2024"
+                        data-seen="Jun 17, 2026"
+                        data-messages="58"
+                        data-reactions="15"
+                        data-points="22"
+                      >
+                        <a
+                          href="#member"
+                          class="avatar size-9 bg-[#db2777] text-xs"
+                          aria-label="View Ava Lopez profile"
+                        >
+                          <span class="avatar__initials">AL</span>
+                          <span class="avatar__status" aria-label="Online"></span>
+                        </a>
+                      </div>
+                      <div class="answer-item__main">
+                        <div class="answer-item__head">
+                          <a href="#member" class="answer-item__name">Ava Lopez</a>
+                          <span class="answer-item__date">Jan 14, 2023</span>
+                        </div>
+                        <a href="#member" class="answer-reply-to">
+                          <svg class="answer-reply-to__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z" fill="currentColor" />
+                          </svg>
+                          ChrisJ_Joseph
+                        </a>
+                        <p class="answer-item__text">
+                          Totally — plugins and coding helpers still tip the
+                          scale for ChatGPT, but Search grounding could close
+                          that gap fast.
+                        </p>
+                        <div class="answer-item__actions">
+                          <span class="like-btn" data-like role="button" tabindex="0" aria-pressed="false">
+                            <svg class="like-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-like-icon>
+                              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            <b data-like-count>64</b>
+                          </span>
+                          <span class="reply-btn" data-reply data-reply-to="Ava Lopez" role="button" tabindex="0" aria-expanded="false">
+                            <svg class="reply-btn__icon" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z" fill="#e11f26" />
+                            </svg>
+                            Reply
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+
                   <!-- Answer 2 -->
                   <article class="answer-item">
-                    <div class="mb-3 flex flex-wrap items-center gap-2 text-sm">
+                    <div class="answer-item__row">
                       <div
                         class="user-hover shrink-0"
                         data-user-card
@@ -708,135 +609,55 @@
                           aria-label="View Sara Khan profile"
                         >
                           <span class="avatar__initials">SK</span>
+                          <span class="avatar__status" aria-label="Online"></span>
                         </a>
                       </div>
-                      <a href="#member" class="font-bold">Sara Khan</a>
-                      <span class="text-body/50">Jan 15, 2023</span>
-                    </div>
-                    <p
-                      class="mb-2 inline-flex items-center gap-1 text-sm text-body/60"
-                    >
-                      <svg
-                        class="size-3.5 shrink-0"
-                        width="12"
-                        height="11"
-                        viewBox="0 0 12 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                      Reply to
-                      <a href="#member" class="font-medium text-body"
-                        >@Oliver Carpenter</a
-                      >
-                    </p>
-                    <p class="mb-4 text-[15px]">
-                      For research workflows I still prefer ChatGPT, but Bard is
-                      stronger when you need fresh web context without leaving
-                      the chat.
-                    </p>
-                    <div class="flex flex-wrap items-center gap-4 text-[15px]">
-                      <span
-                        class="like-btn"
-                        data-like
-                        role="button"
-                        tabindex="0"
-                        aria-pressed="false"
-                      >
-                        <svg
-                          class="like-btn__icon"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          data-like-icon
-                        >
-                          <path
-                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                          />
-                        </svg>
-                        <b data-like-count>96</b>
-                      </span>
-                      <span
-                        class="reply-btn"
-                        data-reply
-                        data-reply-to="Sara Khan"
-                        role="button"
-                        tabindex="0"
-                        aria-expanded="false"
-                      >
-                        <svg
-                          class="reply-btn__icon"
-                          width="16"
-                          height="15"
-                          viewBox="0 0 16 15"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.637.317.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z"
-                            fill="#e11f26"
-                          />
-                        </svg>
-                        Reply
-                      </span>
+                      <div class="answer-item__main">
+                        <div class="answer-item__head">
+                          <a href="#member" class="answer-item__name">Sara Khan</a>
+                          <span class="answer-item__date">Jan 15, 2023</span>
+                        </div>
+                        <a href="#member" class="answer-reply-to">
+                          <svg class="answer-reply-to__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z" fill="currentColor" />
+                          </svg>
+                          Oliver Carpenter
+                        </a>
+                        <p class="answer-item__text">
+                          For research workflows I still prefer ChatGPT, but Bard
+                          is stronger when you need fresh web context without
+                          leaving the chat.
+                        </p>
+                        <div class="answer-item__actions">
+                          <span class="like-btn" data-like role="button" tabindex="0" aria-pressed="false">
+                            <svg class="like-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-like-icon>
+                              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            <b data-like-count>96</b>
+                          </span>
+                          <span class="reply-btn" data-reply data-reply-to="Sara Khan" role="button" tabindex="0" aria-expanded="false">
+                            <svg class="reply-btn__icon" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z" fill="#e11f26" />
+                            </svg>
+                            Reply
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </article>
-                </div>
-
                 <template id="answer-reply-template">
                   <div class="answer-reply">
-                    <form action="#" method="post" class="space-y-4">
-                      <div class="reply-editor">
-                        <div class="reply-editor__toolbar">
-                          <select class="reply-editor__select" aria-label="Format">
-                            <option>Paragraph</option>
-                            <option>Heading 2</option>
-                            <option>Heading 3</option>
-                          </select>
-                          <button type="button" class="reply-editor__tool" aria-label="Bold">
-                            <strong>B</strong>
-                          </button>
-                          <button type="button" class="reply-editor__tool" aria-label="Italic">
-                            <em>I</em>
-                          </button>
-                          <button type="button" class="reply-editor__tool" aria-label="Bullet list">
-                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                              <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
-                            </svg>
-                          </button>
-                          <button type="button" class="reply-editor__tool" aria-label="Numbered list">
-                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                              <path d="M10 6h11M10 12h11M10 18h11M4 6h1v4M4 10h2M6 18H4c0-1 2-2 2-3s-1-1.5-2-1" />
-                            </svg>
-                          </button>
-                          <button type="button" class="reply-editor__tool" aria-label="Undo">
-                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                              <path d="M3 7v6h6" />
-                              <path d="M3 13a9 9 0 1 0 3-7.7L3 7" />
-                            </svg>
-                          </button>
-                          <button type="button" class="reply-editor__tool" aria-label="Redo">
-                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                              <path d="M21 7v6h-6" />
-                              <path d="M21 13a9 9 0 1 1-3-7.7L21 7" />
-                            </svg>
-                          </button>
-                        </div>
+                    <form action="#" method="post" class="leave-reply__form">
+                      <div class="reply-editor-shell">
                         <textarea
-                          class="reply-editor__body"
+                          class="js-reply-editor js-ckeditor"
                           name="reply"
-                          placeholder="Write your reply…"
                         ></textarea>
                       </div>
                       <div class="flex flex-wrap items-center gap-3">
-                        <button type="submit" class="btn btn-secondary">Submit Reply</button>
+                        <button type="submit" class="btn btn-secondary">
+                          Submit Reply
+                        </button>
                         <button
                           type="button"
                           class="font-medium text-body transition-colors hover:text-primary"
