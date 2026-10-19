@@ -1213,23 +1213,16 @@
                   <div class="user-hover shrink-0 self-start">
                     <a
                       href="#member"
-                      class="relative block size-11"
+                      class="avatar"
                       aria-label="View OC profile"
                     >
                       <img
                         src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
                         alt="OC"
-                        class="size-full rounded-full object-cover"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
                       />
-                      <span
-                        class="hidden size-full items-center justify-center rounded-full bg-[#7c3aed] text-sm font-bold leading-none text-white"
-                      >
-                        OC
-                      </span>
-                      <span
-                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__fallback bg-[#7c3aed]">OC</span>
+                      <span class="avatar__status"></span>
                     </a>
                     <div class="user-card" role="tooltip">
                       <div class="user-card__head">
@@ -1371,14 +1364,15 @@
                       <div
                         class="flex flex-wrap items-center gap-3 text-[15px]"
                       >
-                        <button
-                          type="button"
+                        <span
+                          class="like-btn"
                           data-like
+                          role="button"
+                          tabindex="0"
                           aria-pressed="false"
-                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
                         >
                           <svg
-                            class="size-4 shrink-0 text-primary"
+                            class="like-btn__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -1390,10 +1384,10 @@
                             />
                           </svg>
                           <span data-like-count>381</span>
-                        </button>
-                        <span class="inline-flex items-center gap-1 text-body">
+                        </span>
+                        <span class="meta-stat">
                           <svg
-                            class="size-4 shrink-0"
+                            class="meta-stat__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -1422,7 +1416,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               A
@@ -1443,16 +1437,15 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               <img
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
                                 alt="A"
-                                class="size-full rounded-full object-cover"
                                 onerror="this.remove()"
                               />
-                              <span class="absolute">A</span>
+                              <span class="avatar__fallback bg-[#22c55e]">A</span>
                             </a>
                           </div>
 
@@ -1471,7 +1464,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#ec4899] text-[10px]"
                               aria-label="View member profile"
                             >
                               C
@@ -1514,17 +1507,11 @@
                   >
                     <a
                       href="#member"
-                      class="relative block size-11"
+                      class="avatar"
                       aria-label="View Sara Khan profile"
                     >
-                      <span
-                        class="flex size-full items-center justify-center rounded-full bg-[#ea580c] text-sm font-bold leading-none text-white"
-                      >
-                        SK
-                      </span>
-                      <span
-                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__initials bg-[#ea580c]">SK</span>
+                      <span class="avatar__status"></span>
                     </a>
                   </div>
 
@@ -1585,14 +1572,15 @@
                       <div
                         class="flex flex-wrap items-center gap-3 text-[15px]"
                       >
-                        <button
-                          type="button"
+                        <span
+                          class="like-btn"
                           data-like
+                          role="button"
+                          tabindex="0"
                           aria-pressed="false"
-                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
                         >
                           <svg
-                            class="size-4 shrink-0 text-primary"
+                            class="like-btn__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -1604,10 +1592,10 @@
                             />
                           </svg>
                           <span data-like-count>214</span>
-                        </button>
-                        <span class="inline-flex items-center gap-1 text-body">
+                        </span>
+                        <span class="meta-stat">
                           <svg
-                            class="size-4 shrink-0"
+                            class="meta-stat__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -1636,7 +1624,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               A
@@ -1657,16 +1645,15 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               <img
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
                                 alt="A"
-                                class="size-full rounded-full object-cover"
                                 onerror="this.remove()"
                               />
-                              <span class="absolute">A</span>
+                              <span class="avatar__fallback bg-[#22c55e]">A</span>
                             </a>
                           </div>
 
@@ -1685,7 +1672,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#ec4899] text-[10px]"
                               aria-label="View member profile"
                             >
                               C
@@ -1728,17 +1715,11 @@
                   >
                     <a
                       href="#member"
-                      class="relative block size-11"
+                      class="avatar"
                       aria-label="View Marcus Reed profile"
                     >
-                      <span
-                        class="flex size-full items-center justify-center rounded-full bg-[#2563eb] text-sm font-bold leading-none text-white"
-                      >
-                        MR
-                      </span>
-                      <span
-                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__initials bg-[#2563eb]">MR</span>
+                      <span class="avatar__status"></span>
                     </a>
                   </div>
 
@@ -1784,14 +1765,15 @@
                       <div
                         class="flex flex-wrap items-center gap-3 text-[15px]"
                       >
-                        <button
-                          type="button"
+                        <span
+                          class="like-btn"
                           data-like
+                          role="button"
+                          tabindex="0"
                           aria-pressed="false"
-                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
                         >
                           <svg
-                            class="size-4 shrink-0 text-primary"
+                            class="like-btn__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -1803,10 +1785,10 @@
                             />
                           </svg>
                           <span data-like-count>97</span>
-                        </button>
-                        <span class="inline-flex items-center gap-1 text-body">
+                        </span>
+                        <span class="meta-stat">
                           <svg
-                            class="size-4 shrink-0"
+                            class="meta-stat__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -1835,7 +1817,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               A
@@ -1856,16 +1838,15 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               <img
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
                                 alt="A"
-                                class="size-full rounded-full object-cover"
                                 onerror="this.remove()"
                               />
-                              <span class="absolute">A</span>
+                              <span class="avatar__fallback bg-[#22c55e]">A</span>
                             </a>
                           </div>
 
@@ -1884,7 +1865,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#ec4899] text-[10px]"
                               aria-label="View member profile"
                             >
                               C
@@ -1927,17 +1908,11 @@
                   >
                     <a
                       href="#member"
-                      class="relative block size-11"
+                      class="avatar"
                       aria-label="View Ava Lopez profile"
                     >
-                      <span
-                        class="flex size-full items-center justify-center rounded-full bg-[#db2777] text-sm font-bold leading-none text-white"
-                      >
-                        AL
-                      </span>
-                      <span
-                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__initials bg-[#db2777]">AL</span>
+                      <span class="avatar__status"></span>
                     </a>
                   </div>
 
@@ -1999,14 +1974,15 @@
                       <div
                         class="flex flex-wrap items-center gap-3 text-[15px]"
                       >
-                        <button
-                          type="button"
+                        <span
+                          class="like-btn"
                           data-like
+                          role="button"
+                          tabindex="0"
                           aria-pressed="false"
-                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
                         >
                           <svg
-                            class="size-4 shrink-0 text-primary"
+                            class="like-btn__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -2018,10 +1994,10 @@
                             />
                           </svg>
                           <span data-like-count>452</span>
-                        </button>
-                        <span class="inline-flex items-center gap-1 text-body">
+                        </span>
+                        <span class="meta-stat">
                           <svg
-                            class="size-4 shrink-0"
+                            class="meta-stat__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -2050,7 +2026,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               A
@@ -2071,16 +2047,15 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               <img
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
                                 alt="A"
-                                class="size-full rounded-full object-cover"
                                 onerror="this.remove()"
                               />
-                              <span class="absolute">A</span>
+                              <span class="avatar__fallback bg-[#22c55e]">A</span>
                             </a>
                           </div>
 
@@ -2099,7 +2074,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#ec4899] text-[10px]"
                               aria-label="View member profile"
                             >
                               C
@@ -2142,17 +2117,11 @@
                   >
                     <a
                       href="#member"
-                      class="relative block size-11"
+                      class="avatar"
                       aria-label="View Jordan Park profile"
                     >
-                      <span
-                        class="flex size-full items-center justify-center rounded-full bg-[#0d9488] text-sm font-bold leading-none text-white"
-                      >
-                        JP
-                      </span>
-                      <span
-                        class="absolute bottom-0 right-0 size-3 translate-x-px translate-y-px rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__initials bg-[#0d9488]">JP</span>
+                      <span class="avatar__status"></span>
                     </a>
                   </div>
 
@@ -2198,14 +2167,15 @@
                       <div
                         class="flex flex-wrap items-center gap-3 text-[15px]"
                       >
-                        <button
-                          type="button"
+                        <span
+                          class="like-btn"
                           data-like
+                          role="button"
+                          tabindex="0"
                           aria-pressed="false"
-                          class="inline-flex cursor-pointer items-center gap-1 text-body transition-colors hover:text-primary"
                         >
                           <svg
-                            class="size-4 shrink-0 text-primary"
+                            class="like-btn__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -2217,10 +2187,10 @@
                             />
                           </svg>
                           <span data-like-count>168</span>
-                        </button>
-                        <span class="inline-flex items-center gap-1 text-body">
+                        </span>
+                        <span class="meta-stat">
                           <svg
-                            class="size-4 shrink-0"
+                            class="meta-stat__icon"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -2250,7 +2220,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               A
@@ -2271,16 +2241,15 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center overflow-hidden rounded-full border-2 border-white bg-[#22c55e] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#22c55e] text-[10px]"
                               aria-label="View member profile"
                             >
                               <img
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=faces"
                                 alt="A"
-                                class="size-full rounded-full object-cover"
                                 onerror="this.remove()"
                               />
-                              <span class="absolute">A</span>
+                              <span class="avatar__fallback bg-[#22c55e]">A</span>
                             </a>
                           </div>
 
@@ -2299,7 +2268,7 @@
                           >
                             <a
                               href="#member"
-                              class="relative grid size-7 place-items-center rounded-full border-2 border-white bg-[#ec4899] text-[10px] font-bold text-white"
+                              class="avatar size-7 border-2 border-white bg-[#ec4899] text-[10px]"
                               aria-label="View member profile"
                             >
                               C
@@ -2376,15 +2345,12 @@
                     data-points="32"
                     data-profile="/users/ak"
                   >
-                    <a href="/users/ak" class="relative inline-block">
+                    <a href="/users/ak" class="avatar size-10">
                       <img
                         src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop"
                         alt="AK"
-                        class="size-10 rounded-full object-cover"
                       />
-                      <span
-                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__status avatar__status--sm"></span>
                     </a>
                   </div>
 
@@ -2402,15 +2368,9 @@
                     data-points="21"
                     data-profile="/users/ak"
                   >
-                    <a href="/users/ak" class="relative inline-block">
-                      <span
-                        class="grid size-10 place-items-center rounded-full bg-[#f97316] text-xs font-bold text-white"
-                      >
-                        AK
-                      </span>
-                      <span
-                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
-                      ></span>
+                    <a href="/users/ak" class="avatar size-10 bg-[#f97316] text-xs">
+                      AK
+                      <span class="avatar__status avatar__status--sm"></span>
                     </a>
                   </div>
 
@@ -2430,25 +2390,21 @@
                   >
                     <a
                       href="/users/oc"
-                      class="relative inline-block"
+                      class="avatar size-10"
                       aria-label="View OC profile"
                     >
                       <img
                         src="/images/users/oc.jpg"
                         alt="OC"
-                        class="size-10 rounded-full object-cover"
                         onerror="
                           this.style.display = 'none';
-                          this.nextElementSibling.style.display = 'grid';
+                          this.nextElementSibling.style.display = 'flex';
                         "
                       />
-                      <span
-                        class="hidden size-10 place-items-center rounded-full bg-[#7c3aed] text-xs font-bold text-white"
+                      <span class="avatar__fallback bg-[#7c3aed] text-xs"
                         >OC</span
                       >
-                      <span
-                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__status avatar__status--sm"></span>
                     </a>
                   </div>
 
@@ -2468,25 +2424,21 @@
                   >
                     <a
                       href="/users/tr"
-                      class="relative inline-block"
+                      class="avatar size-10"
                       aria-label="View TR profile"
                     >
                       <img
                         src="/images/users/tr.jpg"
                         alt="TR"
-                        class="size-10 rounded-full object-cover"
                         onerror="
                           this.style.display = 'none';
-                          this.nextElementSibling.style.display = 'grid';
+                          this.nextElementSibling.style.display = 'flex';
                         "
                       />
-                      <span
-                        class="hidden size-10 place-items-center rounded-full bg-[#06b6d4] text-xs font-bold text-white"
+                      <span class="avatar__fallback bg-[#06b6d4] text-xs"
                         >TR</span
                       >
-                      <span
-                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__status avatar__status--sm"></span>
                     </a>
                   </div>
 
@@ -2506,25 +2458,21 @@
                   >
                     <a
                       href="/users/ps"
-                      class="relative inline-block"
+                      class="avatar size-10"
                       aria-label="View PS profile"
                     >
                       <img
                         src="/images/users/ps.jpg"
                         alt="PS"
-                        class="size-10 rounded-full object-cover"
                         onerror="
                           this.style.display = 'none';
-                          this.nextElementSibling.style.display = 'grid';
+                          this.nextElementSibling.style.display = 'flex';
                         "
                       />
-                      <span
-                        class="hidden size-10 place-items-center rounded-full bg-[#ec4899] text-xs font-bold text-white"
+                      <span class="avatar__fallback bg-[#ec4899] text-xs"
                         >PS</span
                       >
-                      <span
-                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__status avatar__status--sm"></span>
                     </a>
                   </div>
 
@@ -2544,25 +2492,21 @@
                   >
                     <a
                       href="/users/mj"
-                      class="relative inline-block"
+                      class="avatar size-10"
                       aria-label="View MJ profile"
                     >
                       <img
                         src="/images/users/mj.jpg"
                         alt="MJ"
-                        class="size-10 rounded-full object-cover"
                         onerror="
                           this.style.display = 'none';
-                          this.nextElementSibling.style.display = 'grid';
+                          this.nextElementSibling.style.display = 'flex';
                         "
                       />
-                      <span
-                        class="hidden size-10 place-items-center rounded-full bg-[#3b82f6] text-xs font-bold text-white"
+                      <span class="avatar__fallback bg-[#3b82f6] text-xs"
                         >MJ</span
                       >
-                      <span
-                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__status avatar__status--sm"></span>
                     </a>
                   </div>
 
@@ -2582,25 +2526,21 @@
                   >
                     <a
                       href="/users/lp"
-                      class="relative inline-block"
+                      class="avatar size-10"
                       aria-label="View LP profile"
                     >
                       <img
                         src="/images/users/lp.jpg"
                         alt="LP"
-                        class="size-10 rounded-full object-cover"
                         onerror="
                           this.style.display = 'none';
-                          this.nextElementSibling.style.display = 'grid';
+                          this.nextElementSibling.style.display = 'flex';
                         "
                       />
-                      <span
-                        class="hidden size-10 place-items-center rounded-full bg-[#eab308] text-xs font-bold text-white"
+                      <span class="avatar__fallback bg-[#eab308] text-xs"
                         >LP</span
                       >
-                      <span
-                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__status avatar__status--sm"></span>
                     </a>
                   </div>
 
@@ -2620,30 +2560,25 @@
                   >
                     <a
                       href="/users/rs"
-                      class="relative inline-block"
+                      class="avatar size-10"
                       aria-label="View RS profile"
                     >
                       <img
                         src="/images/users/rs.jpg"
                         alt="RS"
-                        class="size-10 rounded-full object-cover"
                         onerror="
                           this.style.display = 'none';
-                          this.nextElementSibling.style.display = 'grid';
+                          this.nextElementSibling.style.display = 'flex';
                         "
                       />
-                      <span
-                        class="hidden size-10 place-items-center rounded-full bg-[#22c55e] text-xs font-bold text-white"
+                      <span class="avatar__fallback bg-[#22c55e] text-xs"
                         >RS</span
                       >
-                      <span
-                        class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-success"
-                      ></span>
+                      <span class="avatar__status avatar__status--sm"></span>
                     </a>
                   </div>
 
-                  <span
-                    class="grid size-10 place-items-center rounded-full bg-surface text-xs font-bold"
+                  <span class="avatar size-10 bg-surface text-xs text-body"
                     >+12</span
                   >
                 </div>
@@ -2806,20 +2741,17 @@
                     >
                       <a
                         href="/users/gregdander"
-                        class="relative grid size-10 place-items-center"
+                        class="avatar size-10"
                         aria-label="View gregDander profile"
                       >
                         <img
                           src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces"
                           alt="gregDander"
-                          class="size-10 rounded-full object-cover"
-                          onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'"
+                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
                         />
-                        <span
-                          class="hidden size-10 place-items-center rounded-full bg-[#f97316] text-xs font-bold text-white"
+                        <span class="avatar__fallback bg-[#f97316] text-xs"
+                          >GR</span
                         >
-                          GR
-                        </span>
                       </a>
                     </div>
                     <a
@@ -2850,7 +2782,7 @@
                     >
                       <a
                         href="#member"
-                        class="grid size-10 place-items-center rounded-full bg-[#ef4444] text-xs font-bold text-white"
+                        class="avatar size-10 bg-[#ef4444] text-xs"
                         aria-label="View Kiarav profile"
                         >KI</a
                       >
@@ -2883,7 +2815,7 @@
                     >
                       <a
                         href="#member"
-                        class="grid size-10 place-items-center rounded-full bg-[#06b6d4] text-xs font-bold text-white"
+                        class="avatar size-10 bg-[#06b6d4] text-xs"
                         aria-label="View WanderingTrader profile"
                         >WA</a
                       >
@@ -2916,7 +2848,7 @@
                     >
                       <a
                         href="#member"
-                        class="grid size-10 place-items-center rounded-full bg-[#7c3aed] text-xs font-bold text-white"
+                        class="avatar size-10 bg-[#7c3aed] text-xs"
                         aria-label="View JochenSantiago profile"
                         >JO</a
                       >
@@ -2949,7 +2881,7 @@
                     >
                       <a
                         href="#member"
-                        class="grid size-10 place-items-center rounded-full bg-[#14b8a6] text-xs font-bold text-white"
+                        class="avatar size-10 bg-[#14b8a6] text-xs"
                         aria-label="View Chris_Joseph_PNip profile"
                         >CH</a
                       >

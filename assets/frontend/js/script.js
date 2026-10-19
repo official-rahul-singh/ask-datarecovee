@@ -138,18 +138,26 @@ document.addEventListener("click", () => {
   document.querySelectorAll(".dropdown.is-open:not(.dropdown-accordion)").forEach(closeDropdown);
 });
 
-document.querySelectorAll("[data-like]").forEach((btn) => {
-  const icon = btn.querySelector("[data-like-icon]");
-  const countEl = btn.querySelector("[data-like-count]");
+document.querySelectorAll("[data-like]").forEach((el) => {
+  const icon = el.querySelector("[data-like-icon]");
+  const countEl = el.querySelector("[data-like-count]");
   if (!icon || !countEl) return;
 
-  btn.addEventListener("click", () => {
-    const liked = btn.getAttribute("aria-pressed") === "true";
+  const toggleLike = () => {
+    const liked = el.getAttribute("aria-pressed") === "true";
     const next = !liked;
-    btn.setAttribute("aria-pressed", String(next));
+    el.setAttribute("aria-pressed", String(next));
     icon.setAttribute("fill", next ? "currentColor" : "none");
     const n = parseInt(countEl.textContent.replace(/,/g, ""), 10);
     if (!Number.isNaN(n)) countEl.textContent = String(next ? n + 1 : n - 1);
+  };
+
+  el.addEventListener("click", toggleLike);
+  el.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleLike();
+    }
   });
 });
 
@@ -229,3 +237,76 @@ function buildUserCard(el) {
 }
 
 document.querySelectorAll("[data-user-card]").forEach(buildUserCard);
+
+(function initAnswerReplies() {
+  const template = document.getElementById("answer-reply-template");
+  if (!template) return;
+
+  let openPanel = null;
+  let openBtn = null;
+
+  function closeReply() {
+    if (openPanel) {
+      openPanel.classList.remove("is-open");
+      openPanel = null;
+    }
+    if (openBtn) {
+      openBtn.setAttribute("aria-expanded", "false");
+      openBtn = null;
+    }
+  }
+
+  function getOrCreatePanel(answer) {
+    let panel = answer.querySelector(".answer-reply");
+    if (panel) return panel;
+
+    panel = template.content.firstElementChild.cloneNode(true);
+    answer.appendChild(panel);
+
+    const cancel = panel.querySelector("[data-reply-cancel]");
+    if (cancel) {
+      cancel.addEventListener("click", () => closeReply());
+    }
+
+    return panel;
+  }
+
+  document.querySelectorAll("[data-reply]").forEach((el) => {
+    const toggleReply = () => {
+      const answer = el.closest(".answer-item");
+      if (!answer) return;
+
+      if (openBtn === el) {
+        closeReply();
+        return;
+      }
+
+      closeReply();
+
+      const panel = getOrCreatePanel(answer);
+      const name = el.dataset.replyTo || "member";
+      const textarea = panel.querySelector(".reply-editor__body");
+      if (textarea) {
+        textarea.placeholder = `Reply to @${name}…`;
+      }
+
+      panel.classList.add("is-open");
+      el.setAttribute("aria-expanded", "true");
+      openPanel = panel;
+      openBtn = el;
+
+      if (textarea) {
+        textarea.focus();
+        panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    };
+
+    el.addEventListener("click", toggleReply);
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleReply();
+      }
+    });
+  });
+})();

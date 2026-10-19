@@ -150,64 +150,85 @@
 
     <main class="answer-page py-10">
       <div class="container">
-        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
-          <a href="index.html">Community</a>
-          <span class="breadcrumb__sep">›</span>
-          <a href="#ai">AI</a>
-          <span class="breadcrumb__sep">›</span>
-          <span class="breadcrumb__current"
-            >Do you think Bard will overtake ChatGPT?</span
+        <ul
+          class="p-breadcrumbs mb-6"
+          itemscope
+          itemtype="https://schema.org/BreadcrumbList"
+        >
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
           >
-        </nav>
+            <a href="index.html" itemprop="item">
+              <span itemprop="name">Community</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a href="#ai" itemprop="item">
+              <span itemprop="name">AI</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <span itemprop="name"
+              >Do you think Bard will overtake ChatGPT?</span
+            >
+            <meta itemprop="position" content="3" />
+          </li>
+        </ul>
 
         <div class="row">
-          <div class="col-lg-8">
+          <div class="col-lg-9">
             <div class="space-y-5">
               <!-- Question -->
               <article class="card">
-                <div class="mb-4 flex flex-wrap items-center gap-2.5 text-sm">
-                  <div
-                    class="user-hover shrink-0"
-                    data-user-card
-                    data-name="oliver"
-                    data-initial="O"
-                    data-avatar-bg="#7c3aed"
-                    data-avatar-color="#fff"
-                    data-joined="Jan 14, 2023"
-                    data-seen="Jun 19, 2026"
-                    data-messages="66"
-                    data-reactions="0"
-                    data-points="6"
-                  >
-                    <a
-                      href="#member"
-                      class="grid size-10 place-items-center rounded-full bg-[#7c3aed] text-sm font-bold text-white"
-                      aria-label="View Oliver Carpenter profile"
-                      >OC</a
-                    >
-                  </div>
-                  <a href="#member" class="font-bold">@Oliver Carpenter</a>
+                <div class="mb-4 flex items-center gap-3 text-sm">
                   <a
-                    href="#ai"
-                    class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb]"
-                    >AI</a
+                    href="#member"
+                    class="avatar size-10 bg-[#7c3aed]"
+                    aria-label="View Oliver Carpenter profile"
                   >
-                  <span class="text-body/50">Jan 14, 2023</span>
-                  <span
-                    class="inline-flex items-center gap-1 font-medium text-success"
-                  >
-                    <svg
-                      class="size-3.5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
+                    <span class="avatar__initials">OC</span>
+                    <span class="avatar__status" aria-label="Online"></span>
+                  </a>
+                  <div>
+                    <a href="#member" class="font-bold text-[#0f172a]"
+                      >@Oliver Carpenter</a
                     >
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                      <path d="m9 11 3 3L22 4" />
-                    </svg>
-                    Solved
-                  </span>
+                    <div class="mt-1 flex flex-wrap items-center gap-2.5">
+                      <a
+                        href="#ai"
+                        class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb]"
+                        >AI</a
+                      >
+                      <span class="text-body/50">Jan 14, 2023</span>
+                      <span
+                        class="inline-flex items-center gap-1 font-medium text-success"
+                      >
+                        <svg
+                          class="size-3.5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                          <path d="m9 11 3 3L22 4" />
+                        </svg>
+                        Solved
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 <h1 class="mb-3 text-2xl font-bold text-[#0f172a] lg:text-[28px]">
@@ -244,14 +265,15 @@
                 <div
                   class="flex flex-wrap items-center gap-4 border-t border-border pt-4 text-[15px]"
                 >
-                  <button
-                    type="button"
+                  <span
+                    class="like-btn"
                     data-like
+                    role="button"
+                    tabindex="0"
                     aria-pressed="false"
-                    class="inline-flex cursor-pointer items-center gap-1.5 text-body transition-colors hover:text-primary"
                   >
                     <svg
-                      class="size-4 shrink-0 text-primary"
+                      class="like-btn__icon"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -262,11 +284,11 @@
                         d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
                       />
                     </svg>
-                    <span data-like-count>381</span>
-                  </button>
-                  <span class="inline-flex items-center gap-1.5 text-body">
+                    <b data-like-count>381</b>
+                  </span>
+                  <span class="meta-stat">
                     <svg
-                      class="size-4 shrink-0"
+                      class="meta-stat__icon"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -475,9 +497,11 @@
                       >
                         <a
                           href="#member"
-                          class="grid size-9 place-items-center rounded-full bg-[#c4b5fd] text-xs font-bold text-[#5b21b6]"
-                          >E</a
+                          class="avatar size-9 bg-[#c4b5fd] text-xs text-[#5b21b6]"
+                          aria-label="View Emil kumar profile"
                         >
+                          <span class="avatar__initials">E</span>
+                        </a>
                       </div>
                       <a href="#member" class="font-bold">Emil kumar</a>
                       <span class="text-body/50">Jan 14, 2023</span>
@@ -499,14 +523,18 @@
                       class="mb-2 inline-flex items-center gap-1 text-sm text-body/60"
                     >
                       <svg
-                        class="size-3.5"
-                        viewBox="0 0 24 24"
+                        class="size-3.5 shrink-0"
+                        width="12"
+                        height="11"
+                        viewBox="0 0 12 11"
                         fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
-                        <path d="m9 14-4-4 4-4" />
-                        <path d="M5 10h11a4 4 0 0 1 0 8h-1" />
+                        <path
+                          d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z"
+                          fill="currentColor"
+                        />
                       </svg>
                       Reply to
                       <a href="#member" class="font-medium text-body"
@@ -520,14 +548,15 @@
                       and model updates.
                     </p>
                     <div class="flex flex-wrap items-center gap-4 text-[15px]">
-                      <button
-                        type="button"
+                      <span
+                        class="like-btn"
                         data-like
+                        role="button"
+                        tabindex="0"
                         aria-pressed="false"
-                        class="inline-flex cursor-pointer items-center gap-1.5 text-body transition-colors hover:text-primary"
                       >
                         <svg
-                          class="size-4 shrink-0 text-primary"
+                          class="like-btn__icon"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -538,14 +567,32 @@
                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
                           />
                         </svg>
-                        <span data-like-count>381</span>
-                      </button>
-                      <button
-                        type="button"
-                        class="font-medium text-body transition-colors hover:text-primary"
+                        <b data-like-count>381</b>
+                      </span>
+                      <span
+                        class="reply-btn"
+                        data-reply
+                        data-reply-to="Emil kumar"
+                        role="button"
+                        tabindex="0"
+                        aria-expanded="false"
                       >
+                        <svg
+                          class="reply-btn__icon"
+                          width="16"
+                          height="15"
+                          viewBox="0 0 16 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.637.317.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z"
+                            fill="#e11f26"
+                          />
+                        </svg>
                         Reply
-                      </button>
+                      </span>
                     </div>
                   </article>
 
@@ -567,9 +614,11 @@
                       >
                         <a
                           href="#member"
-                          class="grid size-9 place-items-center rounded-full bg-[#86efac] text-xs font-bold text-[#166534]"
-                          >C</a
+                          class="avatar size-9 bg-[#86efac] text-xs text-[#166534]"
+                          aria-label="View Chris J_Joseph profile"
                         >
+                          <span class="avatar__initials">C</span>
+                        </a>
                       </div>
                       <a href="#member" class="font-bold">Chris J_Joseph</a>
                       <span class="text-body/50">Jan 14, 2023</span>
@@ -578,14 +627,18 @@
                       class="mb-2 inline-flex items-center gap-1 text-sm text-body/60"
                     >
                       <svg
-                        class="size-3.5"
-                        viewBox="0 0 24 24"
+                        class="size-3.5 shrink-0"
+                        width="12"
+                        height="11"
+                        viewBox="0 0 12 11"
                         fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
-                        <path d="m9 14-4-4 4-4" />
-                        <path d="M5 10h11a4 4 0 0 1 0 8h-1" />
+                        <path
+                          d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z"
+                          fill="currentColor"
+                        />
                       </svg>
                       Reply to
                       <a href="#member" class="font-medium text-body"
@@ -598,14 +651,15 @@
                       grounding more tightly.
                     </p>
                     <div class="flex flex-wrap items-center gap-4 text-[15px]">
-                      <button
-                        type="button"
+                      <span
+                        class="like-btn"
                         data-like
+                        role="button"
+                        tabindex="0"
                         aria-pressed="false"
-                        class="inline-flex cursor-pointer items-center gap-1.5 text-body transition-colors hover:text-primary"
                       >
                         <svg
-                          class="size-4 shrink-0 text-primary"
+                          class="like-btn__icon"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -616,14 +670,19 @@
                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
                           />
                         </svg>
-                        <span data-like-count>42</span>
-                      </button>
-                      <button
-                        type="button"
-                        class="font-medium text-body transition-colors hover:text-primary"
+                        <b data-like-count>42</b>
+                      </span>
+                      <span
+                        class="reply-btn"
+                        data-reply
+                        data-reply-to="Chris J_Joseph"
+                        role="button"
+                        tabindex="0"
+                        aria-expanded="false"
                       >
+                      <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.637.317.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z" fill="#e11f26"/></svg>
                         Reply
-                      </button>
+                      </span>
                     </div>
                   </article>
 
@@ -645,9 +704,11 @@
                       >
                         <a
                           href="#member"
-                          class="grid size-9 place-items-center rounded-full bg-[#ea580c] text-xs font-bold text-white"
-                          >SK</a
+                          class="avatar size-9 bg-[#ea580c] text-xs"
+                          aria-label="View Sara Khan profile"
                         >
+                          <span class="avatar__initials">SK</span>
+                        </a>
                       </div>
                       <a href="#member" class="font-bold">Sara Khan</a>
                       <span class="text-body/50">Jan 15, 2023</span>
@@ -656,14 +717,18 @@
                       class="mb-2 inline-flex items-center gap-1 text-sm text-body/60"
                     >
                       <svg
-                        class="size-3.5"
-                        viewBox="0 0 24 24"
+                        class="size-3.5 shrink-0"
+                        width="12"
+                        height="11"
+                        viewBox="0 0 12 11"
                         fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
-                        <path d="m9 14-4-4 4-4" />
-                        <path d="M5 10h11a4 4 0 0 1 0 8h-1" />
+                        <path
+                          d="M4.369.169a.585.585 0 0 1 .995.407V2.59a6.4 6.4 0 0 1 4.454 1.861 6.25 6.25 0 0 1 1.843 4.416v1.037a.57.57 0 0 1-.414.55.59.59 0 0 1-.655-.231c-2.227-3.3-4.362-3.535-5.228-3.467v2.111a.57.57 0 0 1-.36.532.59.59 0 0 1-.635-.125L.17 5.13a.57.57 0 0 1 0-.814z"
+                          fill="currentColor"
+                        />
                       </svg>
                       Reply to
                       <a href="#member" class="font-medium text-body"
@@ -676,14 +741,15 @@
                       the chat.
                     </p>
                     <div class="flex flex-wrap items-center gap-4 text-[15px]">
-                      <button
-                        type="button"
+                      <span
+                        class="like-btn"
                         data-like
+                        role="button"
+                        tabindex="0"
                         aria-pressed="false"
-                        class="inline-flex cursor-pointer items-center gap-1.5 text-body transition-colors hover:text-primary"
                       >
                         <svg
-                          class="size-4 shrink-0 text-primary"
+                          class="like-btn__icon"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -694,17 +760,94 @@
                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
                           />
                         </svg>
-                        <span data-like-count>96</span>
-                      </button>
-                      <button
-                        type="button"
-                        class="font-medium text-body transition-colors hover:text-primary"
+                        <b data-like-count>96</b>
+                      </span>
+                      <span
+                        class="reply-btn"
+                        data-reply
+                        data-reply-to="Sara Khan"
+                        role="button"
+                        tabindex="0"
+                        aria-expanded="false"
                       >
+                        <svg
+                          class="reply-btn__icon"
+                          width="16"
+                          height="15"
+                          viewBox="0 0 16 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M5.95.23a.8.8 0 0 1 .866-.17c.145.06.269.16.356.289s.134.28.134.435V3.53a8.72 8.72 0 0 1 6.067 2.534 8.5 8.5 0 0 1 2.51 6.015v1.412a.78.78 0 0 1-.157.467.8.8 0 0 1-.637.317.8.8 0 0 1-.661-.35c-3.034-4.494-5.943-4.814-7.122-4.721v2.875a.78.78 0 0 1-.49.725.8.8 0 0 1-.866-.17L.233 6.986a.78.78 0 0 1 0-1.109z"
+                            fill="#e11f26"
+                          />
+                        </svg>
                         Reply
-                      </button>
+                      </span>
                     </div>
                   </article>
                 </div>
+
+                <template id="answer-reply-template">
+                  <div class="answer-reply">
+                    <form action="#" method="post" class="space-y-4">
+                      <div class="reply-editor">
+                        <div class="reply-editor__toolbar">
+                          <select class="reply-editor__select" aria-label="Format">
+                            <option>Paragraph</option>
+                            <option>Heading 2</option>
+                            <option>Heading 3</option>
+                          </select>
+                          <button type="button" class="reply-editor__tool" aria-label="Bold">
+                            <strong>B</strong>
+                          </button>
+                          <button type="button" class="reply-editor__tool" aria-label="Italic">
+                            <em>I</em>
+                          </button>
+                          <button type="button" class="reply-editor__tool" aria-label="Bullet list">
+                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+                            </svg>
+                          </button>
+                          <button type="button" class="reply-editor__tool" aria-label="Numbered list">
+                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <path d="M10 6h11M10 12h11M10 18h11M4 6h1v4M4 10h2M6 18H4c0-1 2-2 2-3s-1-1.5-2-1" />
+                            </svg>
+                          </button>
+                          <button type="button" class="reply-editor__tool" aria-label="Undo">
+                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <path d="M3 7v6h6" />
+                              <path d="M3 13a9 9 0 1 0 3-7.7L3 7" />
+                            </svg>
+                          </button>
+                          <button type="button" class="reply-editor__tool" aria-label="Redo">
+                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <path d="M21 7v6h-6" />
+                              <path d="M21 13a9 9 0 1 1-3-7.7L21 7" />
+                            </svg>
+                          </button>
+                        </div>
+                        <textarea
+                          class="reply-editor__body"
+                          name="reply"
+                          placeholder="Write your reply…"
+                        ></textarea>
+                      </div>
+                      <div class="flex flex-wrap items-center gap-3">
+                        <button type="submit" class="btn btn-secondary">Submit Reply</button>
+                        <button
+                          type="button"
+                          class="font-medium text-body transition-colors hover:text-primary"
+                          data-reply-cancel
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </template>
 
                 <div class="px-6 py-5">
                   <button type="button" class="btn-load-more mx-auto">
@@ -735,46 +878,48 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <aside class="space-y-4 lg:sticky lg:top-24 lg:self-start">
-              <a href="#login" class="btn btn-fill btn-block">
-                <svg
-                  class="size-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <rect x="3" y="11" width="18" height="11" rx="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
-                Log in to Reply
-              </a>
-              <button type="button" class="btn btn-secondary btn-block">
-                <svg
-                  class="size-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"
-                  />
-                </svg>
-                Share
-              </button>
+              <div class="card space-y-3 p-5">
+                <a href="#login" class="btn btn-fill">
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  Log in to Reply
+                </a>
+                <button type="button" class="btn btn-secondary btn-block">
+                  <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M13.48 10.375a3.04 3.04 0 0 0-2.396 1.149l-4.71-2.27c.079-.251.134-.51.134-.785a2.65 2.65 0 0 0-.221-1.051l4.929-2.792a3.05 3.05 0 0 0 2.265.999c1.647 0 2.988-1.262 2.988-2.812C16.469 1.262 15.129 0 13.48 0c-1.647 0-2.988 1.262-2.988 2.813 0 .357.078.696.208 1.01l-4.943 2.8a3.05 3.05 0 0 0-2.237-.967C1.872 5.656.53 6.918.53 8.47c0 1.55 1.34 2.812 2.989 2.812 1 0 1.882-.469 2.425-1.181l4.694 2.262a2.6 2.6 0 0 0-.147.825c0 1.551 1.34 2.813 2.988 2.813s2.989-1.262 2.989-2.812c0-1.551-1.34-2.813-2.989-2.813" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h17v16H0z"/></clipPath></defs></svg>
+                  Share
+                </button>
+              </div>
 
               <div class="card p-5">
                 <div class="mb-3 flex items-center justify-between gap-2">
-                  <h3 class="text-sm font-bold text-[#0f172a]">
+                  <h3 class="text-sm font-bold">
                     Similar Threads
                   </h3>
                   <a
                     href="#similar"
-                    class="text-sm font-medium text-primary hover:opacity-80"
-                    >View all ›</a
+                    class="inline-flex items-center gap-1 text-sm font-medium text-primary transition hover:opacity-80"
                   >
+                    View all
+                    <svg
+                      class="size-3.5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </a>
                 </div>
                 <div>
                   <a href="#thread" class="similar-thread">
@@ -782,7 +927,7 @@
                       Will ChatGPT remain the top AI tool in 2024?
                     </p>
                     <span
-                      class="inline-flex items-center gap-3 text-xs text-body/60"
+                      class="inline-flex items-center gap-3 text-xs"
                     >
                       <span class="inline-flex items-center gap-1">
                         <svg
@@ -807,7 +952,7 @@
                       Will ChatGPT remain the top AI tool in 2024?
                     </p>
                     <span
-                      class="inline-flex items-center gap-3 text-xs text-body/60"
+                      class="inline-flex items-center gap-3 text-xs"
                     >
                       <span class="inline-flex items-center gap-1">
                         <svg
@@ -832,7 +977,7 @@
                       Will ChatGPT remain the top AI tool in 2024?
                     </p>
                     <span
-                      class="inline-flex items-center gap-3 text-xs text-body/60"
+                      class="inline-flex items-center gap-3 text-xs"
                     >
                       <span class="inline-flex items-center gap-1">
                         <svg
@@ -857,7 +1002,7 @@
                       Will ChatGPT remain the top AI tool in 2024?
                     </p>
                     <span
-                      class="inline-flex items-center gap-3 text-xs text-body/60"
+                      class="inline-flex items-center gap-3 text-xs"
                     >
                       <span class="inline-flex items-center gap-1">
                         <svg
@@ -880,25 +1025,26 @@
                 </div>
               </div>
 
-              <div class="card ask-card p-6">
+              <div class="card ask-card">
                 <div class="ask-card__icon mb-4">?</div>
                 <h3 class="mb-2 text-lg font-bold text-[#0f172a]">
                   Have a question?
                 </h3>
-                <p class="mb-5 text-sm text-body/70">
+                <p class="mb-5 text-sm">
                   Ask the community and get help from experts.
                 </p>
-                <a href="index.html#ask" class="btn btn-fill mx-auto">
-                  Ask a Question
+                <a href="index.html#start-discussion" class="btn btn-fill">
                   <svg
-                    class="size-3.5"
+                    class="size-4"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2.5"
+                    stroke-width="2"
                   >
-                    <path d="m9 18 6-6-6-6" />
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
                   </svg>
+                  Ask a Question
                 </a>
               </div>
             </aside>
