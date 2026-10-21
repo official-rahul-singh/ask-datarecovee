@@ -61,6 +61,33 @@ function applyGroupTab(tabName) {
   });
 }
 
+const DISCUSSION_TABS = new Set([
+  "all",
+  "open",
+  "solved",
+  "unanswered",
+  "following",
+]);
+
+function applyDiscussionTab(tabName) {
+  const area = document.querySelector(".question-area");
+  if (!area) return;
+
+  area.querySelectorAll("article.card").forEach((card) => {
+    const status = card.dataset.status || "open";
+    const following = card.dataset.following === "true";
+    let show = true;
+
+    if (tabName === "solved") show = status === "solved";
+    else if (tabName === "unanswered") show = status === "unanswered";
+    else if (tabName === "open") show = status === "open" || status === "unanswered";
+    else if (tabName === "following") show = following;
+    else show = true;
+
+    card.hidden = !show;
+  });
+}
+
 document.querySelectorAll('[role="tablist"]').forEach((list) => {
   list.querySelectorAll('[role="tab"]').forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -68,9 +95,10 @@ document.querySelectorAll('[role="tablist"]').forEach((list) => {
         t.setAttribute("aria-selected", "false");
       });
       tab.setAttribute("aria-selected", "true");
-      if (tab.dataset.tab in TAB_ORDER) {
-        applyGroupTab(tab.dataset.tab);
-      }
+
+      const name = tab.dataset.tab;
+      if (name in TAB_ORDER) applyGroupTab(name);
+      if (DISCUSSION_TABS.has(name)) applyDiscussionTab(name);
     });
   });
 });
@@ -107,10 +135,18 @@ document.querySelectorAll(".dropdown").forEach((dropdown) => {
   if (!trigger || !menu) return;
 
   const isAccordion = dropdown.classList.contains("dropdown-accordion");
+  const isMobileSidebarAccordion = () =>
+    isAccordion &&
+    dropdown.closest(".home-sidebar") &&
+    window.matchMedia("(width < 64rem)").matches;
 
   const toggleDropdown = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    if (isMobileSidebarAccordion()) {
+      closeDropdown(dropdown);
+      return;
+    }
     const isOpen = dropdown.classList.contains("is-open");
     if (!isAccordion) closeAllDropdowns(dropdown);
     if (isOpen) closeDropdown(dropdown);
