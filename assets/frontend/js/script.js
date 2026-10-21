@@ -1,3 +1,6 @@
+import Swiper from "swiper";
+import { Pagination, Autoplay } from "swiper/modules";
+
 const TAB_ORDER = {
   popular: ["backup", "recovery", "mac", "iphone", "windows"],
   latest: ["iphone", "windows", "mac", "recovery", "backup"],
@@ -237,3 +240,167 @@ function buildUserCard(el) {
 }
 
 document.querySelectorAll("[data-user-card]").forEach(buildUserCard);
+
+const signupSwiperEl = document.querySelector(".signup-swiper");
+if (signupSwiperEl) {
+  new Swiper(signupSwiperEl, {
+    modules: [Pagination, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".signup-swiper-pagination",
+      clickable: true,
+      renderBullet(index, className) {
+        return `<button type="button" class="${className} signup-swiper-bullet" aria-label="Slide ${index + 1}">${index + 1}</button>`;
+      },
+    },
+  });
+}
+
+document.querySelectorAll(".password-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const field = btn.closest(".password-field");
+    const input = field?.querySelector("input");
+    if (!input) return;
+
+    const showIcon = btn.querySelector(".password-icon-show");
+    const hideIcon = btn.querySelector(".password-icon-hide");
+    const isHidden = input.type === "password";
+
+    input.type = isHidden ? "text" : "password";
+    btn.setAttribute("aria-pressed", String(isHidden));
+    btn.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
+    showIcon?.classList.toggle("hidden", isHidden);
+    hideIcon?.classList.toggle("hidden", !isHidden);
+  });
+});
+
+const signupForm = document.getElementById("signup-form");
+const signupPassword = document.getElementById("signup-password");
+const signupPasswordConfirm = document.getElementById(
+  "signup-password-confirm",
+);
+
+function validateSignupPasswords() {
+  if (!signupPassword || !signupPasswordConfirm) return true;
+
+  if (
+    signupPasswordConfirm.value &&
+    signupPassword.value !== signupPasswordConfirm.value
+  ) {
+    signupPasswordConfirm.setCustomValidity("Passwords do not match");
+    return false;
+  }
+
+  signupPasswordConfirm.setCustomValidity("");
+  return true;
+}
+
+if (signupPassword && signupPasswordConfirm) {
+  signupPassword.addEventListener("input", validateSignupPasswords);
+  signupPasswordConfirm.addEventListener("input", validateSignupPasswords);
+}
+
+signupForm?.addEventListener("submit", (event) => {
+  if (!validateSignupPasswords()) {
+    event.preventDefault();
+    signupPasswordConfirm?.reportValidity();
+  }
+});
+
+/* Mobile header slide menu */
+const headerSlide = document.querySelector(".header-slide");
+const headerSlideOverlay = document.querySelector(".header-slide-overlay");
+const toggleSlideBtns = document.querySelectorAll(".toggle-slide-btn");
+const closeSlideBtns = document.querySelectorAll(".header-slide-close");
+
+function setSearchBtnState(btn, isOpen) {
+  btn.classList.toggle("is-active", isOpen);
+  btn.setAttribute("aria-expanded", String(isOpen));
+  btn.setAttribute("aria-label", isOpen ? "Close search" : "Open search");
+  btn.querySelector(".search-btn-icon--open")?.classList.toggle("hidden", isOpen);
+  btn.querySelector(".search-btn-icon--close")?.classList.toggle("hidden", !isOpen);
+}
+
+function closeMobileSearch() {
+  document.querySelector(".search-bar")?.classList.remove("is-open");
+  document.querySelectorAll(".search-btn").forEach((btn) => {
+    setSearchBtnState(btn, false);
+  });
+}
+
+function openHeaderSlide() {
+  if (!headerSlide) return;
+  closeMobileSearch();
+  headerSlide.classList.add("is-open");
+  headerSlideOverlay?.classList.add("is-open");
+  document.body.classList.add("menu-open");
+  toggleSlideBtns.forEach((btn) => btn.setAttribute("aria-expanded", "true"));
+}
+
+function closeHeaderSlide() {
+  if (!headerSlide) return;
+  headerSlide.classList.remove("is-open");
+  headerSlideOverlay?.classList.remove("is-open");
+  document.body.classList.remove("menu-open");
+  toggleSlideBtns.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+}
+
+toggleSlideBtns.forEach((btn) => {
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("aria-controls", "header-slide");
+  btn.addEventListener("click", () => {
+    if (headerSlide?.classList.contains("is-open")) closeHeaderSlide();
+    else openHeaderSlide();
+  });
+});
+
+closeSlideBtns.forEach((btn) => {
+  btn.addEventListener("click", closeHeaderSlide);
+});
+
+headerSlideOverlay?.addEventListener("click", closeHeaderSlide);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeHeaderSlide();
+});
+
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(min-width: 80rem)").matches) closeHeaderSlide();
+});
+
+document.querySelectorAll(".openLogin").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location.href = "login-pg.html";
+  });
+});
+
+document.querySelectorAll(".openSignup").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location.href = "signup-pg.html";
+  });
+});
+
+document.querySelectorAll(".search-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const bar = document.querySelector(".search-bar");
+    if (!bar) return;
+    const willOpen = !bar.classList.contains("is-open");
+    bar.classList.toggle("is-open", willOpen);
+    setSearchBtnState(btn, willOpen);
+    if (willOpen) {
+      bar.querySelector("input")?.focus();
+    }
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMobileSearch();
+});
+
+

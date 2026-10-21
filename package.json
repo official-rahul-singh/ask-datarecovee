@@ -11,6 +11,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "ckeditor5": "^49.0.0",
+    "swiper": "^14.3.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {

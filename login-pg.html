@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In | Datarecovee Community</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="assets/frontend/js/main.js"></script>
+  </head>
+
+  <body class="min-h-screen">
+    <div class="signup-page min-h-screen overflow-hidden">
+      <div class="row m-0 min-h-screen">
+      <!-- Left: marketing panel -->
+      <aside
+        class="col-lg-6 bg-abstract-gradient relative hidden min-h-screen flex-col items-center !px-6 py-8 sm:!px-10 lg:flex lg:!px-12 xl:!px-16"
+      >
+        <div class="flex w-full max-w-lg flex-1 flex-col">
+          <a href="index.html" class="logo mb-8 shrink-0 lg:mb-10">
+            <img
+              src="https://ask.datarecovee.com/storage/branding/logo/logo.svg"
+              alt="Datarecovee Community"
+              class="img-fluid"
+            />
+          </a>
+
+          <div class="my-auto flex w-full flex-col pb-4">
+            <div class="swiper signup-swiper mb-4 w-full">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="assets/images/signup-2.svg"
+                    alt="Datarecovee community illustration"
+                    class="img-fluid mx-auto h-auto w-full max-w-lg"
+                    width="538"
+                    height="279"
+                  />
+                  <p class="mt-4 mb-2 text-sm font-semibold text-primary">
+                    Welcome To Datarecovee,
+                  </p>
+                  <h1 class="text-[20px] font-bold leading-snug text-secondary">
+                    Need help with a Data Recovery Problem Join Our Community?
+                  </h1>
+                  <p class="mt-3 text-sm text-body sm:text-base">
+                    Ask questions, find support, and connect with the community.
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/images/signup-2.svg"
+                    alt="Ask questions in the community"
+                    class="img-fluid mx-auto h-auto w-full max-w-lg"
+                    width="538"
+                    height="279"
+                  />
+                  <p class="mt-4 mb-2 text-sm font-semibold text-primary">
+                    Ask &amp; Learn,
+                  </p>
+                  <h1 class="text-[20px] font-bold leading-snug text-secondary">
+                    Get real answers from people who have solved the same problems.
+                  </h1>
+                  <p class="mt-3 text-sm text-body sm:text-base">
+                    Post your question and get guided by experienced members.
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/images/signup-2.svg"
+                    alt="Get solutions from the community"
+                    class="img-fluid mx-auto h-auto w-full max-w-lg"
+                    width="538"
+                    height="279"
+                  />
+                  <p class="mt-4 mb-2 text-sm font-semibold text-primary">
+                    Grow Together,
+                  </p>
+                  <h1 class="text-[20px] font-bold leading-snug text-secondary">
+                    Share solutions and help others recover their data faster.
+                  </h1>
+                  <p class="mt-3 text-sm text-body sm:text-base">
+                    Build your reputation while supporting the community.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="signup-swiper-pagination mt-8 flex items-center gap-3"
+              aria-label="Login content slides"
+            ></div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right: login form -->
+      <main
+        class="col-lg-6 flex min-h-screen flex-col items-center bg-white !px-4 py-6 sm:!px-10 lg:!px-12 xl:!px-16"
+      >
+        <div class="flex w-full max-w-md flex-1 flex-col xl:max-w-lg">
+          <a href="index.html" class="logo mb-6 shrink-0 lg:hidden">
+            <img
+              src="https://ask.datarecovee.com/storage/branding/logo/logo.svg"
+              alt="Datarecovee Community"
+              class="img-fluid"
+            />
+          </a>
+
+          <a
+            href="index.html"
+            class="mb-6 hidden w-fit items-center gap-2 text-sm text-body transition-colors hover:text-primary sm:mb-8 sm:inline-flex"
+          >
+            <svg
+              class="size-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M19 12H5" />
+              <path d="m12 19-7-7 7-7" />
+            </svg>
+            Back to site
+          </a>
+
+          <div class="my-auto w-full">
+          <h2 class="mb-2 text-xl font-bold text-secondary sm:text-3xl">
+            Log in
+          </h2>
+          <p class="mb-6 text-sm text-body sm:mb-8">
+            Login to your account and check out the new messages.
+          </p>
+
+          <form id="login-form" class="space-y-4" action="#" method="post">
+            <div>
+              <label class="mb-1.5 block text-sm font-semibold text-secondary" for="login-username">
+                Email or Username <span class="text-primary" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="login-username"
+                type="text"
+                name="username"
+                placeholder="Enter Your Email or Username"
+                autocomplete="username"
+                required
+                class="signup-input"
+              />
+            </div>
+
+            <div>
+              <label class="mb-1.5 block text-sm font-semibold text-secondary" for="login-password">
+                Password <span class="text-primary" aria-hidden="true">*</span>
+              </label>
+              <div class="password-field relative">
+                <input
+                  id="login-password"
+                  type="password"
+                  name="password"
+                  placeholder="Enter Your Password"
+                  autocomplete="current-password"
+                  required
+                  class="signup-input"
+                />
+                <button
+                  type="button"
+                  class="password-toggle absolute top-1/2 right-3 -translate-y-1/2 text-body transition-colors hover:text-primary"
+                  aria-label="Show password"
+                  aria-pressed="false"
+                >
+                  <svg
+                    class="password-icon-show size-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                    />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <svg
+                    class="password-icon-hide hidden size-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-10-8-10-8a18.45 18.45 0 0 1 5.06-5.94"
+                    />
+                    <path
+                      d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19"
+                    />
+                    <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
+                    <path d="M1 1l22 22" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-4 pt-1">
+              <label class="flex items-center gap-2 text-sm text-body">
+                <input
+                  type="checkbox"
+                  name="remember"
+                  class="size-4 shrink-0 accent-primary"
+                  checked
+                />
+                Remember Me
+              </label>
+              <a
+                href="forget-password.html"
+                class="text-sm font-semibold text-primary underline-offset-2 hover:underline"
+              >
+                Forgot password?
+              </a>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-secondary mt-2 w-full !rounded-10 py-3.5 text-base"
+            >
+              Log in
+            </button>
+          </form>
+
+          <p class="mt-6 text-center text-sm text-body">
+            Don&apos;t have an account?
+            <a
+              href="signup-pg.html"
+              class="font-semibold text-primary underline-offset-2 hover:underline"
+              >Create account</a
+            >
+          </p>
+          </div>
+        </div>
+      </main>
+      </div>
+    </div>
+  </body>
+</html>
