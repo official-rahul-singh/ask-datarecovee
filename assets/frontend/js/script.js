@@ -69,24 +69,41 @@ const DISCUSSION_TABS = new Set([
   "following",
 ]);
 
+const discussionsSearchInput = document.querySelector(".discussions-search__input");
+
 function applyDiscussionTab(tabName) {
   const area = document.querySelector(".question-area");
   if (!area) return;
+
+  const activeTab =
+    tabName ||
+    document.querySelector('.tabs-scroll [role="tab"][aria-selected="true"]')
+      ?.dataset.tab ||
+    "all";
+  const query = (discussionsSearchInput?.value || "").trim().toLowerCase();
 
   area.querySelectorAll("article.card").forEach((card) => {
     const status = card.dataset.status || "open";
     const following = card.dataset.following === "true";
     let show = true;
 
-    if (tabName === "solved") show = status === "solved";
-    else if (tabName === "unanswered") show = status === "unanswered";
-    else if (tabName === "open") show = status === "open" || status === "unanswered";
-    else if (tabName === "following") show = following;
+    if (activeTab === "solved") show = status === "solved";
+    else if (activeTab === "unanswered") show = status === "unanswered";
+    else if (activeTab === "open") show = status === "open" || status === "unanswered";
+    else if (activeTab === "following") show = following;
     else show = true;
+
+    if (show && query) {
+      const text = card.textContent?.toLowerCase() || "";
+      show = text.includes(query);
+    }
 
     card.hidden = !show;
   });
 }
+
+discussionsSearchInput?.addEventListener("input", () => applyDiscussionTab());
+
 
 document.querySelectorAll('[role="tablist"]').forEach((list) => {
   list.querySelectorAll('[role="tab"]').forEach((tab) => {
@@ -102,6 +119,60 @@ document.querySelectorAll('[role="tablist"]').forEach((list) => {
     });
   });
 });
+
+/* Tabs horizontal scroll arrows — show when tabs are cut off */
+function updateTabsScroll(wrap, remeasure = true) {
+  const scroller = wrap.querySelector(".tabs-scroll");
+  const prevBtn = wrap.querySelector(".tabs-scroll-prev");
+  const nextBtn = wrap.querySelector(".tabs-scroll-next");
+  if (!scroller || !prevBtn || !nextBtn) return;
+
+  const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+  const hasOverflow = maxScroll > 4;
+  const atStart = scroller.scrollLeft <= 4;
+  const atEnd = scroller.scrollLeft >= maxScroll - 4;
+  const wasOverflow = wrap.classList.contains("has-overflow");
+
+  /* Keep both arrow slots when overflowing so the row doesn’t jump */
+  prevBtn.hidden = !hasOverflow;
+  nextBtn.hidden = !hasOverflow;
+  prevBtn.disabled = !hasOverflow || atStart;
+  nextBtn.disabled = !hasOverflow || atEnd;
+
+  wrap.classList.toggle("has-overflow", hasOverflow);
+  wrap.classList.toggle("has-prev", hasOverflow && !atStart);
+  wrap.classList.toggle("has-next", hasOverflow && !atEnd);
+
+  /* Arrow show/hide changes scroller width — remeasure once */
+  if (remeasure && wasOverflow !== hasOverflow) {
+    requestAnimationFrame(() => updateTabsScroll(wrap, false));
+  }
+}
+
+document.querySelectorAll("[data-tabs-scroll]").forEach((wrap) => {
+  const scroller = wrap.querySelector(".tabs-scroll");
+  const prevBtn = wrap.querySelector(".tabs-scroll-prev");
+  const nextBtn = wrap.querySelector(".tabs-scroll-next");
+  if (!scroller) return;
+
+  const scrollByAmount = () => Math.max(120, Math.round(scroller.clientWidth * 0.6));
+
+  prevBtn?.addEventListener("click", () => {
+    scroller.scrollBy({ left: -scrollByAmount(), behavior: "smooth" });
+  });
+  nextBtn?.addEventListener("click", () => {
+    scroller.scrollBy({ left: scrollByAmount(), behavior: "smooth" });
+  });
+  scroller.addEventListener("scroll", () => updateTabsScroll(wrap), { passive: true });
+  window.addEventListener("resize", () => updateTabsScroll(wrap));
+
+  if (typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(() => updateTabsScroll(wrap)).observe(scroller);
+  }
+
+  updateTabsScroll(wrap);
+});
+
 
 function closeDropdown(dropdown) {
   const trigger = dropdown.querySelector(".dropdown-trigger");
@@ -438,5 +509,135 @@ document.querySelectorAll(".search-btn").forEach((btn) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMobileSearch();
 });
+
+/* Discussions bottom sheet (mobile) */
+const discussionsSheet = document.querySelector(".discussions-sheet");
+const discussionsSheetOverlay = document.querySelector(".discussions-sheet-overlay");
+const discussionsSheetBtns = document.querySelectorAll(".discussions-sheet-btn");
+const discussionsSheetCloses = document.querySelectorAll(".discussions-sheet-close");
+
+function openDiscussionsSheet() {
+  if (!discussionsSheet) return;
+  discussionsSheet.classList.add("is-open");
+  discussionsSheetOverlay?.classList.add("is-open");
+  document.body.classList.add("discussions-sheet-open");
+  discussionsSheetBtns.forEach((btn) => btn.setAttribute("aria-expanded", "true"));
+}
+
+function closeDiscussionsSheet() {
+  if (!discussionsSheet) return;
+  discussionsSheet.classList.remove("is-open");
+  discussionsSheetOverlay?.classList.remove("is-open");
+  document.body.classList.remove("discussions-sheet-open");
+  discussionsSheetBtns.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+}
+
+discussionsSheetBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (discussionsSheet?.classList.contains("is-open")) closeDiscussionsSheet();
+    else openDiscussionsSheet();
+  });
+});
+
+discussionsSheetCloses.forEach((btn) => {
+  btn.addEventListener("click", closeDiscussionsSheet);
+});
+
+discussionsSheetOverlay?.addEventListener("click", closeDiscussionsSheet);
+
+discussionsSheet?.querySelectorAll("a[href]").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.matchMedia("(width < 64rem)").matches) closeDiscussionsSheet();
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeDiscussionsSheet();
+});
+
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(width >= 64rem)").matches) closeDiscussionsSheet();
+});
+
+/* Members page — filter by name */
+const membersSearchInput = document.querySelector(".members-search__input");
+const membersCountEl = document.querySelector("[data-members-count]");
+const memberItems = document.querySelectorAll(".members-list > .col-md-6");
+
+function filterMembers() {
+  if (!memberItems.length) return;
+
+  const query = (membersSearchInput?.value || "").trim().toLowerCase();
+  let visible = 0;
+
+  memberItems.forEach((item) => {
+    const name =
+      item.querySelector(".member-card__name")?.textContent?.trim().toLowerCase() ||
+      "";
+    const match = !query || name.includes(query);
+    item.hidden = !match;
+    if (match) visible += 1;
+  });
+
+  if (membersCountEl) membersCountEl.textContent = String(visible);
+}
+
+membersSearchInput?.addEventListener("input", filterMembers);
+
+/* Categories page — filter by name / subcategories */
+const categoriesSearchInput = document.querySelector(".categories-search__input");
+const categoriesCountEl = document.querySelector("[data-categories-count]");
+const categoryItems = document.querySelectorAll(".categories-list > .category-card");
+
+function filterCategories() {
+  if (!categoryItems.length) return;
+
+  const query = (categoriesSearchInput?.value || "").trim().toLowerCase();
+  let visible = 0;
+
+  categoryItems.forEach((card) => {
+    const title =
+      card.querySelector(".category-card__title")?.textContent?.trim().toLowerCase() ||
+      "";
+    const desc =
+      card.querySelector(".category-card__desc")?.textContent?.trim().toLowerCase() ||
+      "";
+    const subs = Array.from(card.querySelectorAll(".category-card__sub-title"))
+      .map((el) => el.textContent?.trim().toLowerCase() || "")
+      .join(" ");
+    const match = !query || title.includes(query) || desc.includes(query) || subs.includes(query);
+    card.hidden = !match;
+    if (match) visible += 1;
+  });
+
+  if (categoriesCountEl) categoriesCountEl.textContent = String(visible);
+}
+
+categoriesSearchInput?.addEventListener("input", filterCategories);
+
+/* Tags page — filter by tag name */
+const tagsSearchInput = document.querySelector(".tags-search__input");
+const tagsCountEl = document.querySelector("[data-tags-count]");
+const tagItems = document.querySelectorAll(".tags-list > .tag-card");
+
+function filterTags() {
+  if (!tagItems.length) return;
+
+  const query = (tagsSearchInput?.value || "").trim().toLowerCase();
+  let visible = 0;
+
+  tagItems.forEach((card) => {
+    const name =
+      card.querySelector(".tag-card__name")?.textContent?.trim().toLowerCase() ||
+      "";
+    const match = !query || name.includes(query);
+    card.hidden = !match;
+    if (match) visible += 1;
+  });
+
+  if (tagsCountEl) tagsCountEl.textContent = String(visible);
+}
+
+tagsSearchInput?.addEventListener("input", filterTags);
 
 

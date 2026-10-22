@@ -51,7 +51,7 @@
           <form
             action="#"
             role="search"
-            class="search-bar w-full items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] py-[15px] pr-2 pl-4 xl:w-[332px]"
+            class="search-bar w-full items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] lg:py-[4px] pr-2 pl-4 xl:w-[332px]"
           >
             <input
               type="search"
@@ -193,7 +193,7 @@
     <main>
 
         <section class="bg-gradient-image">
-          <div class="container py-12">
+          <div class="container py-8 md:py-12">
             <div class="page-banner">
               <span class="page-banner__icon" aria-hidden="true">
                 <svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.327 17.598v1.256a.626.626 0 0 0 .628.628h12.558a.627.627 0 0 0 .628-.628v-1.256a6.907 6.907 0 1 0-13.814 0M.676 19.482h4.503a1.9 1.9 0 0 1-.108-.628v-1.256c0-1.434.378-2.829 1.077-4.052a4.395 4.395 0 0 0-6.1 4.053v1.255a.63.63 0 0 0 .628.628m21.349-6.279c-.605 0-1.181.122-1.705.343a8.16 8.16 0 0 1 1.077 4.052v1.256q-.001.326-.109.628h4.504a.63.63 0 0 0 .628-.628v-1.256a4.395 4.395 0 0 0-4.395-4.395M6.638 11.054A3.14 3.14 0 1 0 2.24 6.571a3.14 3.14 0 0 0 4.397 4.483m17.586.006a3.14 3.14 0 1 0-4.396-4.483 3.14 3.14 0 0 0 4.396 4.483m-10.29-1.682A4.395 4.395 0 1 0 12.536.7a4.395 4.395 0 0 0 1.397 8.678" fill="#e11f26"/></svg>
@@ -203,12 +203,29 @@
           </div>
         </section>
 
-        <section class="bg-surface pb-16 pt-10">
+        <section class="bg-surface py-10 sm:py-16">
             <div class="container">
-              <div class="row">
-                <div class="col-lg-2">
-                  <aside class="space-y-4 lg:sticky lg:top-24 lg:self-start">
-                    <a href="#start-discussion" class="btn btn-fill">
+              <div class="row row-gap">
+                <div class="col-lg-2 discussions-sheet-col">
+                  <div class="discussions-sheet-overlay" aria-hidden="true"></div>
+                  <aside
+                    id="discussions-sheet"
+                    class="discussions-sheet space-y-4 lg:sticky lg:top-24 lg:self-start"
+                  >
+                    <div class="discussions-sheet__top">
+                      <span class="discussions-sheet__title">Discussions</span>
+                      <button
+                        type="button"
+                        class="discussions-sheet-close"
+                        aria-label="Close discussions menu"
+                      >
+                        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M18 6 6 18M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <a href="#start-discussion" class="btn btn-fill hidden lg:flex">
                       <svg
                         class="size-4"
                         viewBox="0 0 24 24"
@@ -461,31 +478,61 @@
       
                 <div class="col-lg-7">
                   <div class="members-page space-y-5">
-                    <form action="#" method="get" role="search">
-                      <label class="members-search">
-                        <svg
-                          class="members-search__icon"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          aria-hidden="true"
-                        >
-                          <circle cx="11" cy="11" r="8" />
-                          <path d="m21 21-4.3-4.3" />
+                    <div class="mobile-bottom-bar lg:hidden">
+                      <button
+                        type="button"
+                        class="discussions-sheet-btn"
+                        aria-expanded="false"
+                        aria-controls="discussions-sheet"
+                      >
+                        <span class="discussions-sheet-btn__icon" aria-hidden="true">
+                          <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path d="m10 5.255 7.133 5.88q0 .012.006.037l.006.037v5.955a.76.76 0 0 1-.235.558.76.76 0 0 1-.559.236h-4.763v-4.764H8.412v4.764H3.649a.76.76 0 0 1-.559-.236.76.76 0 0 1-.236-.558v-5.955q0-.05.013-.074z"/>
+                            <path d="m.138 9.795 2.717-2.257V2.476q0-.173.111-.285a.4.4 0 0 1 .286-.112h2.381q.174 0 .286.112t.111.285v2.42l3.027-2.531q.396-.324.943-.323.546 0 .943.323l8.92 7.43a.36.36 0 0 1 .136.267.4.4 0 0 1-.087.292l-.77.918a.42.42 0 0 1-.26.136.46.46 0 0 1-.298-.087L10 4.163l-8.584 7.158a.38.38 0 0 1-.261.087h-.037a.42.42 0 0 1-.26-.136l-.77-.918a.4.4 0 0 1-.087-.292.36.36 0 0 1 .137-.267"/>
+                          </svg>
+                        </span>
+                        <span class="discussions-sheet-btn__label">All Discussions</span>
+                        <span class="discussions-sheet-btn__caret" aria-hidden="true">
+                          <svg viewBox="0 0 10 14" fill="currentColor">
+                            <path d="M5 0 10 5.5H0L5 0Z" />
+                            <path d="M5 14 0 8.5h10L5 14Z" />
+                          </svg>
+                        </span>
+                      </button>
+                      <a href="#start-discussion" class="btn btn-fill mobile-bottom-bar__ask">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M12 20h9" />
+                          <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
                         </svg>
-                        <input
-                          type="search"
-                          name="q"
-                          placeholder="Search member names..."
-                          class="members-search__input"
-                        />
-                      </label>
-                    </form>
+                        Ask Question
+                      </a>
+                    </div>
 
-                    <h2 class="members-page__title">All Members (32)</h2>
+                    <div class="members-search" role="search">
+                      <svg
+                        class="members-search__icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                      </svg>
+                      <input
+                        type="search"
+                        placeholder="Search member names..."
+                        class="members-search__input"
+                        autocomplete="off"
+                        aria-label="Search member names"
+                      />
+                    </div>
 
-                    <div class="members-grid">
+                    <h2 class="members-page__title">All Members (<span data-members-count>6</span>)</h2>
+
+                    <div class="row row-gap members-list">
+<div class="col-md-6">
                       <article class="member-card card">
                         <div class="member-card__head">
                           <a href="#member" class="avatar size-11 shrink-0">
@@ -537,7 +584,9 @@
                           </svg>
                         </a>
                       </article>
+                    </div>
 
+                      <div class="col-md-6">
                       <article class="member-card card">
                         <div class="member-card__head">
                           <a
@@ -588,7 +637,9 @@
                           </svg>
                         </a>
                       </article>
+                    </div>
 
+                      <div class="col-md-6">
                       <article class="member-card card">
                         <div class="member-card__head">
                           <a
@@ -639,7 +690,9 @@
                           </svg>
                         </a>
                       </article>
+                    </div>
 
+                      <div class="col-md-6">
                       <article class="member-card card">
                         <div class="member-card__head">
                           <a
@@ -690,7 +743,9 @@
                           </svg>
                         </a>
                       </article>
+                    </div>
 
+                      <div class="col-md-6">
                       <article class="member-card card">
                         <div class="member-card__head">
                           <a
@@ -741,7 +796,9 @@
                           </svg>
                         </a>
                       </article>
+                    </div>
 
+                      <div class="col-md-6">
                       <article class="member-card card">
                         <div class="member-card__head">
                           <a
@@ -792,7 +849,7 @@
                           </svg>
                         </a>
                       </article>
-
+                    </div>
                     </div>
                     <div class="px-6 py-5">
                         <button type="button" class="btn-load-more mx-auto">

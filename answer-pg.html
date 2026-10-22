@@ -51,7 +51,7 @@
           <form
             action="#"
             role="search"
-            class="search-bar w-full items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] py-[15px] pr-2 pl-4 xl:w-[332px]"
+            class="search-bar w-full items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] lg:py-[4px] pr-2 pl-4 xl:w-[332px]"
           >
             <input
               type="search"
@@ -229,20 +229,34 @@
           </li>
         </ul>
 
-        <div class="row">
+        <div class="row row-gap">
           <div class="col-lg-9">
             <div class="space-y-5">
               <!-- Question -->
               <article class="card">
                 <div class="mb-4 flex items-center gap-3 text-sm">
-                  <a
-                    href="#member"
-                    class="avatar size-10 bg-[#7c3aed]"
-                    aria-label="View Oliver Carpenter profile"
+                  <div
+                    class="user-hover user-hover--below shrink-0"
+                    data-user-card
+                    data-name="oliver"
+                    data-initial="O"
+                    data-avatar-bg="#7c3aed"
+                    data-avatar-color="#fff"
+                    data-joined="Jan 14, 2023"
+                    data-seen="Online now"
+                    data-messages="66"
+                    data-reactions="0"
+                    data-points="6"
                   >
-                    <span class="avatar__initials">OC</span>
-                    <span class="avatar__status" aria-label="Online"></span>
-                  </a>
+                    <a
+                      href="#member"
+                      class="avatar size-10 bg-[#7c3aed]"
+                      aria-label="View Oliver Carpenter profile"
+                    >
+                      <span class="avatar__initials">OC</span>
+                      <span class="avatar__status" aria-label="Online"></span>
+                    </a>
+                  </div>
                   <div>
                     <a href="#member" class="font-bold text-[#0f172a]"
                       >@Oliver Carpenter</a
@@ -376,7 +390,7 @@
               <!-- Answers -->
               <section class="card !p-0">
                 <div
-                  class="flex flex-wrap items-center justify-between gap-3 border-b border-border px-6 py-4"
+                  class="flex flex-wrap items-center justify-between gap-3 border-b border-border p-4 lg:px-6 lg:py-4"
                 >
                   <h2 class="text-lg font-bold text-[#0f172a]">305 Answers</h2>
                   <div class="dropdown relative">
@@ -442,12 +456,14 @@
                   </div>
                 </div>
 
-                <div class="px-6">
+                <div class="px-4 lg:px-6">
                   <!-- Answer 1 -->
                   <article class="answer-item">
                     <div class="answer-item__row">
-                      <div
-                        class="user-hover shrink-0"
+                      <div class="answer-item__main">
+                        <div class="answer-item__meta">
+                          <div
+                        class="user-hover answer-item__avatar shrink-0"
                         data-user-card
                         data-name="emil"
                         data-initial="E"
@@ -468,8 +484,8 @@
                           <span class="avatar__status" aria-label="Online"></span>
                         </a>
                       </div>
-                      <div class="answer-item__main">
-                        <div class="answer-item__head">
+                          <div class="answer-item__meta-text">
+                            <div class="answer-item__head">
                           <a href="#member" class="answer-item__name">Emil kumar</a>
                           <span class="answer-item__date">Jan 14, 2023</span>
                           <span class="accepted-badge">
@@ -479,6 +495,8 @@
                             </svg>
                             Accepted answer
                           </span>
+                        </div>
+                            </div>
                         </div>
                         <a href="#member" class="answer-reply-to">
                           <svg class="answer-reply-to__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -513,8 +531,10 @@
                   <!-- Nested reply -->
                   <article class="answer-item answer-item--nested">
                     <div class="answer-item__row">
-                      <div
-                        class="user-hover shrink-0"
+                      <div class="answer-item__main">
+                        <div class="answer-item__meta">
+                          <div
+                        class="user-hover answer-item__avatar shrink-0"
                         data-user-card
                         data-name="chris"
                         data-initial="C"
@@ -535,10 +555,12 @@
                           <span class="avatar__status" aria-label="Online"></span>
                         </a>
                       </div>
-                      <div class="answer-item__main">
-                        <div class="answer-item__head">
+                          <div class="answer-item__meta-text">
+                            <div class="answer-item__head">
                           <a href="#member" class="answer-item__name">ChrisJ_Joseph</a>
                           <span class="answer-item__date">Jan 14, 2023</span>
+                        </div>
+                            </div>
                         </div>
                         <a href="#member" class="answer-reply-to">
                           <svg class="answer-reply-to__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -572,8 +594,10 @@
                   <!-- Nested reply 2 -->
                   <article class="answer-item answer-item--nested answer-item--nested-2">
                     <div class="answer-item__row">
-                      <div
-                        class="user-hover shrink-0"
+                      <div class="answer-item__main">
+                        <div class="answer-item__meta">
+                          <div
+                        class="user-hover answer-item__avatar shrink-0"
                         data-user-card
                         data-name="ava"
                         data-initial="A"
@@ -594,10 +618,12 @@
                           <span class="avatar__status" aria-label="Online"></span>
                         </a>
                       </div>
-                      <div class="answer-item__main">
-                        <div class="answer-item__head">
+                          <div class="answer-item__meta-text">
+                            <div class="answer-item__head">
                           <a href="#member" class="answer-item__name">Ava Lopez</a>
                           <span class="answer-item__date">Jan 14, 2023</span>
+                        </div>
+                            </div>
                         </div>
                         <a href="#member" class="answer-reply-to">
                           <svg class="answer-reply-to__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -632,8 +658,10 @@
                   <!-- Answer 2 -->
                   <article class="answer-item">
                     <div class="answer-item__row">
-                      <div
-                        class="user-hover shrink-0"
+                      <div class="answer-item__main">
+                        <div class="answer-item__meta">
+                          <div
+                        class="user-hover answer-item__avatar shrink-0"
                         data-user-card
                         data-name="sara"
                         data-initial="S"
@@ -654,10 +682,12 @@
                           <span class="avatar__status" aria-label="Online"></span>
                         </a>
                       </div>
-                      <div class="answer-item__main">
-                        <div class="answer-item__head">
+                          <div class="answer-item__meta-text">
+                            <div class="answer-item__head">
                           <a href="#member" class="answer-item__name">Sara Khan</a>
                           <span class="answer-item__date">Jan 15, 2023</span>
+                        </div>
+                            </div>
                         </div>
                         <a href="#member" class="answer-reply-to">
                           <svg class="answer-reply-to__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -712,7 +742,7 @@
                   </div>
                 </template>
 
-                <div class="px-6 py-5">
+                <div class="px-4 py-5 lg:px-6">
                   <button type="button" class="btn-load-more mx-auto">
                     Load More
                     <svg

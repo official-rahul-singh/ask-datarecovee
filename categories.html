@@ -51,7 +51,7 @@
           <form
             action="#"
             role="search"
-            class="search-bar w-full items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] py-[15px] pr-2 pl-4 xl:w-[332px]"
+            class="search-bar w-full items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] lg:py-[4px] pr-2 pl-4 xl:w-[332px]"
           >
             <input
               type="search"
@@ -193,7 +193,7 @@
     <main>
 
         <section class="bg-gradient-image">
-          <div class="container py-12">
+          <div class="container py-8 md:py-12">
             <div class="page-banner">
               <span class="page-banner__icon" aria-hidden="true">
                 <svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.327 17.598v1.256a.626.626 0 0 0 .628.628h12.558a.627.627 0 0 0 .628-.628v-1.256a6.907 6.907 0 1 0-13.814 0M.676 19.482h4.503a1.9 1.9 0 0 1-.108-.628v-1.256c0-1.434.378-2.829 1.077-4.052a4.395 4.395 0 0 0-6.1 4.053v1.255a.63.63 0 0 0 .628.628m21.349-6.279c-.605 0-1.181.122-1.705.343a8.16 8.16 0 0 1 1.077 4.052v1.256q-.001.326-.109.628h4.504a.63.63 0 0 0 .628-.628v-1.256a4.395 4.395 0 0 0-4.395-4.395M6.638 11.054A3.14 3.14 0 1 0 2.24 6.571a3.14 3.14 0 0 0 4.397 4.483m17.586.006a3.14 3.14 0 1 0-4.396-4.483 3.14 3.14 0 0 0 4.396 4.483m-10.29-1.682A4.395 4.395 0 1 0 12.536.7a4.395 4.395 0 0 0 1.397 8.678" fill="#e11f26"/></svg>
@@ -203,12 +203,29 @@
           </div>
         </section>
 
-        <section class="bg-surface pb-16 pt-10">
+        <section class="bg-surface py-10 sm:py-16">
             <div class="container">
-              <div class="row">
-                <div class="col-lg-2">
-                  <aside class="space-y-4 lg:sticky lg:top-24 lg:self-start">
-                    <a href="#start-discussion" class="btn btn-fill">
+              <div class="row row-gap">
+                <div class="col-lg-2 discussions-sheet-col">
+                  <div class="discussions-sheet-overlay" aria-hidden="true"></div>
+                  <aside
+                    id="discussions-sheet"
+                    class="discussions-sheet space-y-4 lg:sticky lg:top-24 lg:self-start"
+                  >
+                    <div class="discussions-sheet__top">
+                      <span class="discussions-sheet__title">Discussions</span>
+                      <button
+                        type="button"
+                        class="discussions-sheet-close"
+                        aria-label="Close discussions menu"
+                      >
+                        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M18 6 6 18M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <a href="#start-discussion" class="btn btn-fill hidden lg:flex">
                       <svg
                         class="size-4"
                         viewBox="0 0 24 24"
@@ -222,7 +239,7 @@
                       Start a Discussion
                     </a>
       
-                    <nav class="mb-6" aria-label="Discussions">
+                    <nav class="lg:mb-6" aria-label="Discussions">
                       <ul class="flex flex-col gap-1">
                         <li>
                           <a
@@ -461,17 +478,52 @@
       
                 <div class="col-lg-7">
                    <div class="space-y-5">
-                    <form class="flex flex-col gap-3 sm:flex-row" action="#" method="get" role="search">
-                        <label class="flex flex-1 items-center gap-3 rounded-full border border-border bg-white px-4 py-3">
-                          <svg class="size-5 shrink-0 text-body" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <div class="mobile-bottom-bar lg:hidden">
+                      <button
+                        type="button"
+                        class="discussions-sheet-btn"
+                        aria-expanded="false"
+                        aria-controls="discussions-sheet"
+                      >
+                        <span class="discussions-sheet-btn__icon" aria-hidden="true">
+                          <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path d="m10 5.255 7.133 5.88q0 .012.006.037l.006.037v5.955a.76.76 0 0 1-.235.558.76.76 0 0 1-.559.236h-4.763v-4.764H8.412v4.764H3.649a.76.76 0 0 1-.559-.236.76.76 0 0 1-.236-.558v-5.955q0-.05.013-.074z"/>
+                            <path d="m.138 9.795 2.717-2.257V2.476q0-.173.111-.285a.4.4 0 0 1 .286-.112h2.381q.174 0 .286.112t.111.285v2.42l3.027-2.531q.396-.324.943-.323.546 0 .943.323l8.92 7.43a.36.36 0 0 1 .136.267.4.4 0 0 1-.087.292l-.77.918a.42.42 0 0 1-.26.136.46.46 0 0 1-.298-.087L10 4.163l-8.584 7.158a.38.38 0 0 1-.261.087h-.037a.42.42 0 0 1-.26-.136l-.77-.918a.4.4 0 0 1-.087-.292.36.36 0 0 1 .137-.267"/>
+                          </svg>
+                        </span>
+                        <span class="discussions-sheet-btn__label">All Discussions</span>
+                        <span class="discussions-sheet-btn__caret" aria-hidden="true">
+                          <svg viewBox="0 0 10 14" fill="currentColor">
+                            <path d="M5 0 10 5.5H0L5 0Z" />
+                            <path d="M5 14 0 8.5h10L5 14Z" />
+                          </svg>
+                        </span>
+                      </button>
+                      <a href="#start-discussion" class="btn btn-fill mobile-bottom-bar__ask">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M12 20h9" />
+                          <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                        </svg>
+                        Ask Question
+                      </a>
+                    </div>
+
+                    <div class="flex flex-col gap-3 sm:flex-row">
+                        <div class="flex flex-1 items-center gap-3 rounded-full border border-border bg-white px-4 py-3" role="search">
+                          <svg class="size-5 shrink-0 text-body" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.3-4.3"></path>
                           </svg>
-                          <input type="search" name="q" placeholder="Search discussions, questions, topics..." class="w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50">
-                        </label>
+                          <input
+                            type="search"
+                            placeholder="Search discussions, questions, topics..."
+                            class="categories-search__input w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50"
+                            autocomplete="off"
+                            aria-label="Search categories"
+                          >
+                        </div>
         
                         <div class="dropdown relative">
-                          <input type="hidden" name="sort" value="most-answered" class="dropdown-input">
                           <button type="button" class="btn btn-secondary dropdown-trigger" aria-expanded="false" aria-haspopup="listbox">
                             <span class="dropdown-label">Most Answered</span>
                             <svg class="dropdown-chevron size-4 shrink-0 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -502,14 +554,16 @@
                             </li>
                           </ul>
                         </div>
-                      </form>
-                      <h2 class="members-page__title">All Categories (32)</h2>
+                      </div>
+                      <h2 class="members-page__title">All Categories (<span data-categories-count>1</span>)</h2>
 
-                      <div class="categories-grid">
-                        <article class="category-card card">
-                          <div class="category-card__head">
-                            <div class="category-card__identity">
-                              <span class="category-card__icon" aria-hidden="true">
+                      <div class="categories-list space-y-5">
+                        <article class="category-card card !p-0 overflow-hidden">
+                          <div
+                            class="flex flex-col gap-3 bg-[color-mix(in_oklab,var(--color-primary)_10%,#fff)] px-[1.35rem] py-5 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+                          >
+                            <div class="flex min-w-0 items-start gap-3">
+                              <span class="category-card__icon shrink-0" aria-hidden="true">
                                 <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                                   <rect x="2" y="3" width="20" height="8" rx="1.5" />
                                   <rect x="2" y="13" width="20" height="8" rx="1.5" />
@@ -518,7 +572,7 @@
                                   <path d="M10 7h8M10 17h8" />
                                 </svg>
                               </span>
-                              <div class="category-card__titles min-w-0">
+                              <div class="min-w-0">
                                 <h3 class="category-card__title">
                                   <a href="#backup-storage">Backup &amp; Storage</a>
                                 </h3>
@@ -527,67 +581,67 @@
                                 </p>
                               </div>
                             </div>
-                            <div class="category-card__total">
+                            <div class="category-card__total hidden shrink-0 self-end text-right sm:block sm:self-start">
                               <span class="category-card__total-value">268</span>
                               <span class="category-card__total-label">Questions</span>
                             </div>
                           </div>
 
-                          <div class="category-card__body">
-                            <div class="category-card__section-head">
+                          <div class="category-card__body flex flex-col">
+                            <div class="category-card__section-head flex items-center justify-between gap-3">
                               <span>Subcategories</span>
                               <span>3 Topics</span>
                             </div>
 
-                            <ul class="category-card__subs">
-                              <li class="category-card__sub">
-                                <span class="category-card__sub-icon" aria-hidden="true">
+                            <ul class="category-card__subs m-0 list-none p-0">
+                              <li class="category-card__sub flex items-start gap-3">
+                                <span class="category-card__sub-icon shrink-0" aria-hidden="true">
                                   <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                                   </svg>
                                 </span>
-                                <div class="category-card__sub-content min-w-0">
+                                <div class="category-card__sub-content min-w-0 flex-1">
                                   <a href="#storage-devices" class="category-card__sub-title">Storage Devices</a>
                                   <p class="category-card__sub-desc">HDDs, SSDs, NAS, And External Storage</p>
                                 </div>
-                                <div class="category-card__sub-stat">
+                                <div class="category-card__sub-stat hidden shrink-0 text-right sm:block">
                                   <span class="category-card__sub-stat-value">112</span>
                                   <span class="category-card__sub-stat-label">Questions</span>
                                 </div>
                               </li>
-                              <li class="category-card__sub">
-                                <span class="category-card__sub-icon" aria-hidden="true">
+                              <li class="category-card__sub flex items-start gap-3">
+                                <span class="category-card__sub-icon shrink-0" aria-hidden="true">
                                   <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                                   </svg>
                                 </span>
-                                <div class="category-card__sub-content min-w-0">
+                                <div class="category-card__sub-content min-w-0 flex-1">
                                   <a href="#cloud-backup" class="category-card__sub-title">Cloud Backup</a>
                                   <p class="category-card__sub-desc">Online Backup Services And Cloud Storage</p>
                                 </div>
-                                <div class="category-card__sub-stat">
+                                <div class="category-card__sub-stat hidden shrink-0 text-right sm:block">
                                   <span class="category-card__sub-stat-value">112</span>
                                   <span class="category-card__sub-stat-label">Questions</span>
                                 </div>
                               </li>
-                              <li class="category-card__sub">
-                                <span class="category-card__sub-icon" aria-hidden="true">
+                              <li class="category-card__sub flex items-start gap-3">
+                                <span class="category-card__sub-icon shrink-0" aria-hidden="true">
                                   <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                                   </svg>
                                 </span>
-                                <div class="category-card__sub-content min-w-0">
+                                <div class="category-card__sub-content min-w-0 flex-1">
                                   <a href="#storage-devices-2" class="category-card__sub-title">Storage Devices</a>
                                   <p class="category-card__sub-desc">HDDs, SSDs, NAS, And External Storage</p>
                                 </div>
-                                <div class="category-card__sub-stat">
+                                <div class="category-card__sub-stat hidden shrink-0 text-right sm:block">
                                   <span class="category-card__sub-stat-value">112</span>
                                   <span class="category-card__sub-stat-label">Questions</span>
                                 </div>
                               </li>
                             </ul>
 
-                            <a href="#backup-storage" class="category-card__explore">
+                            <a href="#backup-storage" class="category-card__explore inline-flex items-center gap-1">
                               Explore Category
                               <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                                 <path d="M7 17 17 7M7 7h10v10" />

@@ -192,7 +192,7 @@
 
     <section class="home-hero bg-gradient-image">
       <div class="container py-8 sm:py-12">
-        <div class="row gap-y-8 lg:gap-y-0">
+        <div class="row row-gap lg:!gap-0">
           <div class="col-lg-6">
             <p class="mb-1 text-sm font-bold text-primary">
               Welcome To Datarecovee,
@@ -208,7 +208,7 @@
             </p>
 
             <div class="mt-6 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
-              <a href="#ask" class="btn btn-fill w-full sm:w-auto">
+              <a href="#ask" class="btn btn-fill w-auto">
                 <svg
                   class="size-4"
                   viewBox="0 0 24 24"
@@ -259,7 +259,7 @@
               </div>
             </div>
 
-            <ul class="home-hero-features mt-8 sm:mt-12">
+            <ul class="home-hero-features mt-8 hidden lg:mt-12 lg:flex">
               <li>
                 <span
                   class="icon-circle grid size-11 place-items-center rounded-full text-primary"
@@ -334,98 +334,99 @@
                     Login to your account and check out the new messages.
                   </p>
 
-                  <form class="mt-8 space-y-4" action="#" method="post">
-                    <label
-                      class="auth-field flex items-center gap-3 rounded-10 border border-[#0000001f] bg-[#F7F7F7] px-4 py-3"
-                    >
-                      <svg
-                        class="size-5 shrink-0 text-body"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
+                  <form class="mt-6 space-y-4" action="#" method="post">
+                    <div>
+                      <label
+                        for="home-login-username"
+                        class="mb-1.5 block text-sm font-semibold text-secondary"
                       >
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                        <circle cx="12" cy="7" r="4" />
-                      </svg>
-                      <input
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        autocomplete="username"
-                        class="auth-field-input w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50"
-                      />
-                    </label>
+                        Username
+                      </label>
+                      <div
+                        class="auth-field flex items-center rounded-10 border border-[#0000001f] bg-[#F7F7F7] px-4 py-3"
+                      >
+                        <input
+                          id="home-login-username"
+                          type="text"
+                          name="username"
+                          placeholder="Enter Your Username"
+                          autocomplete="username"
+                          class="auth-field-input w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50"
+                        />
+                      </div>
+                    </div>
 
-                    <label
-                      class="auth-field password-field flex items-center gap-3 rounded-10 border border-[#0000001f] bg-[#F7F7F7] px-4 py-3"
-                    >
-                      <svg
-                        class="size-5 shrink-0 text-body"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
+                    <div>
+                      <label
+                        for="home-login-password"
+                        class="mb-1.5 block text-sm font-semibold text-secondary"
                       >
-                        <rect x="3" y="11" width="18" height="11" rx="2" />
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                      </svg>
-                      <input
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        autocomplete="current-password"
-                        class="auth-field-input w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50"
-                      />
-                      <button
-                        type="button"
-                        class="password-toggle text-body transition-colors hover:text-primary"
-                        aria-label="Show password"
-                        aria-pressed="false"
+                        Password
+                      </label>
+                      <div
+                        class="auth-field password-field flex items-center gap-3 rounded-10 border border-[#0000001f] bg-[#F7F7F7] px-4 py-3"
                       >
-                        <svg
-                          class="password-icon-show size-5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          aria-hidden="true"
+                        <input
+                          id="home-login-password"
+                          type="password"
+                          name="password"
+                          placeholder="Enter Your Password"
+                          autocomplete="current-password"
+                          class="auth-field-input w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50"
+                        />
+                        <button
+                          type="button"
+                          class="password-toggle shrink-0 cursor-pointer text-body transition-colors hover:text-primary"
+                          aria-label="Show password"
+                          aria-pressed="false"
                         >
-                          <path
-                            d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                        <svg
-                          class="password-icon-hide hidden size-5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-10-8-10-8a18.45 18.45 0 0 1 5.06-5.94"
-                          />
-                          <path
-                            d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19"
-                          />
-                          <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
-                          <path d="M1 1l22 22" />
-                        </svg>
-                      </button>
-                    </label>
+                          <svg
+                            class="password-icon-show size-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                            />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                          <svg
+                            class="password-icon-hide hidden size-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-10-8-10-8a18.45 18.45 0 0 1 5.06-5.94"
+                            />
+                            <path
+                              d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19"
+                            />
+                            <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
+                            <path d="M1 1l22 22" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
 
-                    <div class="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-                      <label class="flex items-center gap-2 text-sm">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                      <label class="flex items-center gap-2 text-sm text-body">
                         <input
                           type="checkbox"
-                          class="size-4 accent-primary"
+                          name="remember"
+                          class="size-4 shrink-0 accent-primary"
                           checked
                         />
                         Remember Me
                       </label>
-                      <button type="submit" class="btn btn-fill w-full sm:w-auto">Log In</button>
+                      <button type="submit" class="btn btn-fill w-full sm:w-auto">
+                        Log In
+                      </button>
                     </div>
                   </form>
                 </div>
@@ -458,50 +459,74 @@
         <div class="mb-6 flex flex-col gap-4 sm:mb-8 lg:flex-row lg:flex-wrap lg:items-center lg:justify-between">
           <h2 class="shrink-0 text-xl font-bold sm:text-2xl">Community Groups</h2>
 
-          <div
-            class="tabs-scroll"
-            role="tablist"
-            aria-label="Community groups filter"
-          >
+          <div class="tabs-scroll-wrap" data-tabs-scroll>
             <button
               type="button"
-              role="tab"
-              aria-selected="true"
-              aria-controls="groups-grid"
-              data-tab="popular"
-              class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              class="tabs-scroll-arrow tabs-scroll-prev"
+              aria-label="Scroll tabs left"
+              hidden
             >
-              Popular
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
             </button>
+
+            <div
+              class="tabs-scroll"
+              role="tablist"
+              aria-label="Community groups filter"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="groups-grid"
+                data-tab="popular"
+                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              >
+                Popular
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="groups-grid"
+                data-tab="latest"
+                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              >
+                Latest
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="groups-grid"
+                data-tab="most-answered"
+                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              >
+                Most Answered
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="groups-grid"
+                data-tab="newest"
+                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              >
+                Newest
+              </button>
+            </div>
+
             <button
               type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="groups-grid"
-              data-tab="latest"
-              class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              class="tabs-scroll-arrow tabs-scroll-next"
+              aria-label="Scroll tabs right"
+              hidden
             >
-              Latest
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="groups-grid"
-              data-tab="most-answered"
-              class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
-            >
-              Most Answered
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="groups-grid"
-              data-tab="newest"
-              class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
-            >
-              Newest
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
             </button>
           </div>
         </div>
@@ -865,10 +890,27 @@
 
     <section class="home-discussions bg-surface py-10 sm:py-16">
       <div class="container">
-        <div class="row gap-y-8">
-          <div class="col-lg-2">
-            <aside class="home-sidebar space-y-4 lg:sticky lg:top-24 lg:self-start">
-              <a href="#start-discussion" class="btn btn-fill w-full">
+        <div class="row row-gap">
+          <div class="col-lg-2 discussions-sheet-col">
+            <div class="discussions-sheet-overlay" aria-hidden="true"></div>
+            <aside
+              id="discussions-sheet"
+              class="discussions-sheet space-y-4 lg:sticky lg:top-24 lg:self-start"
+            >
+              <div class="discussions-sheet__top">
+                <span class="discussions-sheet__title">Discussions</span>
+                <button
+                  type="button"
+                  class="discussions-sheet-close"
+                  aria-label="Close discussions menu"
+                >
+                  <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              <a href="#start-discussion" class="btn btn-fill hidden lg:flex w-full">
                 <svg
                   class="size-4"
                   viewBox="0 0 24 24"
@@ -882,8 +924,8 @@
                 Start a Discussion
               </a>
 
-              <nav class="mb-6" aria-label="Discussions">
-                <ul class="sidebar-nav-list flex flex-row gap-1 overflow-x-auto lg:flex-col lg:overflow-visible">
+              <nav class="lg:mb-6" aria-label="Discussions">
+                <ul class="sidebar-nav-list flex flex-col gap-1">
                   <li>
                     <a
                       class="menu-item menu-item-active"
@@ -1125,14 +1167,40 @@
 
           <div class="col-lg-7">
             <div class="space-y-4">
-              <form
-                class="flex flex-col gap-3 sm:flex-row"
-                action="#"
-                method="get"
-                role="search"
-              >
-                <label
+              <div class="mobile-bottom-bar lg:hidden">
+                <button
+                  type="button"
+                  class="discussions-sheet-btn"
+                  aria-expanded="false"
+                  aria-controls="discussions-sheet"
+                >
+                  <span class="discussions-sheet-btn__icon" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                      <path d="m10 5.255 7.133 5.88q0 .012.006.037l.006.037v5.955a.76.76 0 0 1-.235.558.76.76 0 0 1-.559.236h-4.763v-4.764H8.412v4.764H3.649a.76.76 0 0 1-.559-.236.76.76 0 0 1-.236-.558v-5.955q0-.05.013-.074z"/>
+                      <path d="m.138 9.795 2.717-2.257V2.476q0-.173.111-.285a.4.4 0 0 1 .286-.112h2.381q.174 0 .286.112t.111.285v2.42l3.027-2.531q.396-.324.943-.323.546 0 .943.323l8.92 7.43a.36.36 0 0 1 .136.267.4.4 0 0 1-.087.292l-.77.918a.42.42 0 0 1-.26.136.46.46 0 0 1-.298-.087L10 4.163l-8.584 7.158a.38.38 0 0 1-.261.087h-.037a.42.42 0 0 1-.26-.136l-.77-.918a.4.4 0 0 1-.087-.292.36.36 0 0 1 .137-.267"/>
+                    </svg>
+                  </span>
+                  <span class="discussions-sheet-btn__label">All Discussions</span>
+                  <span class="discussions-sheet-btn__caret" aria-hidden="true">
+                    <svg viewBox="0 0 10 14" fill="currentColor">
+                      <path d="M5 0 10 5.5H0L5 0Z" />
+                      <path d="M5 14 0 8.5h10L5 14Z" />
+                    </svg>
+                  </span>
+                </button>
+                <a href="#start-discussion" class="btn btn-fill mobile-bottom-bar__ask">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                  </svg>
+                  Ask Question
+                </a>
+              </div>
+
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <div
                   class="flex flex-1 items-center gap-3 rounded-full border border-border bg-white px-4 py-3"
+                  role="search"
                 >
                   <svg
                     class="size-5 shrink-0 text-body"
@@ -1140,25 +1208,21 @@
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    aria-hidden="true"
                   >
                     <circle cx="11" cy="11" r="8" />
                     <path d="m21 21-4.3-4.3" />
                   </svg>
                   <input
                     type="search"
-                    name="q"
                     placeholder="Search discussions, questions, topics..."
-                    class="w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50"
+                    class="discussions-search__input w-full bg-transparent text-sm text-body outline-none placeholder:text-body/50"
+                    autocomplete="off"
+                    aria-label="Search discussions"
                   />
-                </label>
+                </div>
 
                 <div class="dropdown relative">
-                  <input
-                    type="hidden"
-                    name="sort"
-                    value="most-answered"
-                    class="dropdown-input"
-                  />
                   <button
                     type="button"
                     class="btn btn-secondary dropdown-trigger"
@@ -1224,68 +1288,95 @@
                     </li>
                   </ul>
                 </div>
-              </form>
+              </div>
 
-              <div
-                class="tabs-scroll"
-                role="tablist"
-                aria-label="Discussion filters"
-              >
+              <div class="tabs-scroll-wrap" data-tabs-scroll>
                 <button
                   type="button"
-                  role="tab"
-                  aria-selected="true"
-                  data-tab="all"
-                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                  class="tabs-scroll-arrow tabs-scroll-prev"
+                  aria-label="Scroll tabs left"
+                  hidden
                 >
-                  All
+                  <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
                 </button>
+
+                <div
+                  class="tabs-scroll"
+                  role="tablist"
+                  aria-label="Discussion filters"
+                >
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    data-tab="all"
+                    class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                  >
+                    All
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-tab="open"
+                    class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                  >
+                    Recent
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-tab="solved"
+                    class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                  >
+                    Solved
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-tab="unanswered"
+                    class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                  >
+                    Unanswered
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-tab="following"
+                    class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                  >
+                    Following
+                  </button>
+                </div>
+
                 <button
                   type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-tab="open"
-                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
+                  class="tabs-scroll-arrow tabs-scroll-next"
+                  aria-label="Scroll tabs right"
+                  hidden
                 >
-                  Recent
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-tab="solved"
-                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
-                >
-                  Solved
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-tab="unanswered"
-                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
-                >
-                  Unanswered
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-tab="following"
-                  class="chip-btn rounded-full border px-4 py-2 text-sm font-medium transition"
-                >
-                  Following
+                  <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
                 </button>
               </div>
 
               <div id="recent" class="question-area space-y-4">
                 <!-- Card 1 -->
                 <article
-                  class="card flex gap-4"
+                  class="card question-card"
                   data-status="solved"
                   data-following="true"
                 >
-                  <div class="user-hover shrink-0 self-start">
+                  <div class="question-card__body">
+                    <div class="question-card__main">
+                      <div class="question-card__meta">
+                        <div class="user-hover question-card__avatar shrink-0">
                     <a
                       href="#member"
                       class="avatar"
@@ -1379,22 +1470,20 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="flex min-w-0 w-full items-start gap-4">
-                    <div class="flex-1">
-                      <div
-                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
-                      >
-                        <a
+                        <div class="question-card__meta-text">
+                          <span class="question-card__meta-primary">
+                            <a
                           href="#ai"
                           class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
                           >AI</a
                         >
-                        <a href="#member" class="font-bold"
+                            <a href="#member" class="font-bold"
                           >@Oliver Carpenter</a
                         >
-                        <span class="text-body/50">Jan 14, 2023</span>
-                        <span
+                          </span>
+                          <span class="question-card__meta-secondary">
+                            <span class="text-body/50">Jan 14, 2023</span>
+                            <span
                           class="inline-flex items-center gap-1 font-medium text-success"
                         >
                           <svg
@@ -1409,6 +1498,8 @@
                           </svg>
                           Solved
                         </span>
+                          </span>
+                        </div>
                       </div>
 
                       <a
@@ -1567,12 +1658,15 @@
 
                 <!-- Card 2 -->
                 <article
-                  class="card flex gap-4"
+                  class="card question-card"
                   data-status="solved"
                   data-following="true"
                 >
-                  <div
-                    class="user-hover shrink-0 self-start"
+                  <div class="question-card__body">
+                    <div class="question-card__main">
+                      <div class="question-card__meta">
+                        <div
+                    class="user-hover question-card__avatar shrink-0"
                     data-user-card
                     data-name="sara"
                     data-initial="S"
@@ -1593,20 +1687,18 @@
                       <span class="avatar__status"></span>
                     </a>
                   </div>
-
-                  <div class="flex min-w-0 w-full items-start gap-4">
-                    <div class="flex-1">
-                      <div
-                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
-                      >
-                        <a
+                        <div class="question-card__meta-text">
+                          <span class="question-card__meta-primary">
+                            <a
                           href="#ai"
                           class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
                           >AI</a
                         >
-                        <a href="#member" class="font-bold">@Sara Khan</a>
-                        <span class="text-body/50">Feb 02, 2024</span>
-                        <span
+                            <a href="#member" class="font-bold">@Sara Khan</a>
+                          </span>
+                          <span class="question-card__meta-secondary">
+                            <span class="text-body/50">Feb 02, 2024</span>
+                            <span
                           class="inline-flex items-center gap-1 font-medium text-success"
                         >
                           <svg
@@ -1621,6 +1713,8 @@
                           </svg>
                           Solved
                         </span>
+                          </span>
+                        </div>
                       </div>
 
                       <a
@@ -1779,12 +1873,15 @@
 
                 <!-- Card 3 -->
                 <article
-                  class="card flex gap-4"
+                  class="card question-card"
                   data-status="unanswered"
                   data-following="false"
                 >
-                  <div
-                    class="user-hover shrink-0 self-start"
+                  <div class="question-card__body">
+                    <div class="question-card__main">
+                      <div class="question-card__meta">
+                        <div
+                    class="user-hover question-card__avatar shrink-0"
                     data-user-card
                     data-name="marcus"
                     data-initial="M"
@@ -1805,19 +1902,19 @@
                       <span class="avatar__status"></span>
                     </a>
                   </div>
-
-                  <div class="flex min-w-0 w-full items-start gap-4">
-                    <div class="flex-1">
-                      <div
-                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
-                      >
-                        <a
+                        <div class="question-card__meta-text">
+                          <span class="question-card__meta-primary">
+                            <a
                           href="#ai"
                           class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
                           >AI</a
                         >
-                        <a href="#member" class="font-bold">@Marcus Reed</a>
-                        <span class="text-body/50">Mar 18, 2024</span>
+                            <a href="#member" class="font-bold">@Marcus Reed</a>
+                          </span>
+                          <span class="question-card__meta-secondary">
+                            <span class="text-body/50">Mar 18, 2024</span>
+                          </span>
+                        </div>
                       </div>
 
                       <a
@@ -1975,9 +2072,12 @@
                 </article>
 
                 <!-- Card 4 -->
-                <article class="card flex gap-4" data-status="solved">
-                  <div
-                    class="user-hover shrink-0 self-start"
+                <article class="card question-card" data-status="solved">
+                  <div class="question-card__body">
+                    <div class="question-card__main">
+                      <div class="question-card__meta">
+                        <div
+                    class="user-hover question-card__avatar shrink-0"
                     data-user-card
                     data-name="ava"
                     data-initial="A"
@@ -1998,20 +2098,18 @@
                       <span class="avatar__status"></span>
                     </a>
                   </div>
-
-                  <div class="flex min-w-0 w-full items-start gap-4">
-                    <div class="flex-1">
-                      <div
-                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
-                      >
-                        <a
+                        <div class="question-card__meta-text">
+                          <span class="question-card__meta-primary">
+                            <a
                           href="#ai"
                           class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
                           >AI</a
                         >
-                        <a href="#member" class="font-bold">@Ava Lopez</a>
-                        <span class="text-body/50">Apr 09, 2024</span>
-                        <span
+                            <a href="#member" class="font-bold">@Ava Lopez</a>
+                          </span>
+                          <span class="question-card__meta-secondary">
+                            <span class="text-body/50">Apr 09, 2024</span>
+                            <span
                           class="inline-flex items-center gap-1 font-medium text-success"
                         >
                           <svg
@@ -2026,6 +2124,8 @@
                           </svg>
                           Solved
                         </span>
+                          </span>
+                        </div>
                       </div>
 
                       <a
@@ -2185,12 +2285,15 @@
 
                 <!-- Card 5 -->
                 <article
-                  class="card flex gap-4"
+                  class="card question-card"
                   data-status="open"
                   data-following="true"
                 >
-                  <div
-                    class="user-hover shrink-0 self-start"
+                  <div class="question-card__body">
+                    <div class="question-card__main">
+                      <div class="question-card__meta">
+                        <div
+                    class="user-hover question-card__avatar shrink-0"
                     data-user-card
                     data-name="jordan"
                     data-initial="J"
@@ -2211,19 +2314,19 @@
                       <span class="avatar__status"></span>
                     </a>
                   </div>
-
-                  <div class="flex min-w-0 w-full items-start gap-4">
-                    <div class="flex-1">
-                      <div
-                        class="mb-3 flex flex-wrap items-center gap-2 text-sm"
-                      >
-                        <a
+                        <div class="question-card__meta-text">
+                          <span class="question-card__meta-primary">
+                            <a
                           href="#ai"
                           class="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#2563eb] transition-colors hover:bg-[#bfdbfe] hover:text-[#1d4ed8]"
                           >AI</a
                         >
-                        <a href="#member" class="font-bold">@Jordan Park</a>
-                        <span class="text-body/50">May 21, 2024</span>
+                            <a href="#member" class="font-bold">@Jordan Park</a>
+                          </span>
+                          <span class="question-card__meta-secondary">
+                            <span class="text-body/50">May 21, 2024</span>
+                          </span>
+                        </div>
                       </div>
 
                       <a
