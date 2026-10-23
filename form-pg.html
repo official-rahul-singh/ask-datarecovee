@@ -1,0 +1,2696 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Members | Datarecovee Community</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="assets/frontend/js/main.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header sticky top-0 z-[100]">
+      <div
+        class="container flex items-center justify-between"
+      >
+        <div
+          class="flex w-full items-center justify-between gap-6 xl:w-fit"
+        >
+          <button
+            type="button"
+            class="toggle-slide-btn block xl:hidden"
+            aria-label="Open menu"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 512 512"
+              fill="#000"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m64 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32m384 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"
+              />
+            </svg>
+          </button>
+
+          <a href="index.html" class="logo shrink-0">
+            <img
+              src="https://ask.datarecovee.com/storage/branding/logo/logo.svg"
+              alt="Data Recovee Community"
+              class="img-fluid"
+            />
+          </a>
+
+          <form
+            action="#"
+            role="search"
+            class="search-bar w-full items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] lg:py-[4px] pr-2 pl-4 xl:w-[332px]"
+          >
+            <input
+              type="search"
+              name="s"
+              value=""
+              placeholder="Have A Questions? Ask..."
+              class="w-full text-sm text-gray-500 outline-none placeholder:text-gray-800"
+              required
+            />
+            <button
+              type="submit"
+              class="btn btn-secondary size-8 shrink-0 !p-0"
+              aria-label="Search"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="#fff"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </button>
+          </form>
+
+          <button
+            type="button"
+            class="search-btn shrink-0 xl:hidden"
+            aria-label="Open search"
+            aria-expanded="false"
+          >
+            <span class="search-btn-icon search-btn-icon--open" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </span>
+            <span class="search-btn-icon search-btn-icon--close hidden" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="header-slide-overlay" aria-hidden="true"></div>
+        <div class="header-slide" id="header-slide">
+          <div class="header-slide-top">
+            <a href="index.html" class="logo shrink-0">
+              <img
+                src="https://ask.datarecovee.com/storage/branding/logo/logo.svg"
+                alt="Data Recovee Community"
+                class="img-fluid"
+              />
+            </a>
+            <button
+              type="button"
+              class="header-slide-close"
+              aria-label="Close menu"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <nav class="nav-head" aria-label="Primary">
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="https://datarecovee.com/about-us/">About Us</a>
+              </li>
+              <li>
+                <a href="https://datarecovee.com/knowledge-base/"
+                  >Knowledge Base</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header-slide-actions flex gap-3">
+            <button
+              type="button"
+              class="openSignup cursor-pointer rounded-full bg-gray-100 px-5 py-2 text-[15px] font-medium text-gray-700 transition-colors hover:bg-gray-200"
+            >
+              Sign Up
+            </button>
+            <button type="button" class="openLogin btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+                />
+              </svg>
+              Log In
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+        <section class="bg-gradient-image">
+          <div class="container py-8 md:py-12">
+            <div class="page-banner page-banner--with-crumbs">
+              <div class="page-banner__row">
+                <span class="page-banner__icon" aria-hidden="true">
+                  <svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.327 17.598v1.256a.626.626 0 0 0 .628.628h12.558a.627.627 0 0 0 .628-.628v-1.256a6.907 6.907 0 1 0-13.814 0M.676 19.482h4.503a1.9 1.9 0 0 1-.108-.628v-1.256c0-1.434.378-2.829 1.077-4.052a4.395 4.395 0 0 0-6.1 4.053v1.255a.63.63 0 0 0 .628.628m21.349-6.279c-.605 0-1.181.122-1.705.343a8.16 8.16 0 0 1 1.077 4.052v1.256q-.001.326-.109.628h4.504a.63.63 0 0 0 .628-.628v-1.256a4.395 4.395 0 0 0-4.395-4.395M6.638 11.054A3.14 3.14 0 1 0 2.24 6.571a3.14 3.14 0 0 0 4.397 4.483m17.586.006a3.14 3.14 0 1 0-4.396-4.483 3.14 3.14 0 0 0 4.396 4.483m-10.29-1.682A4.395 4.395 0 1 0 12.536.7a4.395 4.395 0 0 0 1.397 8.678" fill="#e11f26"/></svg>
+                </span>
+                <h1 class="page-banner__title">Form Field</h1>
+              </div>
+              <ul
+                class="p-breadcrumbs"
+                itemscope
+                itemtype="https://schema.org/BreadcrumbList"
+              >
+                <li
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="https://schema.org/ListItem"
+                >
+                  <a href="index.html" itemprop="item">
+                    <span itemprop="name">Community</span>
+                  </a>
+                  <meta itemprop="position" content="1" />
+                </li>
+                <li
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="https://schema.org/ListItem"
+                >
+                  <span itemprop="name">Form Field</span>
+                  <meta itemprop="position" content="2" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-surface py-10 sm:py-16">
+            <div class="container">
+              <div class="row row-gap">
+                <div class="col-lg-2 discussions-sheet-col">
+                  <div class="discussions-sheet-overlay" aria-hidden="true"></div>
+                  <aside
+                    id="discussions-sheet"
+                    class="discussions-sheet space-y-4 lg:sticky lg:top-24 lg:self-start"
+                  >
+                    <div class="discussions-sheet__top">
+                      <span class="discussions-sheet__title">Discussions</span>
+                      <button
+                        type="button"
+                        class="discussions-sheet-close"
+                        aria-label="Close discussions menu"
+                      >
+                        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M18 6 6 18M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <a href="#start-discussion" class="btn btn-fill hidden lg:flex">
+                      <svg
+                        class="size-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M12 20h9" />
+                        <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                      </svg>
+                      Start a Discussion
+                    </a>
+      
+                    <nav class="mb-6" aria-label="Discussions">
+                      <ul class="flex flex-col gap-1">
+                        <li>
+                          <a
+                            class="menu-item menu-item-active"
+                            href="#all"
+                            aria-current="page"
+                          >
+                            <span class="menu-item-icon">
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g clip-path="url(#home-icon)" fill="currentColor">
+                                  <path
+                                    d="m10 5.255 7.133 5.88q0 .012.006.037l.006.037v5.955a.76.76 0 0 1-.235.558.76.76 0 0 1-.559.236h-4.763v-4.764H8.412v4.764H3.649a.76.76 0 0 1-.559-.236.76.76 0 0 1-.236-.558v-5.955q0-.05.013-.074z"
+                                  />
+                                  <path
+                                    d="m.138 9.795 2.717-2.257V2.476q0-.173.111-.285a.4.4 0 0 1 .286-.112h2.381q.174 0 .286.112t.111.285v2.42l3.027-2.531q.396-.324.943-.323.546 0 .943.323l8.92 7.43a.36.36 0 0 1 .136.267.4.4 0 0 1-.087.292l-.77.918a.42.42 0 0 1-.26.136.46.46 0 0 1-.298-.087L10 4.163l-8.584 7.158a.38.38 0 0 1-.261.087h-.037a.42.42 0 0 1-.26-.136l-.77-.918a.4.4 0 0 1-.087-.292.36.36 0 0 1 .137-.267"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="home-icon">
+                                    <path fill="#fff" d="M20 0H0v20h20z" />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                            </span>
+                            <span class="menu-item-text label">All Discussions</span>
+                          </a>
+                        </li>
+                        <li class="dropdown dropdown-accordion">
+                          <div
+                            class="menu-item dropdown-trigger"
+                            role="button"
+                            tabindex="0"
+                            aria-expanded="false"
+                            aria-controls="categories-menu"
+                          >
+                            <span class="menu-item-icon">
+                              <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7.59 1.38v4.83a1.38 1.38 0 0 1-1.38 1.38H1.38A1.38 1.38 0 0 1 0 6.21V1.38A1.38 1.38 0 0 1 1.38 0h4.83a1.38 1.38 0 0 1 1.38 1.38M15.87 0h-4.83a1.38 1.38 0 0 0-1.38 1.38v4.83a1.38 1.38 0 0 0 1.38 1.38h4.83a1.38 1.38 0 0 0 1.38-1.38V1.38A1.38 1.38 0 0 0 15.87 0M6.21 9.66H1.38A1.38 1.38 0 0 0 0 11.04v4.83a1.38 1.38 0 0 0 1.38 1.38h4.83a1.38 1.38 0 0 0 1.38-1.38v-4.83a1.38 1.38 0 0 0-1.38-1.38m7.245 0a3.795 3.795 0 1 0 0 7.59 3.795 3.795 0 0 0 0-7.59"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </span>
+                            <span class="menu-item-text label">Categories</span>
+                            <svg
+                              class="dropdown-chevron ml-auto size-3.5 shrink-0 transition-transform"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <path d="m6 9 6 6 6-6" />
+                            </svg>
+                          </div>
+                          <ul
+                            id="categories-menu"
+                            class="dropdown-menu menu-submenu hidden"
+                            role="list"
+                          >
+                            <li>
+                              <a
+                                class="menu-subitem"
+                                href="#backup-storage"
+                                data-value="backup"
+                                >Backup &amp; Storage</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="menu-subitem"
+                                href="#data-recovery"
+                                data-value="recovery"
+                                >Data Recovery</a
+                              >
+                            </li>
+                            <li>
+                              <a class="menu-subitem" href="#mac" data-value="mac"
+                                >Mac</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="menu-subitem"
+                                href="#iphone"
+                                data-value="iphone"
+                                >iPhone</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="menu-subitem"
+                                href="#windows"
+                                data-value="windows"
+                                >Windows</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a class="menu-item" href="#unanswered">
+                            <span class="menu-item-icon">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M12.031 6.227a1.935 1.935 0 0 1-2.738 0 1.939 1.939 0 0 1 0-2.741 1.934 1.934 0 0 1 2.738 0 1.939 1.939 0 0 1 0 2.741M14.591 0H8.088c-.514 0-.607.224-1.096.736L2.152 5.562l7.814 7.814 4.854-4.839c.411-.411.703-.616.703-1.128V.926A.922.922 0 0 0 14.593 0m-4.614 4.171a.968.968 0 1 0 1.37 1.369.968.968 0 0 0-1.37-1.369M.589 7.119a2 2 0 0 0 0 2.836l4.98 4.967a2.018 2.018 0 0 0 2.845 0l.862-.86-7.814-7.814z"
+                                />
+                              </svg>
+                            </span>
+                            <span class="menu-item-text label">Unanswered</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menu-item" href="#solved">
+                            <span class="menu-item-icon">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 6.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6m6 5a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v3h12z"
+                                />
+                              </svg>
+                            </span>
+                            <span class="menu-item-text label">Solved</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menu-item" href="#guides">
+                            <span class="menu-item-icon">
+                              <svg
+                                width="15"
+                                height="15"
+                                viewBox="0 0 15 15"
+                                fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M14.582 6.729H10.62a3.38 3.38 0 0 0-2.765-2.766V0a7.314 7.314 0 0 1 6.728 6.729m0 1.125a7.31 7.31 0 0 1-6.728 6.728V10.62a3.38 3.38 0 0 0 2.765-2.765zm-14.58 0h3.963a3.38 3.38 0 0 0 2.764 2.765v3.963A7.31 7.31 0 0 1 0 7.854zm0-1.125A7.314 7.314 0 0 1 6.728 0v3.963A3.38 3.38 0 0 0 3.963 6.73H0z"
+                                />
+                              </svg>
+                            </span>
+                            <span class="menu-item-text label"
+                              >Guides &amp; Tutorials</span
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menu-item" href="#support">
+                            <span class="menu-item-icon">
+                              <svg
+                                width="15"
+                                height="15"
+                                viewBox="0 0 15 15"
+                                fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M14.582 6.729H10.62a3.38 3.38 0 0 0-2.765-2.766V0a7.314 7.314 0 0 1 6.728 6.729m0 1.125a7.31 7.31 0 0 1-6.728 6.728V10.62a3.38 3.38 0 0 0 2.765-2.765zm-14.58 0h3.963a3.38 3.38 0 0 0 2.764 2.765v3.963A7.31 7.31 0 0 1 0 7.854zm0-1.125A7.314 7.314 0 0 1 6.728 0v3.963A3.38 3.38 0 0 0 3.963 6.73H0z"
+                                />
+                              </svg>
+                            </span>
+                            <span class="menu-item-text label">Product Support</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menu-item" href="#news">
+                            <span class="menu-item-icon">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M4 14h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v11a1 1 0 0 1-1 1Zm0 0a1 1 0 0 1-1-1V7"
+                                />
+                                <path d="M10 9H6M9 11H6M6 4h5v2H6V4Z" />
+                              </svg>
+                            </span>
+                            <span class="menu-item-text label"
+                              >News &amp; Updates</span
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menu-item" href="#rules">
+                            <span class="menu-item-icon">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 2H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5L9 2Z"
+                                />
+                                <path d="M9 2v3h3M10 8H6M10 11H6M7 5H6" />
+                              </svg>
+                            </span>
+                            <span class="menu-item-text label">Community Rules</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </aside>
+                </div>
+      
+                <div class="col-lg-7">
+                  <div class="space-y-5">
+                    <div class="mobile-bottom-bar lg:hidden">
+                      <button
+                        type="button"
+                        class="discussions-sheet-btn"
+                        aria-expanded="false"
+                        aria-controls="discussions-sheet"
+                      >
+                        <span class="discussions-sheet-btn__icon" aria-hidden="true">
+                          <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path d="m10 5.255 7.133 5.88q0 .012.006.037l.006.037v5.955a.76.76 0 0 1-.235.558.76.76 0 0 1-.559.236h-4.763v-4.764H8.412v4.764H3.649a.76.76 0 0 1-.559-.236.76.76 0 0 1-.236-.558v-5.955q0-.05.013-.074z" />
+                            <path d="m.138 9.795 2.717-2.257V2.476q0-.173.111-.285a.4.4 0 0 1 .286-.112h2.381q.174 0 .286.112t.111.285v2.42l3.027-2.531q.396-.324.943-.323.546 0 .943.323l8.92 7.43a.36.36 0 0 1 .136.267.4.4 0 0 1-.087.292l-.77.918a.42.42 0 0 1-.26.136.46.46 0 0 1-.298-.087L10 4.163l-8.584 7.158a.38.38 0 0 1-.261.087h-.037a.42.42 0 0 1-.26-.136l-.77-.918a.4.4 0 0 1-.087-.292.36.36 0 0 1 .137-.267" />
+                          </svg>
+                        </span>
+                        <span class="discussions-sheet-btn__label">All Discussions</span>
+                        <span class="discussions-sheet-btn__caret" aria-hidden="true">
+                          <svg viewBox="0 0 10 14" fill="currentColor">
+                            <path d="M5 0 10 5.5H0L5 0Z" />
+                            <path d="M5 14 0 8.5h10L5 14Z" />
+                          </svg>
+                        </span>
+                      </button>
+                      <a href="#start-discussion" class="btn btn-fill mobile-bottom-bar__ask">
+                        <span class="btn__ripple" aria-hidden="true"></span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M12 20h9" />
+                          <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                        </svg>
+                        Ask Question
+                      </a>
+                    </div>
+
+                    <div class="card flex flex-col gap-5">
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-input"
+                          class="text-sm font-semibold"
+                          >Input</label
+                        >
+                        <input
+                          id="form-input"
+                          type="text"
+                          placeholder="Enter your name..."
+                          class="w-full rounded-10 border border-border bg-transparent px-4 py-3 text-sm text-body outline-none transition placeholder:text-body/45 focus:border-primary"
+                        />
+                      </div>
+
+                      <!-- Input error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-input-error"
+                          class="text-sm font-semibold"
+                          >Input</label
+                        >
+                        <input
+                          id="form-input-error"
+                          type="text"
+                          value="A"
+                          aria-invalid="true"
+                          aria-describedby="form-input-error-msg"
+                          class="is-error w-full rounded-10 border border-primary bg-transparent px-4 py-3 text-sm text-body outline-none transition focus:border-primary"
+                        />
+                        <p id="form-input-error-msg" class="form-msg--error">
+                          Name must be at least 2 characters.
+                        </p>
+                      </div>
+
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-email"
+                          class="text-sm font-semibold"
+                          >Input with Placeholder</label
+                        >
+                        <input
+                          id="form-email"
+                          type="email"
+                          placeholder="Enter your email..."
+                          class="w-full rounded-10 border border-border bg-transparent px-4 py-3 text-sm text-body outline-none transition placeholder:text-body/45 focus:border-primary"
+                        />
+                      </div>
+
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-select"
+                          class="text-sm font-semibold"
+                          >Select Input</label
+                        >
+                        <div class="relative">
+                          <select
+                            id="form-select"
+                            class="form-select h-[46px] w-full cursor-pointer appearance-none rounded-10 border border-border bg-white px-4 pr-10 text-sm leading-none outline-none transition focus:border-primary"
+                          >
+                            <option value="" selected disabled>
+                              Select Option
+                            </option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                          </select>
+                          <span
+                            class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-body"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path d="m6 9 6 6 6-6" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Select error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-select-error"
+                          class="text-sm font-semibold"
+                          >Select Input</label
+                        >
+                        <div class="relative">
+                          <select
+                            id="form-select-error"
+                            aria-invalid="true"
+                            aria-describedby="form-select-error-msg"
+                            class="form-select is-error h-[46px] w-full cursor-pointer appearance-none rounded-10 border border-primary bg-white px-4 pr-10 text-sm leading-none outline-none transition focus:border-primary"
+                          >
+                            <option value="" selected disabled>
+                              Select Option
+                            </option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                          </select>
+                          <span
+                            class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-primary"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path d="m6 9 6 6 6-6" />
+                            </svg>
+                          </span>
+                        </div>
+                        <p id="form-select-error-msg" class="form-msg--error">
+                          Please select an option.
+                        </p>
+                      </div>
+
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-password"
+                          class="text-sm font-semibold"
+                          >Password Input</label
+                        >
+                        <div class="password-field relative">
+                          <input
+                            id="form-password"
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="new-password"
+                            class="w-full rounded-10 border border-border bg-transparent px-4 py-3 pr-11 text-sm text-body outline-none transition placeholder:text-body/45 focus:border-primary"
+                          />
+                          <button
+                            type="button"
+                            class="password-toggle absolute top-1/2 right-3 -translate-y-1/2 text-body transition-colors hover:text-primary"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                          >
+                            <svg
+                              class="password-icon-show size-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                              />
+                              <circle cx="12" cy="12" r="3" />
+                            </svg>
+                            <svg
+                              class="password-icon-hide hidden size-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-10-8-10-8a18.45 18.45 0 0 1 5.06-5.94"
+                              />
+                              <path
+                                d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19"
+                              />
+                              <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
+                              <path d="M1 1l22 22" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Password error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-password-error"
+                          class="text-sm font-semibold"
+                          >Password Input</label
+                        >
+                        <div class="password-field relative">
+                          <input
+                            id="form-password-error"
+                            type="password"
+                            name="password-error"
+                            value="123"
+                            aria-invalid="true"
+                            aria-describedby="form-password-error-msg"
+                            autocomplete="new-password"
+                            class="is-error w-full rounded-10 border border-primary bg-transparent px-4 py-3 pr-11 text-sm text-body outline-none transition focus:border-primary"
+                          />
+                          <button
+                            type="button"
+                            class="password-toggle absolute top-1/2 right-3 -translate-y-1/2 text-primary transition-colors hover:text-primary"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                          >
+                            <svg
+                              class="password-icon-show size-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                              />
+                              <circle cx="12" cy="12" r="3" />
+                            </svg>
+                            <svg
+                              class="password-icon-hide hidden size-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-10-8-10-8a18.45 18.45 0 0 1 5.06-5.94"
+                              />
+                              <path
+                                d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19"
+                              />
+                              <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
+                              <path d="M1 1l22 22" />
+                            </svg>
+                          </button>
+                        </div>
+                        <p id="form-password-error-msg" class="form-msg--error">
+                          Password must be at least 8 characters.
+                        </p>
+                      </div>
+
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-date"
+                          class="text-sm font-semibold"
+                          >Date Picker Input</label
+                        >
+                        <div class="relative" data-datepicker>
+                          <input
+                            id="form-date"
+                            type="text"
+                            data-input
+                            placeholder="Select date"
+                            class="w-full rounded-10 border border-border bg-transparent px-4 py-3 pr-11 text-sm text-body outline-none transition placeholder:text-body/45 focus:border-primary"
+                            readonly
+                          />
+                          <button
+                            type="button"
+                            data-toggle
+                            class="absolute top-1/2 right-3 -translate-y-1/2 text-body transition-colors hover:text-primary"
+                            aria-label="Open calendar"
+                          >
+                            <svg
+                              class="size-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <rect
+                                x="3"
+                                y="4"
+                                width="18"
+                                height="18"
+                                rx="2"
+                              />
+                              <path d="M16 2v4M8 2v4M3 10h18" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Date error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-date-error"
+                          class="text-sm font-semibold"
+                          >Date Picker Input</label
+                        >
+                        <div class="relative" data-datepicker>
+                          <input
+                            id="form-date-error"
+                            type="text"
+                            data-input
+                            placeholder="Select date"
+                            aria-invalid="true"
+                            aria-describedby="form-date-error-msg"
+                            class="is-error w-full rounded-10 border border-primary bg-transparent px-4 py-3 pr-11 text-sm text-body outline-none transition focus:border-primary"
+                            readonly
+                          />
+                          <button
+                            type="button"
+                            data-toggle
+                            class="absolute top-1/2 right-3 -translate-y-1/2 text-primary transition-colors hover:text-primary"
+                            aria-label="Open calendar"
+                          >
+                            <svg
+                              class="size-5"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <rect
+                                x="3"
+                                y="4"
+                                width="18"
+                                height="18"
+                                rx="2"
+                              />
+                              <path d="M16 2v4M8 2v4M3 10h18" />
+                            </svg>
+                          </button>
+                        </div>
+                        <p id="form-date-error-msg" class="form-msg--error">
+                          Please select a valid date.
+                        </p>
+                      </div>
+
+                      <!-- Email with icon prefix -->
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-email-icon"
+                          class="text-sm font-semibold"
+                          >Email</label
+                        >
+                        <div
+                          class="flex overflow-hidden rounded-10 border border-border transition focus-within:border-primary"
+                        >
+                          <span
+                            class="grid shrink-0 place-items-center border-r border-border px-3 text-body"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <rect
+                                x="2"
+                                y="4"
+                                width="20"
+                                height="16"
+                                rx="2"
+                              />
+                              <path d="m22 7-10 7L2 7" />
+                            </svg>
+                          </span>
+                          <input
+                            id="form-email-icon"
+                            type="email"
+                            placeholder="info@gmail.com"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none placeholder:text-body/45"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Email success -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-email-success"
+                          class="text-sm font-semibold"
+                          >Email</label
+                        >
+                        <div
+                          class="flex overflow-hidden rounded-10 border border-success transition focus-within:border-success"
+                        >
+                          <span
+                            class="grid shrink-0 place-items-center border-r border-success/40 px-3 text-success"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <rect
+                                x="2"
+                                y="4"
+                                width="20"
+                                height="16"
+                                rx="2"
+                              />
+                              <path d="m22 7-10 7L2 7" />
+                            </svg>
+                          </span>
+                          <input
+                            id="form-email-success"
+                            type="email"
+                            value="info@gmail.com"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none"
+                          />
+                          <span
+                            class="grid shrink-0 place-items-center px-3 text-success"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                          </span>
+                        </div>
+                        <p class="form-msg--success">Email looks good.</p>
+                      </div>
+
+                      <!-- Email error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-email-error"
+                          class="text-sm font-semibold"
+                          >Email</label
+                        >
+                        <div
+                          class="flex overflow-hidden rounded-10 border border-primary transition focus-within:border-primary"
+                        >
+                          <span
+                            class="grid shrink-0 place-items-center border-r border-primary/40 px-3 text-primary"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <rect
+                                x="2"
+                                y="4"
+                                width="20"
+                                height="16"
+                                rx="2"
+                              />
+                              <path d="m22 7-10 7L2 7" />
+                            </svg>
+                          </span>
+                          <input
+                            id="form-email-error"
+                            type="email"
+                            value="info@"
+                            aria-invalid="true"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none"
+                          />
+                          <span
+                            class="grid shrink-0 place-items-center px-3 text-primary"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <circle cx="12" cy="12" r="9" />
+                              <path d="M12 8v4M12 16h.01" />
+                            </svg>
+                          </span>
+                        </div>
+                        <p class="form-msg--error">
+                          Please enter a valid email address.
+                        </p>
+                      </div>
+
+                      <!-- Phone — country code left -->
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-phone-left"
+                          class="text-sm font-semibold"
+                          >Phone</label
+                        >
+                        <div
+                          class="flex overflow-hidden rounded-10 border border-border transition focus-within:border-primary"
+                        >
+                          <div class="relative shrink-0 border-r border-border">
+                            <select
+                              aria-label="Country code"
+                              class="form-select h-full cursor-pointer appearance-none bg-transparent py-3 pr-8 pl-3 text-sm text-body outline-none"
+                            >
+                              <option value="US" selected>US</option>
+                              <option value="IN">IN</option>
+                              <option value="UK">UK</option>
+                              <option value="AE">AE</option>
+                            </select>
+                            <span
+                              class="pointer-events-none absolute top-1/2 right-2 -translate-y-1/2 text-body"
+                              aria-hidden="true"
+                            >
+                              <svg
+                                class="size-3.5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                              >
+                                <path d="m6 9 6 6 6-6" />
+                              </svg>
+                            </span>
+                          </div>
+                          <input
+                            id="form-phone-left"
+                            type="tel"
+                            placeholder="+1 (555) 000-0000"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none placeholder:text-body/45"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Phone error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-phone-error"
+                          class="text-sm font-semibold"
+                          >Phone</label
+                        >
+                        <div
+                          class="form-control-wrap is-error flex overflow-hidden rounded-10 border border-primary transition focus-within:border-primary"
+                        >
+                          <div class="relative shrink-0 border-r border-primary/40">
+                            <select
+                              aria-label="Country code"
+                              class="form-select h-full cursor-pointer appearance-none bg-transparent py-3 pr-8 pl-3 text-sm text-body outline-none"
+                            >
+                              <option value="US" selected>US</option>
+                              <option value="IN">IN</option>
+                              <option value="UK">UK</option>
+                              <option value="AE">AE</option>
+                            </select>
+                            <span
+                              class="pointer-events-none absolute top-1/2 right-2 -translate-y-1/2 text-primary"
+                              aria-hidden="true"
+                            >
+                              <svg
+                                class="size-3.5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                              >
+                                <path d="m6 9 6 6 6-6" />
+                              </svg>
+                            </span>
+                          </div>
+                          <input
+                            id="form-phone-error"
+                            type="tel"
+                            value="555"
+                            aria-invalid="true"
+                            aria-describedby="form-phone-error-msg"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none"
+                          />
+                        </div>
+                        <p id="form-phone-error-msg" class="form-msg--error">
+                          Please enter a valid phone number.
+                        </p>
+                      </div>
+
+                      <!-- Phone — country code right -->
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-phone-right"
+                          class="text-sm font-semibold"
+                          >Phone</label
+                        >
+                        <div
+                          class="flex overflow-hidden rounded-10 border border-border transition focus-within:border-primary"
+                        >
+                          <input
+                            id="form-phone-right"
+                            type="tel"
+                            placeholder="+1 (555) 000-0000"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none placeholder:text-body/45"
+                          />
+                          <div class="relative shrink-0 border-l border-border">
+                            <select
+                              aria-label="Country code"
+                              class="form-select h-full cursor-pointer appearance-none bg-transparent py-3 pr-8 pl-3 text-sm text-body outline-none"
+                            >
+                              <option value="US" selected>US</option>
+                              <option value="IN">IN</option>
+                              <option value="UK">UK</option>
+                              <option value="AE">AE</option>
+                            </select>
+                            <span
+                              class="pointer-events-none absolute top-1/2 right-2 -translate-y-1/2 text-body"
+                              aria-hidden="true"
+                            >
+                              <svg
+                                class="size-3.5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                              >
+                                <path d="m6 9 6 6 6-6" />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- URL with http:// prefix -->
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-url"
+                          class="text-sm font-semibold"
+                          >URL</label
+                        >
+                        <div
+                          class="flex overflow-hidden rounded-10 border border-border transition focus-within:border-primary"
+                        >
+                          <span
+                            class="shrink-0 border-r border-border px-3 py-3 text-sm text-body/60"
+                            >http://</span
+                          >
+                          <input
+                            id="form-url"
+                            type="text"
+                            placeholder="www.tailadmin.com"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none placeholder:text-body/45"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- URL error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-url-error"
+                          class="text-sm font-semibold"
+                          >URL</label
+                        >
+                        <div
+                          class="form-control-wrap is-error flex overflow-hidden rounded-10 border border-primary transition focus-within:border-primary"
+                        >
+                          <span
+                            class="shrink-0 border-r border-primary/40 px-3 py-3 text-sm text-primary"
+                            >http://</span
+                          >
+                          <input
+                            id="form-url-error"
+                            type="text"
+                            value="not a url"
+                            aria-invalid="true"
+                            aria-describedby="form-url-error-msg"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none"
+                          />
+                        </div>
+                        <p id="form-url-error-msg" class="form-msg--error">
+                          Please enter a valid URL.
+                        </p>
+                      </div>
+
+                      <!-- Website with Copy action -->
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-website"
+                          class="text-sm font-semibold"
+                          >Website</label
+                        >
+                        <div
+                          class="flex overflow-hidden rounded-10 border border-border transition focus-within:border-primary"
+                        >
+                          <input
+                            id="form-website"
+                            type="text"
+                            value="www.tailadmin.com"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none placeholder:text-body/45"
+                          />
+                          <button
+                            type="button"
+                            data-copy="#form-website"
+                            class="inline-flex shrink-0 items-center gap-1.5 border-l border-border px-3 py-3 text-sm font-medium text-body transition-colors hover:bg-surface hover:text-primary"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <rect
+                                x="9"
+                                y="9"
+                                width="13"
+                                height="13"
+                                rx="2"
+                              />
+                              <path
+                                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                              />
+                            </svg>
+                            <span data-copy-label>Copy</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Website error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-website-error"
+                          class="text-sm font-semibold"
+                          >Website</label
+                        >
+                        <div
+                          class="form-control-wrap is-error flex overflow-hidden rounded-10 border border-primary transition focus-within:border-primary"
+                        >
+                          <input
+                            id="form-website-error"
+                            type="text"
+                            value="invalid"
+                            aria-invalid="true"
+                            aria-describedby="form-website-error-msg"
+                            class="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-body outline-none"
+                          />
+                          <button
+                            type="button"
+                            data-copy="#form-website-error"
+                            class="inline-flex shrink-0 items-center gap-1.5 border-l border-primary/40 px-3 py-3 text-sm font-medium text-primary transition-colors hover:bg-surface"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              aria-hidden="true"
+                            >
+                              <rect
+                                x="9"
+                                y="9"
+                                width="13"
+                                height="13"
+                                rx="2"
+                              />
+                              <path
+                                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                              />
+                            </svg>
+                            <span data-copy-label>Copy</span>
+                          </button>
+                        </div>
+                        <p id="form-website-error-msg" class="form-msg--error">
+                          Please enter a valid website.
+                        </p>
+                      </div>
+
+                      <!-- Upload file -->
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-file"
+                          class="text-sm font-semibold"
+                          >Upload file</label
+                        >
+                        <label
+                          class="flex cursor-pointer overflow-hidden rounded-10 border border-border transition hover:border-primary/50 has-[:focus-visible]:border-primary"
+                        >
+                          <span
+                            class="shrink-0 border-r border-border bg-surface px-4 py-3 text-sm font-medium text-body"
+                            >Choose File</span
+                          >
+                          <span
+                            data-file-name
+                            class="min-w-0 flex-1 truncate px-4 py-3 text-sm text-body/45"
+                            >No file chosen</span
+                          >
+                          <input
+                            id="form-file"
+                            type="file"
+                            data-file-input
+                            class="sr-only"
+                          />
+                        </label>
+                      </div>
+
+                      <!-- Upload file error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <label
+                          for="form-file-error"
+                          class="text-sm font-semibold"
+                          >Upload file</label
+                        >
+                        <label
+                          class="form-control-wrap is-error flex cursor-pointer overflow-hidden rounded-10 border border-primary transition"
+                        >
+                          <span
+                            class="shrink-0 border-r border-primary/40 bg-surface px-4 py-3 text-sm font-medium text-primary"
+                            >Choose File</span
+                          >
+                          <span
+                            class="min-w-0 flex-1 truncate px-4 py-3 text-sm text-primary/70"
+                            >No file chosen</span
+                          >
+                          <input
+                            id="form-file-error"
+                            type="file"
+                            aria-invalid="true"
+                            aria-describedby="form-file-error-msg"
+                            class="sr-only"
+                          />
+                        </label>
+                        <p id="form-file-error-msg" class="form-msg--error">
+                          Please choose a file to upload.
+                        </p>
+                      </div>
+
+                      <!-- Select Input -->
+                      <div class="flex flex-col gap-2 mb-4">
+                        <label
+                          for="form-select-basic"
+                          class="text-sm font-semibold"
+                          >Select Input</label
+                        >
+                        <div class="relative">
+                          <select
+                            id="form-select-basic"
+                            class="form-select h-[46px] w-full cursor-pointer appearance-none rounded-10 border border-border bg-white px-4 pr-10 text-sm leading-none outline-none transition focus:border-primary"
+                          >
+                            <option value="" selected disabled>
+                              Select Option
+                            </option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                          </select>
+                          <span
+                            class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-body"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path d="m6 9 6 6 6-6" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Multiple Select Options -->
+                      <div class="flex flex-col gap-2 mb-4" data-multi-select>
+                        <span class="text-sm font-semibold"
+                          >Multiple Select Options</span
+                        >
+                        <div class="relative">
+                          <button
+                            type="button"
+                            data-multi-trigger
+                            class="flex min-h-[46px] w-full items-center gap-2 rounded-10 border border-border bg-white px-3 py-2 pr-10 text-left transition focus:border-primary focus:outline-none"
+                            aria-haspopup="listbox"
+                            aria-expanded="false"
+                          >
+                            <span
+                              data-multi-chips
+                              class="flex min-w-0 flex-1 flex-wrap items-center gap-1.5"
+                            ></span>
+                            <span
+                              data-multi-placeholder
+                              class="text-sm text-body/45"
+                              >Select options</span
+                            >
+                          </button>
+                          <span
+                            class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-body transition"
+                            data-multi-chevron
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path d="m6 9 6 6 6-6" />
+                            </svg>
+                          </span>
+                          <ul
+                            data-multi-menu
+                            class="absolute left-0 right-0 z-20 mt-2 hidden overflow-hidden rounded-10 border border-border bg-white py-1 shadow-lg"
+                            role="listbox"
+                            aria-multiselectable="true"
+                          >
+                            <li>
+                              <button
+                                type="button"
+                                class="dropdown-option"
+                                role="option"
+                                data-multi-option
+                                data-value="1"
+                                data-label="Option 1"
+                                aria-selected="true"
+                              >
+                                Option 1
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                class="dropdown-option"
+                                role="option"
+                                data-multi-option
+                                data-value="2"
+                                data-label="Option 2"
+                                aria-selected="false"
+                              >
+                                Option 2
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                class="dropdown-option"
+                                role="option"
+                                data-multi-option
+                                data-value="3"
+                                data-label="Option 3"
+                                aria-selected="false"
+                              >
+                                Option 3
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <!-- Multiple Select error -->
+                      <div class="flex flex-col gap-1.5 mb-4">
+                        <span class="text-sm font-semibold"
+                          >Multiple Select Options</span
+                        >
+                        <div class="relative">
+                          <button
+                            type="button"
+                            class="is-error flex min-h-[46px] w-full items-center gap-2 rounded-10 border border-primary bg-white px-3 py-2 pr-10 text-left transition focus:border-primary focus:outline-none"
+                            aria-invalid="true"
+                            aria-describedby="form-multi-error-msg"
+                          >
+                            <span
+                              class="text-sm text-body/45"
+                              >Select options</span
+                            >
+                          </button>
+                          <span
+                            class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-primary"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path d="m6 9 6 6 6-6" />
+                            </svg>
+                          </span>
+                        </div>
+                        <p id="form-multi-error-msg" class="form-msg--error">
+                          Please select at least one option.
+                        </p>
+                      </div>
+
+                      <!-- Checkboxes -->
+                      <div class="mb-4 flex flex-wrap items-center gap-6">
+                        <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
+                          <span class="relative inline-flex">
+                            <input
+                              type="checkbox"
+                              class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
+                            />
+                            <span
+                              class="grid size-5 place-items-center rounded-[6px] border border-border bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_svg]:opacity-100"
+                            >
+                              <svg
+                                class="size-3 text-white opacity-0 transition"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                aria-hidden="true"
+                              >
+                                <path d="M20 6 9 17l-5-5" />
+                              </svg>
+                            </span>
+                          </span>
+                          <span class="text-sm text-body">Default</span>
+                        </label>
+
+                        <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
+                          <span class="relative inline-flex">
+                            <input
+                              type="checkbox"
+                              checked
+                              class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
+                            />
+                            <span
+                              class="grid size-5 place-items-center rounded-[6px] border border-border bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_svg]:opacity-100"
+                            >
+                              <svg
+                                class="size-3 text-white opacity-0 transition"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                aria-hidden="true"
+                              >
+                                <path d="M20 6 9 17l-5-5" />
+                              </svg>
+                            </span>
+                          </span>
+                          <span class="text-sm text-body">Checked</span>
+                        </label>
+
+                        <label class="inline-flex cursor-not-allowed items-center gap-2.5 select-none">
+                          <span class="relative inline-flex">
+                            <input
+                              type="checkbox"
+                              checked
+                              disabled
+                              class="absolute inset-0 z-10 size-full cursor-not-allowed opacity-0"
+                            />
+                            <span
+                              class="grid size-5 place-items-center rounded-[6px] border border-border bg-surface"
+                            >
+                              <svg
+                                class="size-3 text-body/35"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                aria-hidden="true"
+                              >
+                                <path d="M20 6 9 17l-5-5" />
+                              </svg>
+                            </span>
+                          </span>
+                          <span class="text-sm text-body/40">Disabled</span>
+                        </label>
+                      </div>
+
+                      <!-- Checkboxes error (required) -->
+                      <div
+                        class="mb-4 flex flex-col gap-1.5"
+                        role="group"
+                        aria-describedby="form-checkbox-error-msg"
+                      >
+                        <div class="flex flex-wrap items-center gap-6">
+                          <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
+                            <span class="relative inline-flex">
+                              <input
+                                type="checkbox"
+                                name="form-terms"
+                                aria-invalid="true"
+                                class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
+                              />
+                              <span
+                                class="grid size-5 place-items-center rounded-[6px] border border-primary bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_svg]:opacity-100"
+                              >
+                                <svg
+                                  class="size-3 text-white opacity-0 transition"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="3"
+                                  aria-hidden="true"
+                                >
+                                  <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                              </span>
+                            </span>
+                            <span class="text-sm text-primary"
+                              >I agree to the terms</span
+                            >
+                          </label>
+
+                          <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
+                            <span class="relative inline-flex">
+                              <input
+                                type="checkbox"
+                                name="form-newsletter"
+                                aria-invalid="true"
+                                class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
+                              />
+                              <span
+                                class="grid size-5 place-items-center rounded-[6px] border border-primary bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_svg]:opacity-100"
+                              >
+                                <svg
+                                  class="size-3 text-white opacity-0 transition"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="3"
+                                  aria-hidden="true"
+                                >
+                                  <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                              </span>
+                            </span>
+                            <span class="text-sm text-primary"
+                              >Subscribe to updates</span
+                            >
+                          </label>
+                        </div>
+                        <p id="form-checkbox-error-msg" class="form-msg--error">
+                          Please select the required options.
+                        </p>
+                      </div>
+
+                      <!-- Radios -->
+                      <div class="mb-4 flex flex-wrap items-center gap-6">
+                        <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
+                          <span class="relative inline-flex">
+                            <input
+                              type="radio"
+                              name="form-radio-demo"
+                              value="default"
+                              class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
+                            />
+                            <span
+                              class="grid size-5 place-items-center rounded-full border border-border bg-white transition peer-checked:border-primary peer-checked:[&_span]:scale-100"
+                            >
+                              <span
+                                class="size-2.5 scale-0 rounded-full bg-primary transition"
+                              ></span>
+                            </span>
+                          </span>
+                          <span class="text-sm text-body">Default</span>
+                        </label>
+
+                        <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
+                          <span class="relative inline-flex">
+                            <input
+                              type="radio"
+                              name="form-radio-demo"
+                              value="secondary"
+                              checked
+                              class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
+                            />
+                            <span
+                              class="grid size-5 place-items-center rounded-full border border-border bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_span]:scale-100 peer-checked:[&_span]:bg-white"
+                            >
+                              <span
+                                class="size-2 scale-0 rounded-full bg-primary transition"
+                              ></span>
+                            </span>
+                          </span>
+                          <span class="text-sm text-body">Secondary</span>
+                        </label>
+
+                        <label class="inline-flex cursor-not-allowed items-center gap-2.5 select-none">
+                          <span class="relative inline-flex">
+                            <input
+                              type="radio"
+                              name="form-radio-disabled"
+                              value="disabled"
+                              checked
+                              disabled
+                              class="absolute inset-0 z-10 size-full cursor-not-allowed opacity-0"
+                            />
+                            <span
+                              class="grid size-5 place-items-center rounded-full border border-primary/35 bg-primary/35"
+                            >
+                              <span
+                                class="size-2 rounded-full bg-white"
+                              ></span>
+                            </span>
+                          </span>
+                          <span class="text-sm text-body/40"
+                            >Disabled Secondary</span
+                          >
+                        </label>
+                      </div>
+
+                      <!-- Radios error (required) -->
+                      <div
+                        class="mb-4 flex flex-col gap-1.5"
+                        role="radiogroup"
+                        aria-describedby="form-radio-error-msg"
+                      >
+                        <div class="flex flex-wrap items-center gap-6">
+                          <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
+                            <span class="relative inline-flex">
+                              <input
+                                type="radio"
+                                name="form-radio-error"
+                                value="default"
+                                aria-invalid="true"
+                                class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
+                              />
+                              <span
+                                class="grid size-5 place-items-center rounded-full border border-primary bg-white transition peer-checked:border-primary peer-checked:[&_span]:scale-100"
+                              >
+                                <span
+                                  class="size-2.5 scale-0 rounded-full bg-primary transition"
+                                ></span>
+                              </span>
+                            </span>
+                            <span class="text-sm text-primary">Default</span>
+                          </label>
+
+                          <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
+                            <span class="relative inline-flex">
+                              <input
+                                type="radio"
+                                name="form-radio-error"
+                                value="secondary"
+                                aria-invalid="true"
+                                class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
+                              />
+                              <span
+                                class="grid size-5 place-items-center rounded-full border border-primary bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_span]:scale-100 peer-checked:[&_span]:bg-white"
+                              >
+                                <span
+                                  class="size-2 scale-0 rounded-full bg-primary transition"
+                                ></span>
+                              </span>
+                            </span>
+                            <span class="text-sm text-primary">Secondary</span>
+                          </label>
+                        </div>
+                        <p id="form-radio-error-msg" class="form-msg--error">
+                          Please select an option.
+                        </p>
+                      </div>
+
+                      <!-- Description textarea -->
+                      <div class="mb-4 flex flex-col gap-2">
+                        <label
+                          for="form-description"
+                          class="text-sm font-semibold"
+                          >Description</label
+                        >
+                        <textarea
+                          id="form-description"
+                          rows="4"
+                          placeholder="Enter a description..."
+                          class="w-full resize-y rounded-10 border border-border bg-transparent px-4 py-3 text-sm text-body outline-none transition placeholder:text-body/45 focus:border-primary"
+                        ></textarea>
+                      </div>
+
+                      <!-- Description error -->
+                      <div class="mb-4 flex flex-col gap-1.5">
+                        <label
+                          for="form-description-error"
+                          class="text-sm font-semibold"
+                          >Description</label
+                        >
+                        <textarea
+                          id="form-description-error"
+                          rows="4"
+                          aria-invalid="true"
+                          aria-describedby="form-description-error-msg"
+                          placeholder="Enter a description..."
+                          class="is-error w-full resize-y rounded-10 border border-primary bg-transparent px-4 py-3 text-sm text-body outline-none transition focus:border-primary"
+                        ></textarea>
+                        <p id="form-description-error-msg" class="form-msg--error">
+                          Description is required.
+                        </p>
+                      </div>
+
+                      <!-- Upload (custom idle UI + FilePond list/preview) -->
+                      <div class="upload-box mb-4" data-upload-box>
+                        <div class="upload-box__idle" data-upload-idle>
+                          <span class="upload-box__icon" aria-hidden="true">
+                            <svg
+                              width="26"
+                              height="26"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.7"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path d="M12 15V4" />
+                              <path d="m7 9 5-5 5 5" />
+                              <path d="M4 14v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
+                            </svg>
+                          </span>
+                          <p class="upload-box__title">Drag &amp; Drop File Here</p>
+                          <p class="upload-box__text">
+                            Drag and drop your PNG, JPG, WebP, SVG images here
+                            or browse
+                          </p>
+                          <button
+                            type="button"
+                            class="upload-box__browse"
+                            data-upload-browse
+                          >
+                            Browse File
+                          </button>
+                        </div>
+                        <input
+                          type="file"
+                          class="filepond"
+                          name="files"
+                          accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                          multiple
+                          data-filepond
+                        />
+                      </div>
+
+                      <!-- Upload error -->
+                      <div class="mb-4 flex flex-col gap-1.5">
+                        <div
+                          class="upload-box is-error"
+                          role="group"
+                          aria-describedby="form-upload-error-msg"
+                        >
+                          <div class="upload-box__idle">
+                            <span class="upload-box__icon" aria-hidden="true">
+                              <svg
+                                width="26"
+                                height="26"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <path d="M12 15V4" />
+                                <path d="m7 9 5-5 5 5" />
+                                <path
+                                  d="M4 14v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"
+                                />
+                              </svg>
+                            </span>
+                            <p class="upload-box__title">
+                              Drag &amp; Drop File Here
+                            </p>
+                            <p class="upload-box__text">
+                              Drag and drop your PNG, JPG, WebP, SVG images here
+                              or browse
+                            </p>
+                            <button type="button" class="upload-box__browse">
+                              Browse File
+                            </button>
+                          </div>
+                        </div>
+                        <p id="form-upload-error-msg" class="form-msg--error">
+                          Please upload at least one image.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-lg-3">
+                  <aside class="space-y-4 lg:sticky lg:top-24 lg:self-start">
+                    <div class="card p-5">
+                      <div class="mb-4 flex items-center justify-between gap-2">
+                        <h3 class="text-sm font-bold">Online Users</h3>
+                        <span class="text-xs font-medium text-success"
+                          >• 24 Online</span
+                        >
+                      </div>
+                      <div class="flex flex-wrap gap-2">
+                        <div
+                          class="user-hover user-hover--right shrink-0"
+                          data-user-card
+                          data-name="alex"
+                          data-initial="A"
+                          data-avatar="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop"
+                          data-joined="Mar 12, 2024"
+                          data-seen="Online now"
+                          data-messages="88"
+                          data-reactions="14"
+                          data-points="32"
+                          data-profile="/users/ak"
+                        >
+                          <a href="/users/ak" class="avatar size-10">
+                            <img
+                              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop"
+                              alt="AK"
+                            />
+                            <span class="avatar__status avatar__status--sm"></span>
+                          </a>
+                        </div>
+      
+                        <div
+                          class="user-hover user-hover--right shrink-0"
+                          data-user-card
+                          data-name="akash"
+                          data-initial="A"
+                          data-avatar-bg="#f97316"
+                          data-avatar-color="#fff"
+                          data-joined="Jan 08, 2024"
+                          data-seen="Online now"
+                          data-messages="54"
+                          data-reactions="9"
+                          data-points="21"
+                          data-profile="/users/ak"
+                        >
+                          <a href="/users/ak" class="avatar size-10 bg-[#f97316] text-xs">
+                            AK
+                            <span class="avatar__status avatar__status--sm"></span>
+                          </a>
+                        </div>
+      
+                        <div
+                          class="user-hover user-hover--right shrink-0"
+                          data-user-card
+                          data-name="oliver"
+                          data-initial="O"
+                          data-avatar-bg="#7c3aed"
+                          data-avatar-color="#fff"
+                          data-joined="Jan 14, 2023"
+                          data-seen="Online now"
+                          data-messages="66"
+                          data-reactions="0"
+                          data-points="6"
+                          data-profile="/users/oc"
+                        >
+                          <a
+                            href="/users/oc"
+                            class="avatar size-10"
+                            aria-label="View OC profile"
+                          >
+                            <img
+                              src="/images/users/oc.jpg"
+                              alt="OC"
+                              onerror="
+                                this.style.display = 'none';
+                                this.nextElementSibling.style.display = 'flex';
+                              "
+                            />
+                            <span class="avatar__fallback bg-[#7c3aed] text-xs"
+                              >OC</span
+                            >
+                            <span class="avatar__status avatar__status--sm"></span>
+                          </a>
+                        </div>
+      
+                        <div
+                          class="user-hover user-hover--right shrink-0"
+                          data-user-card
+                          data-name="tara"
+                          data-initial="T"
+                          data-avatar-bg="#06b6d4"
+                          data-avatar-color="#fff"
+                          data-joined="Feb 20, 2024"
+                          data-seen="Online now"
+                          data-messages="41"
+                          data-reactions="7"
+                          data-points="18"
+                          data-profile="/users/tr"
+                        >
+                          <a
+                            href="/users/tr"
+                            class="avatar size-10"
+                            aria-label="View TR profile"
+                          >
+                            <img
+                              src="/images/users/tr.jpg"
+                              alt="TR"
+                              onerror="
+                                this.style.display = 'none';
+                                this.nextElementSibling.style.display = 'flex';
+                              "
+                            />
+                            <span class="avatar__fallback bg-[#06b6d4] text-xs"
+                              >TR</span
+                            >
+                            <span class="avatar__status avatar__status--sm"></span>
+                          </a>
+                        </div>
+      
+                        <div
+                          class="user-hover user-hover--right shrink-0"
+                          data-user-card
+                          data-name="priya"
+                          data-initial="P"
+                          data-avatar-bg="#ec4899"
+                          data-avatar-color="#fff"
+                          data-joined="Apr 03, 2024"
+                          data-seen="Online now"
+                          data-messages="73"
+                          data-reactions="11"
+                          data-points="27"
+                          data-profile="/users/ps"
+                        >
+                          <a
+                            href="/users/ps"
+                            class="avatar size-10"
+                            aria-label="View PS profile"
+                          >
+                            <img
+                              src="/images/users/ps.jpg"
+                              alt="PS"
+                              onerror="
+                                this.style.display = 'none';
+                                this.nextElementSibling.style.display = 'flex';
+                              "
+                            />
+                            <span class="avatar__fallback bg-[#ec4899] text-xs"
+                              >PS</span
+                            >
+                            <span class="avatar__status avatar__status--sm"></span>
+                          </a>
+                        </div>
+      
+                        <div
+                          class="user-hover user-hover--right shrink-0"
+                          data-user-card
+                          data-name="mike"
+                          data-initial="M"
+                          data-avatar-bg="#3b82f6"
+                          data-avatar-color="#fff"
+                          data-joined="May 15, 2024"
+                          data-seen="Online now"
+                          data-messages="29"
+                          data-reactions="4"
+                          data-points="12"
+                          data-profile="/users/mj"
+                        >
+                          <a
+                            href="/users/mj"
+                            class="avatar size-10"
+                            aria-label="View MJ profile"
+                          >
+                            <img
+                              src="/images/users/mj.jpg"
+                              alt="MJ"
+                              onerror="
+                                this.style.display = 'none';
+                                this.nextElementSibling.style.display = 'flex';
+                              "
+                            />
+                            <span class="avatar__fallback bg-[#3b82f6] text-xs"
+                              >MJ</span
+                            >
+                            <span class="avatar__status avatar__status--sm"></span>
+                          </a>
+                        </div>
+      
+                        <div
+                          class="user-hover user-hover--right shrink-0"
+                          data-user-card
+                          data-name="lisa"
+                          data-initial="L"
+                          data-avatar-bg="#eab308"
+                          data-avatar-color="#fff"
+                          data-joined="Jun 01, 2024"
+                          data-seen="Online now"
+                          data-messages="36"
+                          data-reactions="6"
+                          data-points="15"
+                          data-profile="/users/lp"
+                        >
+                          <a
+                            href="/users/lp"
+                            class="avatar size-10"
+                            aria-label="View LP profile"
+                          >
+                            <img
+                              src="/images/users/lp.jpg"
+                              alt="LP"
+                              onerror="
+                                this.style.display = 'none';
+                                this.nextElementSibling.style.display = 'flex';
+                              "
+                            />
+                            <span class="avatar__fallback bg-[#eab308] text-xs"
+                              >LP</span
+                            >
+                            <span class="avatar__status avatar__status--sm"></span>
+                          </a>
+                        </div>
+      
+                        <div
+                          class="user-hover user-hover--right shrink-0"
+                          data-user-card
+                          data-name="ryan"
+                          data-initial="R"
+                          data-avatar-bg="#22c55e"
+                          data-avatar-color="#fff"
+                          data-joined="Jul 11, 2024"
+                          data-seen="Online now"
+                          data-messages="47"
+                          data-reactions="8"
+                          data-points="19"
+                          data-profile="/users/rs"
+                        >
+                          <a
+                            href="/users/rs"
+                            class="avatar size-10"
+                            aria-label="View RS profile"
+                          >
+                            <img
+                              src="/images/users/rs.jpg"
+                              alt="RS"
+                              onerror="
+                                this.style.display = 'none';
+                                this.nextElementSibling.style.display = 'flex';
+                              "
+                            />
+                            <span class="avatar__fallback bg-[#22c55e] text-xs"
+                              >RS</span
+                            >
+                            <span class="avatar__status avatar__status--sm"></span>
+                          </a>
+                        </div>
+      
+                        <span class="avatar size-10 bg-surface text-xs text-body"
+                          >+12</span
+                        >
+                      </div>
+                    </div>
+      
+                    <div class="card p-5">
+                      <h3 class="mb-4 text-sm font-bold">Forum Stats</h3>
+                      <div class="grid grid-cols-2 gap-3">
+                        <div
+                          class="flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3"
+                        >
+                          <span
+                            class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[#2563eb]"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                              <circle cx="9" cy="7" r="4" />
+                              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                          </span>
+                          <div class="min-w-0">
+                            <p class="text-sm font-bold leading-tight">49.9K</p>
+                            <p class="text-[11px] leading-tight">
+                              Members
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3"
+                        >
+                          <span
+                            class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dcfce7] text-[#16a34a]"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                              />
+                              <path d="M14 2v6h6" />
+                              <path d="M16 13H8" />
+                              <path d="M16 17H8" />
+                              <path d="M10 9H8" />
+                            </svg>
+                          </span>
+                          <div class="min-w-0">
+                            <p class="text-sm font-bold leading-tight">205.9K</p>
+                            <p class="text-[11px] leading-tight">
+                              Questions
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3"
+                        >
+                          <span
+                            class="grid size-7 shrink-0 place-items-center rounded-full bg-[#ffedd5] text-[#ea580c]"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                              />
+                              <circle cx="12" cy="12" r="3" />
+                            </svg>
+                          </span>
+                          <div class="min-w-0">
+                            <p class="text-sm font-bold leading-tight">49.9K</p>
+                            <p class="text-[11px] leading-tight">
+                            Viewers
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3"
+                        >
+                          <span
+                            class="grid size-7 shrink-0 place-items-center rounded-full bg-[#f3e8ff] text-[#9333ea]"
+                          >
+                            <svg
+                              class="size-4"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path
+                                d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"
+                              />
+                              <circle
+                                cx="9"
+                                cy="11"
+                                r="0.8"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                              <circle
+                                cx="12"
+                                cy="11"
+                                r="0.8"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                              <circle
+                                cx="15"
+                                cy="11"
+                                r="0.8"
+                                fill="currentColor"
+                                stroke="none"
+                              />
+                            </svg>
+                          </span>
+                          <div class="min-w-0">
+                            <p class="text-sm font-bold leading-tight">120.4K</p>
+                            <p class="text-[11px] leading-tight">
+                              Replies
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <div class="card p-5">
+                      <h3 class="mb-4 text-sm font-bold">Top Posters This Month</h3>
+                      <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                          <span
+                            class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                          >
+                            1
+                          </span>
+                          <div
+                            class="user-hover user-hover--right shrink-0"
+                            data-user-card
+                            data-name="gregDander"
+                            data-initial="G"
+                            data-avatar="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces"
+                            data-joined="Nov 02, 2022"
+                            data-seen="Online now"
+                            data-messages="171"
+                            data-reactions="48"
+                            data-points="92"
+                            data-profile="/users/gregdander"
+                          >
+                            <a
+                              href="/users/gregdander"
+                              class="avatar size-10"
+                              aria-label="View gregDander profile"
+                            >
+                              <img
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces"
+                                alt="gregDander"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+                              />
+                              <span class="avatar__fallback bg-[#f97316] text-xs"
+                                >GR</span
+                              >
+                            </a>
+                          </div>
+                          <a
+                            href="/users/gregdander"
+                            class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                          >
+                            <p class="truncate text-sm font-bold">gregDander</p>
+                            <p class="text-xs text-body/60">171 posts</p>
+                          </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <span
+                            class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                            >2</span
+                          >
+                          <div
+                            class="user-hover user-hover--right shrink-0"
+                            data-user-card
+                            data-name="Kiarav"
+                            data-initial="K"
+                            data-avatar-bg="#ef4444"
+                            data-avatar-color="#fff"
+                            data-joined="Jan 18, 2023"
+                            data-seen="Online now"
+                            data-messages="139"
+                            data-reactions="31"
+                            data-points="64"
+                          >
+                            <a
+                              href="#member"
+                              class="avatar size-10 bg-[#ef4444] text-xs"
+                              aria-label="View Kiarav profile"
+                              >KI</a
+                            >
+                          </div>
+                          <a
+                            href="#member"
+                            class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                          >
+                            <p class="truncate text-sm font-bold">Kiarav</p>
+                            <p class="text-xs text-body/60">139 posts</p>
+                          </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <span
+                            class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                            >3</span
+                          >
+                          <div
+                            class="user-hover user-hover--right shrink-0"
+                            data-user-card
+                            data-name="WanderingTrader"
+                            data-initial="W"
+                            data-avatar-bg="#06b6d4"
+                            data-avatar-color="#fff"
+                            data-joined="Mar 05, 2023"
+                            data-seen="Jun 19, 2026"
+                            data-messages="120"
+                            data-reactions="22"
+                            data-points="51"
+                          >
+                            <a
+                              href="#member"
+                              class="avatar size-10 bg-[#06b6d4] text-xs"
+                              aria-label="View WanderingTrader profile"
+                              >WA</a
+                            >
+                          </div>
+                          <a
+                            href="#member"
+                            class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                          >
+                            <p class="truncate text-sm font-bold">WanderingTrader</p>
+                            <p class="text-xs text-body/60">120 posts</p>
+                          </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <span
+                            class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                            >4</span
+                          >
+                          <div
+                            class="user-hover user-hover--right shrink-0"
+                            data-user-card
+                            data-name="JochenSantiago"
+                            data-initial="J"
+                            data-avatar-bg="#7c3aed"
+                            data-avatar-color="#fff"
+                            data-joined="Aug 21, 2023"
+                            data-seen="Jun 18, 2026"
+                            data-messages="76"
+                            data-reactions="12"
+                            data-points="33"
+                          >
+                            <a
+                              href="#member"
+                              class="avatar size-10 bg-[#7c3aed] text-xs"
+                              aria-label="View JochenSantiago profile"
+                              >JO</a
+                            >
+                          </div>
+                          <a
+                            href="#member"
+                            class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                          >
+                            <p class="truncate text-sm font-bold">JochenSantiago</p>
+                            <p class="text-xs text-body/60">76 posts</p>
+                          </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <span
+                            class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold"
+                            >5</span
+                          >
+                          <div
+                            class="user-hover user-hover--right shrink-0"
+                            data-user-card
+                            data-name="Chris_Joseph_PNip"
+                            data-initial="C"
+                            data-avatar-bg="#14b8a6"
+                            data-avatar-color="#fff"
+                            data-joined="Oct 09, 2023"
+                            data-seen="Jun 17, 2026"
+                            data-messages="74"
+                            data-reactions="10"
+                            data-points="29"
+                          >
+                            <a
+                              href="#member"
+                              class="avatar size-10 bg-[#14b8a6] text-xs"
+                              aria-label="View Chris_Joseph_PNip profile"
+                              >CH</a
+                            >
+                          </div>
+                          <a
+                            href="#member"
+                            class="min-w-0 flex-1 transition-opacity hover:opacity-80"
+                          >
+                            <p class="truncate text-sm font-bold">Chris_Joseph_PNip</p>
+                            <p class="text-xs text-body/60">74 posts</p>
+                          </a>
+                        </li>
+                      </ul>
+                      <a
+                        href="#top-posters"
+                        class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition hover:opacity-80"
+                      >
+                        View all
+                        <svg
+                          class="size-3.5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path d="m9 18 6-6-6-6" />
+                        </svg>
+                      </a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+    </main>
+
+    <footer class="bg-footer text-white">
+      <div class="container py-14 lg:py-16">
+        <div class="footer-layout row">
+          <!-- Find your Topic -->
+          <div class="footer-col col-lg-5">
+            <div class="footer-title">Find your Topic</div>
+            <div class="footer-topics">
+              <a href="#backup-storage" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 10H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7h.01M7 17h.01" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h3m-3 10h3" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                <span>Backup & Storage</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#mac" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 3h-11A1.5 1.5 0 0 0 5 4.5v10A1.5 1.5 0 0 0 6.5 16h11a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 17.5 3M3 20h18l-2-4H5z" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 18h4" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Mac</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#iphone" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2H9a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 5h4" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19h4" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Iphone</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#general" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.999 11a8 8 0 0 1-8 8h-6l-4 3v-6a8 8 0 0 1-1-4V9a7 7 0 0 1 7-7h5a7 7 0 0 1 7 7z" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10h.01M12 10h.01M17 10h.01" stroke="#f05258" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>General Discussion</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#windows" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 4 8-1v8H3zm0 9h8v8l-8-1zm10 0h8v10l-8-1z" stroke="#d9d9d9"/><path d="m13 3 8-1v9h-8z" stroke="#f05258"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></svg>
+                <span>Windows</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+              <a href="#productivity" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 7 1 1 2-2m-3 6 1 1 2-2m-3 6 1 1 2-2" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 7h4m-4 5h4m-4 5h4" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Digital Productivity</span>
+                <svg
+                  class="size-3.5 shrink-0 opacity-70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Explore -->
+          <div class="footer-col col-lg-5">
+            <div class="footer-title">Explore Datarecove</div>
+            <ul class="footer-list">
+              <li>
+                <a href="#about" class="footer-link" title="About Us"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#privacy" class="footer-link" title="Privacy Policy"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#categories" class="footer-link" title="Categories"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a href="#terms" class="footer-link" title="Terms of Use"
+                  >Terms of Use</a
+                >
+              </li>
+              <li>
+                <a href="#popular" class="footer-link" title="Popular Questions"
+                  >Popular Questions</a
+                >
+              </li>
+              <li>
+                <a href="#faqs" class="footer-link" title="Help & Faqs"
+                  >Help &amp; Faqs</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="footer-link" title="Contact Us"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#rules" class="footer-link" title="Community Rules"
+                  >Community Rules</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social -->
+          <div class="footer-col footer-socials col-lg-2">
+            <a href="#instagram" class="footer-social">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.002 3.898A4.095 4.095 0 0 0 3.9 8a4.095 4.095 0 0 0 4.102 4.102A4.095 4.095 0 0 0 12.103 8a4.095 4.095 0 0 0-4.101-4.102m0 6.769A2.67 2.67 0 0 1 5.335 8a2.67 2.67 0 0 1 2.667-2.667A2.67 2.67 0 0 1 10.668 8c0 1.47-1.2 2.667-2.666 2.667m5.225-6.937a.954.954 0 0 1-.956.957.957.957 0 1 1 .957-.957m2.717.971c-.06-1.282-.354-2.417-1.292-3.352C13.717.413 12.582.12 11.3.056c-1.32-.075-5.28-.075-6.6 0-1.278.06-2.413.354-3.352 1.29C.41 2.28.12 3.415.056 4.697c-.075 1.32-.075 5.28 0 6.6.06 1.283.354 2.418 1.292 3.353.94.936 2.07 1.229 3.352 1.293 1.32.075 5.28.075 6.6 0 1.281-.06 2.416-.354 3.352-1.293.935-.935 1.228-2.07 1.292-3.352.075-1.321.075-5.277 0-6.598m-1.706 8.015a2.7 2.7 0 0 1-1.521 1.521c-1.053.418-3.552.322-4.715.322-1.164 0-3.666.092-4.715-.322a2.7 2.7 0 0 1-1.521-1.52C1.348 11.662 1.445 9.163 1.445 8s-.093-3.667.321-4.716a2.7 2.7 0 0 1 1.52-1.521c1.054-.418 3.552-.322 4.716-.322 1.163 0 3.666-.092 4.715.322a2.7 2.7 0 0 1 1.52 1.52c.418 1.054.322 3.553.322 4.717s.096 3.667-.321 4.716" fill="#fff"/></svg>
+              instagram
+            </a>
+            <a href="#linkedin" class="footer-social">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.582 16H.264V5.318h3.318zM1.922 3.86C.86 3.86 0 2.982 0 1.921a1.921 1.921 0 0 1 3.842 0c0 1.06-.86 1.94-1.92 1.94M15.996 16h-3.31v-5.2c0-1.24-.025-2.829-1.725-2.829-1.725 0-1.989 1.347-1.989 2.74V16H5.66V5.318h3.182v1.457h.046c.443-.84 1.525-1.725 3.139-1.725C15.383 5.05 16 7.26 16 10.132V16z" fill="#fff"/></svg>
+              Linkedin
+            </a>
+            <a href="#x" class="footer-social">
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.704 0h2.475L9.773 6.264l6.36 8.524h-4.978L7.253 9.62l-4.46 5.17H.316l5.781-6.702L0 0h5.104l3.523 4.724zm-.87 13.288h1.371L4.357 1.422H2.885z" fill="#fff"/></svg>
+              X.com
+            </a>
+            <a href="#facebook" class="footer-social">
+              <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.744 9.023 9.23 6.12H6.196V4.236c0-.794.423-1.568 1.782-1.568h1.38V.196S8.106 0 6.909 0C4.411 0 2.777 1.39 2.777 3.908V6.12H0v2.903h2.777v7.018h3.419V9.023z" fill="#fff"/></svg>
+              facebook
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10">
+        <div
+          class="container py-5">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="site-logo">
+                <a href="https://datarecovee.com/">
+                  <img
+                    src="./assets/images/logo-white.svg"
+                    alt="logo"
+                    width="100%"
+                    height="100%"
+                    class="img-fluid"
+                    aria-label="logo"
+                  />
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-6">
+              <p class="text-sm text-white/60 text-end">
+                © 2026 <span class="text-primary">Datarecovee</span>. All Rights
+                Reserved.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

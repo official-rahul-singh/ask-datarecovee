@@ -1,5 +1,11 @@
 import Swiper from "swiper";
 import { Pagination, Autoplay } from "swiper/modules";
+import flatpickr from "flatpickr";
+import * as FilePond from "filepond";
+import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
+import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+import "filepond/dist/filepond.min.css";
+import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 
 const TAB_ORDER = {
   popular: ["backup", "recovery", "mac", "iphone", "windows"],
@@ -248,6 +254,30 @@ document.addEventListener("click", () => {
   document.querySelectorAll(".dropdown.is-open:not(.dropdown-accordion)").forEach(closeDropdown);
 });
 
+const LIKE_POP_PATH =
+  "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z";
+
+function spawnLikePops(btn) {
+  btn.querySelector(".like-btn__pops")?.remove();
+
+  const wrap = document.createElement("span");
+  wrap.className = "like-btn__pops";
+  wrap.setAttribute("aria-hidden", "true");
+
+  for (let i = 1; i <= 9; i++) {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", `like-btn__pop like-btn__pop--${i}`);
+    svg.setAttribute("viewBox", "0 0 24 24");
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", LIKE_POP_PATH);
+    svg.appendChild(path);
+    wrap.appendChild(svg);
+  }
+
+  btn.appendChild(wrap);
+  setTimeout(() => wrap.remove(), 2000);
+}
+
 document.querySelectorAll("[data-like]").forEach((el) => {
   const icon = el.querySelector("[data-like-icon]");
   const countEl = el.querySelector("[data-like-count]");
@@ -260,6 +290,8 @@ document.querySelectorAll("[data-like]").forEach((el) => {
     icon.setAttribute("fill", next ? "currentColor" : "none");
     const n = parseInt(countEl.textContent.replace(/,/g, ""), 10);
     if (!Number.isNaN(n)) countEl.textContent = String(next ? n + 1 : n - 1);
+
+    if (next) spawnLikePops(el);
   };
 
   el.addEventListener("click", toggleLike);
@@ -385,6 +417,203 @@ document.querySelectorAll(".password-toggle").forEach((btn) => {
     showIcon?.classList.toggle("hidden", isHidden);
     hideIcon?.classList.toggle("hidden", !isHidden);
   });
+});
+
+document.querySelectorAll("select.form-select").forEach((select) => {
+  const syncSelectState = () => {
+    const hasValue = select.value !== "";
+    select.classList.toggle("is-selected", hasValue);
+  };
+
+  syncSelectState();
+  select.addEventListener("change", syncSelectState);
+});
+
+document.querySelectorAll("[data-datepicker]").forEach((el) => {
+  flatpickr(el, {
+    wrap: true,
+    dateFormat: "Y-m-d",
+    allowInput: false,
+    disableMobile: true,
+  });
+});
+
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const target = document.querySelector(btn.getAttribute("data-copy"));
+    if (!target) return;
+
+    const text = "value" in target ? target.value : target.textContent;
+    try {
+      await navigator.clipboard.writeText(String(text || "").trim());
+      const label = btn.querySelector("[data-copy-label]");
+      if (label) {
+        const prev = label.textContent;
+        label.textContent = "Copied";
+        setTimeout(() => {
+          label.textContent = prev;
+        }, 1500);
+      }
+    } catch {
+      /* clipboard blocked */
+    }
+  });
+});
+
+document.querySelectorAll("[data-file-input]").forEach((input) => {
+  const nameEl = input
+    .closest("label")
+    ?.querySelector("[data-file-name]");
+  if (!nameEl) return;
+
+  input.addEventListener("change", () => {
+    const file = input.files?.[0];
+    nameEl.textContent = file ? file.name : "No file chosen";
+    nameEl.classList.toggle("text-body", Boolean(file));
+    nameEl.classList.toggle("text-body/45", !file);
+  });
+});
+
+FilePond.registerPlugin(
+  FilePondPluginFileValidateType,
+  FilePondPluginImagePreview,
+);
+
+document.querySelectorAll("[data-upload-box]").forEach((box) => {
+  const input = box.querySelector("[data-filepond]");
+  const idle = box.querySelector("[data-upload-idle]");
+  const browseBtn = box.querySelector("[data-upload-browse]");
+  if (!input) return;
+
+  const pond = FilePond.create(input, {
+    allowMultiple: true,
+    acceptedFileTypes: [
+      "image/png",
+      "image/jpeg",
+      "image/webp",
+      "image/svg+xml",
+    ],
+    labelIdle: " ",
+    labelFileTypeNotAllowed: "Invalid file type",
+    fileValidateTypeLabelExpectedTypes: "Expects PNG, JPG, WebP or SVG",
+    imagePreviewHeight: 240,
+    imagePreviewMinHeight: 200,
+    imagePreviewMaxHeight: 320,
+    imagePreviewTransparencyIndicator: null,
+    styleItemPanelAspectRatio: "0.75",
+    styleButtonRemoveItemPosition: "right top",
+    credits: false,
+  });
+
+  const syncFiles = () => {
+    const count = pond.getFiles().length;
+    box.classList.toggle("has-files", count > 0);
+    box.dataset.filesCount = String(count);
+  };
+
+  browseBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    pond.browse();
+  });
+
+  idle?.addEventListener("click", (e) => {
+    if (e.target.closest("[data-upload-browse]")) return;
+    pond.browse();
+  });
+
+  ["dragenter", "dragover"].forEach((evt) => {
+    box.addEventListener(evt, (e) => {
+      e.preventDefault();
+      box.classList.add("is-dragover");
+    });
+  });
+
+  ["dragleave", "drop"].forEach((evt) => {
+    box.addEventListener(evt, (e) => {
+      e.preventDefault();
+      box.classList.remove("is-dragover");
+    });
+  });
+
+  box.addEventListener("drop", (e) => {
+    const files = e.dataTransfer?.files;
+    if (!files?.length) return;
+    pond.addFiles(files);
+  });
+
+  pond.on("addfile", syncFiles);
+  pond.on("removefile", syncFiles);
+  syncFiles();
+});
+
+document.querySelectorAll("[data-multi-select]").forEach((root) => {
+  const trigger = root.querySelector("[data-multi-trigger]");
+  const menu = root.querySelector("[data-multi-menu]");
+  const chipsEl = root.querySelector("[data-multi-chips]");
+  const placeholder = root.querySelector("[data-multi-placeholder]");
+  const chevron = root.querySelector("[data-multi-chevron]");
+  const options = [...root.querySelectorAll("[data-multi-option]")];
+  if (!trigger || !menu || !chipsEl) return;
+
+  const selected = new Set(
+    options
+      .filter((opt) => opt.getAttribute("aria-selected") === "true")
+      .map((opt) => opt.dataset.value),
+  );
+
+  const renderChips = () => {
+    chipsEl.innerHTML = "";
+    options.forEach((opt) => {
+      const value = opt.dataset.value;
+      const label = opt.dataset.label || opt.textContent.trim();
+      const isOn = selected.has(value);
+      opt.setAttribute("aria-selected", String(isOn));
+      if (!isOn) return;
+
+      const chip = document.createElement("span");
+      chip.className =
+        "inline-flex items-center gap-1 rounded-full bg-surface px-2.5 py-1 text-xs font-medium text-body";
+      chip.innerHTML = `${label}<button type="button" class="grid size-4 place-items-center rounded-full text-body/60 transition hover:bg-border hover:text-body" data-chip-remove data-value="${value}" aria-label="Remove ${label}"><svg class="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>`;
+      chipsEl.appendChild(chip);
+    });
+
+    placeholder?.classList.toggle("hidden", selected.size > 0);
+  };
+
+  const setOpen = (open) => {
+    menu.classList.toggle("hidden", !open);
+    trigger.setAttribute("aria-expanded", String(open));
+    chevron?.classList.toggle("rotate-180", open);
+  };
+
+  trigger.addEventListener("click", (e) => {
+    if (e.target.closest("[data-chip-remove]")) return;
+    setOpen(menu.classList.contains("hidden"));
+  });
+
+  options.forEach((opt) => {
+    opt.addEventListener("click", () => {
+      const value = opt.dataset.value;
+      if (selected.has(value)) selected.delete(value);
+      else selected.add(value);
+      renderChips();
+    });
+  });
+
+  chipsEl.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-chip-remove]");
+    if (!btn) return;
+    e.stopPropagation();
+    selected.delete(btn.dataset.value);
+    renderChips();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!root.contains(e.target)) setOpen(false);
+  });
+
+  renderChips();
 });
 
 const signupForm = document.getElementById("signup-form");
@@ -640,4 +869,105 @@ function filterTags() {
 
 tagsSearchInput?.addEventListener("input", filterTags);
 
+function scrollToTarget(selector) {
+  const target = document.querySelector(selector);
+  if (!target) return;
+
+  const header = document.querySelector(".site-header");
+  const offset = header ? header.getBoundingClientRect().height + 8 : 8;
+  const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
+document.querySelectorAll("[data-scroll-to]").forEach((el) => {
+  const go = () => {
+    const selector = el.getAttribute("data-scroll-to");
+    if (selector) scrollToTarget(selector);
+  };
+
+  el.addEventListener("click", go);
+  el.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      go();
+    }
+  });
+});
+
+document.querySelectorAll(".btn-fill, .btn-secondary").forEach((button) => {
+  let circle = button.querySelector(".btn__ripple");
+  if (!circle) {
+    circle = document.createElement("span");
+    circle.className = "btn__ripple";
+    circle.setAttribute("aria-hidden", "true");
+    button.prepend(circle);
+  }
+
+  const updatePosition = (event) => {
+    const rect = button.getBoundingClientRect();
+    circle.style.left = `${event.clientX - rect.left}px`;
+    circle.style.top = `${event.clientY - rect.top}px`;
+  };
+
+  button.addEventListener("pointerenter", updatePosition);
+  button.addEventListener("pointermove", updatePosition);
+  button.addEventListener("focus", () => {
+    circle.style.left = `${button.offsetWidth / 2}px`;
+    circle.style.top = `${button.offsetHeight / 2}px`;
+  });
+});
+
+function setProfileTab(target) {
+  if (!target) return;
+
+  document.querySelectorAll("[data-profile-tab]").forEach((btn) => {
+    const on = btn.getAttribute("data-profile-tab") === target;
+    btn.classList.toggle("is-active", on);
+    btn.setAttribute("aria-selected", String(on));
+  });
+
+  document.querySelectorAll("[data-profile-panel]").forEach((panel) => {
+    const on = panel.getAttribute("data-profile-panel") === target;
+    panel.classList.toggle("hidden", !on);
+    panel.hidden = !on;
+  });
+}
+
+function setActivityTab(target) {
+  if (!target) return;
+
+  document.querySelectorAll("[data-activity-tab]").forEach((btn) => {
+    const on = btn.getAttribute("data-activity-tab") === target;
+    btn.classList.toggle("is-active", on);
+    btn.setAttribute("aria-selected", String(on));
+  });
+
+  document.querySelectorAll("[data-activity-panel]").forEach((panel) => {
+    const on = panel.getAttribute("data-activity-panel") === target;
+    panel.classList.toggle("hidden", !on);
+    panel.hidden = !on;
+  });
+}
+
+document.querySelectorAll("[data-profile-tab]").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    setProfileTab(tab.getAttribute("data-profile-tab"));
+  });
+});
+
+document.querySelectorAll("[data-activity-tab]").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    setActivityTab(tab.getAttribute("data-activity-tab"));
+  });
+});
+
+document.querySelectorAll("[data-goto-activity]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = btn.getAttribute("data-goto-activity");
+    if (!target) return;
+    setProfileTab("activity");
+    setActivityTab(target);
+  });
+});
 
