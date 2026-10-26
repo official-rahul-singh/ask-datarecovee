@@ -16,7 +16,7 @@
     </script>
   </head>
   <body class="bg-surface font-sans text-body antialiased">
-<header class="site-header sticky top-0 z-[100]">
+<header class="site-header sticky top-0 z-[200]">
       <div class="container flex items-center justify-between">
         <div class="flex w-full items-center justify-between gap-6 xl:w-fit">
           <button
@@ -193,9 +193,9 @@
               <span class="page-banner__icon" aria-hidden="true"><svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.327 17.598v1.256a.626.626 0 0 0 .628.628h12.558a.627.627 0 0 0 .628-.628v-1.256a6.907 6.907 0 1 0-13.814 0M.676 19.482h4.503a1.9 1.9 0 0 1-.108-.628v-1.256c0-1.434.378-2.829 1.077-4.052a4.395 4.395 0 0 0-6.1 4.053v1.255a.63.63 0 0 0 .628.628m21.349-6.279c-.605 0-1.181.122-1.705.343a8.16 8.16 0 0 1 1.077 4.052v1.256q-.001.326-.109.628h4.504a.63.63 0 0 0 .628-.628v-1.256a4.395 4.395 0 0 0-4.395-4.395M6.638 11.054A3.14 3.14 0 1 0 2.24 6.571a3.14 3.14 0 0 0 4.397 4.483m17.586.006a3.14 3.14 0 1 0-4.396-4.483 3.14 3.14 0 0 0 4.396 4.483m-10.29-1.682A4.395 4.395 0 1 0 12.536.7a4.395 4.395 0 0 0 1.397 8.678" fill="#e11f26"/></svg></span>
               <h1 class="page-banner__title">Tags</h1>
             </div>
-            <ul class="p-breadcrumbs">
-              <li><a href="../index.html"><span>Community</span></a></li>
-              <li><span>Tags</span></li>
+            <ul class="p-breadcrumbs" aria-hidden="true">
+              <li><div class="sk h-3 w-20"></div></li>
+              <li><div class="sk h-3 w-12"></div></li>
             </ul>
           </div>
         </div>
@@ -447,7 +447,7 @@
               <div class="card p-5">
                 <h3 class="mb-4 text-sm font-bold">Forum Stats</h3>
                 <div class="grid grid-cols-2 gap-3">
-                  <div class="flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3">
+                  <div class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3" aria-hidden="true">
                     <span
                       class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[#2563eb]"
                     >
@@ -463,7 +463,7 @@
                       <p class="text-[11px] leading-tight">Members</p>
                     </div>
                   </div>
-                  <div class="flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3">
+                  <div class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3" aria-hidden="true">
                     <span
                       class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dcfce7] text-[#16a34a]"
                     >
@@ -480,7 +480,7 @@
                       <p class="text-[11px] leading-tight">Questions</p>
                     </div>
                   </div>
-                  <div class="flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3">
+                  <div class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3" aria-hidden="true">
                     <span
                       class="grid size-7 shrink-0 place-items-center rounded-full bg-[#ffedd5] text-[#ea580c]"
                     >
@@ -494,7 +494,7 @@
                       <p class="text-[11px] leading-tight">Viewers</p>
                     </div>
                   </div>
-                  <div class="flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3">
+                  <div class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3" aria-hidden="true">
                     <span
                       class="grid size-7 shrink-0 place-items-center rounded-full bg-[#f3e8ff] text-[#9333ea]"
                     >

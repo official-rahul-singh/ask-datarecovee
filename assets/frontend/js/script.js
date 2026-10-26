@@ -235,6 +235,15 @@ document.querySelectorAll(".dropdown").forEach((dropdown) => {
     if (e.key === "Enter" || e.key === " ") toggleDropdown(e);
   });
 
+  if (isAccordion) {
+    const split = dropdown.querySelector(".menu-item-split");
+    split?.addEventListener("click", (e) => {
+      if (e.target.closest(".menu-item-link")) return;
+      if (e.target.closest(".dropdown-trigger")) return;
+      toggleDropdown(e);
+    });
+  }
+
   if (!isAccordion) {
     menu.querySelectorAll("[data-value]").forEach((option) => {
       option.addEventListener("click", () => {
@@ -283,7 +292,11 @@ document.querySelectorAll("[data-like]").forEach((el) => {
   const countEl = el.querySelector("[data-like-count]");
   if (!icon || !countEl) return;
 
+  const isDisabled = () =>
+    el.matches(":disabled, [disabled], [aria-disabled='true']");
+
   const toggleLike = () => {
+    if (isDisabled()) return;
     const liked = el.getAttribute("aria-pressed") === "true";
     const next = !liked;
     el.setAttribute("aria-pressed", String(next));
@@ -379,6 +392,27 @@ function buildUserCard(el) {
 }
 
 document.querySelectorAll("[data-user-card]").forEach(buildUserCard);
+
+function positionUserCard(hoverEl) {
+  const card = hoverEl.querySelector(":scope > .user-card");
+  if (!card) return;
+
+  // Always open above the avatar; only flip horizontal alignment
+  hoverEl.classList.remove("user-hover--below", "user-hover--right");
+
+  const trigger = hoverEl.getBoundingClientRect();
+  const cardWidth = card.offsetWidth || 360;
+  const pad = 8;
+
+  if (trigger.left + cardWidth > window.innerWidth - pad) {
+    hoverEl.classList.add("user-hover--right");
+  }
+}
+
+document.querySelectorAll(".user-hover").forEach((hoverEl) => {
+  hoverEl.addEventListener("mouseenter", () => positionUserCard(hoverEl));
+  hoverEl.addEventListener("focusin", () => positionUserCard(hoverEl));
+});
 
 const signupSwiperEl = document.querySelector(".signup-swiper");
 if (signupSwiperEl) {
@@ -969,5 +1003,40 @@ document.querySelectorAll("[data-goto-activity]").forEach((btn) => {
     setProfileTab("activity");
     setActivityTab(target);
   });
+});
+
+const forgetForm = document.getElementById("forget-password-form");
+const forgetFormView = document.getElementById("forget-form-view");
+const forgetSuccessView = document.getElementById("forget-success-view");
+const forgetSuccessEmail = document.getElementById("forget-success-email");
+const forgetResendBtn = document.getElementById("forget-resend-btn");
+
+function showForgetSuccess(email) {
+  if (!forgetFormView || !forgetSuccessView) return;
+  if (forgetSuccessEmail) forgetSuccessEmail.textContent = email;
+  forgetFormView.classList.add("hidden");
+  forgetFormView.hidden = true;
+  forgetSuccessView.classList.remove("hidden");
+  forgetSuccessView.hidden = false;
+}
+
+forgetForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const emailInput = forgetForm.querySelector("#forget-email");
+  const email = emailInput?.value?.trim();
+  if (!email || !emailInput.checkValidity()) {
+    emailInput?.reportValidity();
+    return;
+  }
+  showForgetSuccess(email);
+});
+
+forgetResendBtn?.addEventListener("click", () => {
+  if (!forgetFormView || !forgetSuccessView) return;
+  forgetSuccessView.classList.add("hidden");
+  forgetSuccessView.hidden = true;
+  forgetFormView.classList.remove("hidden");
+  forgetFormView.hidden = false;
+  forgetForm?.querySelector("#forget-email")?.focus();
 });
 

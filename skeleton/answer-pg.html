@@ -16,7 +16,7 @@
     </script>
   </head>
   <body class="bg-surface font-sans text-body antialiased">
-    <header class="site-header sticky top-0 z-[100]">
+    <header class="site-header sticky top-0 z-[200]">
       <div class="container flex items-center justify-between">
         <div class="flex w-full items-center justify-between gap-6 xl:w-fit">
           <button
@@ -187,10 +187,8 @@
 
     <main>
       <div class="container py-10">
-        <ul class="p-breadcrumbs mb-6">
-          <li>
-            <a href="../index.html"><span>Community</span></a>
-          </li>
+        <ul class="p-breadcrumbs mb-6" aria-hidden="true">
+          <li><div class="sk h-3 w-20"></div></li>
           <li><div class="sk h-3 w-16"></div></li>
           <li><div class="sk h-3 w-48 max-w-[40vw]"></div></li>
         </ul>
@@ -233,31 +231,9 @@
                   class="flex flex-wrap items-center gap-4 border-t border-border pt-4 text-[15px]"
                 >
                   <span class="like-btn" aria-hidden="true">
-                    <svg
-                      class="like-btn__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                      />
-                    </svg>
                     <div class="sk h-3 w-8"></div>
                   </span>
                   <span class="meta-stat" aria-hidden="true">
-                    <svg
-                      class="meta-stat__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"
-                      />
-                    </svg>
                     <div class="sk h-3 w-8"></div>
                   </span>
                 </div>
@@ -271,9 +247,10 @@
                 </p>
                 <div class="space-y-4">
                   <div class="sk h-36 w-full rounded-10 sm:h-44"></div>
-                  <button type="button" class="btn btn-secondary leave-reply__submit" disabled>
-                    Submit Answer
-                  </button>
+                  <div
+                    class="sk h-10 w-[148px] rounded-full"
+                    aria-hidden="true"
+                  ></div>
                 </div>
               </section>
 
@@ -286,23 +263,10 @@
                     <div class="sk h-5 w-10"></div>
                     <h2 class="text-lg font-bold text-[#0f172a]">Answers</h2>
                   </div>
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    disabled
+                  <div
+                    class="sk h-10 w-[150px] rounded-full"
                     aria-hidden="true"
-                  >
-                    <span>Newest First</span>
-                    <svg
-                      class="size-4 shrink-0"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
+                  ></div>
                 </div>
 
                 <div class="space-y-0 px-4 lg:px-6">
@@ -319,9 +283,15 @@
                         <div class="sk h-3.5 w-full"></div>
                         <div class="sk h-3.5 w-[90%]"></div>
                         <div class="sk h-3.5 w-[70%]"></div>
-                        <div class="flex items-center gap-4 pt-1">
-                          <div class="sk h-4 w-14"></div>
-                          <div class="sk h-4 w-14"></div>
+                        <div
+                          class="flex flex-wrap items-center gap-4 border-t border-border pt-4 text-[15px]"
+                        >
+                          <span class="like-btn" aria-hidden="true">
+                            <div class="sk h-3 w-8"></div>
+                          </span>
+                          <span class="meta-stat" aria-hidden="true">
+                            <div class="sk h-3 w-8"></div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -337,9 +307,15 @@
                         <div class="sk h-3 w-36"></div>
                         <div class="sk h-3.5 w-full"></div>
                         <div class="sk h-3.5 w-[75%]"></div>
-                        <div class="flex items-center gap-4 pt-1">
-                          <div class="sk h-4 w-14"></div>
-                          <div class="sk h-4 w-14"></div>
+                        <div
+                          class="flex flex-wrap items-center gap-4 border-t border-border pt-4 text-[15px]"
+                        >
+                          <span class="like-btn" aria-hidden="true">
+                            <div class="sk h-3 w-8"></div>
+                          </span>
+                          <span class="meta-stat" aria-hidden="true">
+                            <div class="sk h-3 w-8"></div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -355,9 +331,15 @@
                         <div class="sk h-3.5 w-full"></div>
                         <div class="sk h-3.5 w-[85%]"></div>
                         <div class="sk h-3.5 w-[55%]"></div>
-                        <div class="flex items-center gap-4 pt-1">
-                          <div class="sk h-4 w-14"></div>
-                          <div class="sk h-4 w-14"></div>
+                        <div
+                          class="flex flex-wrap items-center gap-4 border-t border-border pt-4 text-[15px]"
+                        >
+                          <span class="like-btn" aria-hidden="true">
+                            <div class="sk h-3 w-8"></div>
+                          </span>
+                          <span class="meta-stat" aria-hidden="true">
+                            <div class="sk h-3 w-8"></div>
+                          </span>
                         </div>
                       </div>
                     </div>

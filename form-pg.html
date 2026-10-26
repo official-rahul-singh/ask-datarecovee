@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <header class="site-header sticky top-0 z-[100]">
+    <header class="site-header sticky top-0 z-[200]">
       <div
         class="container flex items-center justify-between"
       >
@@ -1616,7 +1616,7 @@
                                 class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
                               />
                               <span
-                                class="grid size-5 place-items-center rounded-[6px] border border-primary bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_svg]:opacity-100"
+                                class="grid size-5 place-items-center rounded-[6px] border border-border bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_svg]:opacity-100"
                               >
                                 <svg
                                   class="size-3 text-white opacity-0 transition"
@@ -1630,7 +1630,7 @@
                                 </svg>
                               </span>
                             </span>
-                            <span class="text-sm text-primary"
+                            <span class="text-sm"
                               >I agree to the terms</span
                             >
                           </label>
@@ -1644,7 +1644,7 @@
                                 class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
                               />
                               <span
-                                class="grid size-5 place-items-center rounded-[6px] border border-primary bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_svg]:opacity-100"
+                                class="grid size-5 place-items-center rounded-[6px] border border-border bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_svg]:opacity-100"
                               >
                                 <svg
                                   class="size-3 text-white opacity-0 transition"
@@ -1658,7 +1658,7 @@
                                 </svg>
                               </span>
                             </span>
-                            <span class="text-sm text-primary"
+                            <span class="text-sm"
                               >Subscribe to updates</span
                             >
                           </label>
@@ -1750,14 +1750,14 @@
                                 class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
                               />
                               <span
-                                class="grid size-5 place-items-center rounded-full border border-primary bg-white transition peer-checked:border-primary peer-checked:[&_span]:scale-100"
+                                class="grid size-5 place-items-center rounded-full border border-border bg-white transition peer-checked:border-primary peer-checked:[&_span]:scale-100"
                               >
                                 <span
                                   class="size-2.5 scale-0 rounded-full bg-primary transition"
                                 ></span>
                               </span>
                             </span>
-                            <span class="text-sm text-primary">Default</span>
+                            <span class="text-sm text-body">Default</span>
                           </label>
 
                           <label class="inline-flex cursor-pointer items-center gap-2.5 select-none">
@@ -1770,14 +1770,14 @@
                                 class="peer absolute inset-0 z-10 size-full cursor-pointer opacity-0"
                               />
                               <span
-                                class="grid size-5 place-items-center rounded-full border border-primary bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_span]:scale-100 peer-checked:[&_span]:bg-white"
+                                class="grid size-5 place-items-center rounded-full border border-border bg-white transition peer-checked:border-primary peer-checked:bg-primary peer-checked:[&_span]:scale-100 peer-checked:[&_span]:bg-white"
                               >
                                 <span
                                   class="size-2 scale-0 rounded-full bg-primary transition"
                                 ></span>
                               </span>
                             </span>
-                            <span class="text-sm text-primary">Secondary</span>
+                            <span class="text-sm text-body">Secondary</span>
                           </label>
                         </div>
                         <p id="form-radio-error-msg" class="form-msg--error">
@@ -1866,10 +1866,11 @@
                       <div class="mb-4 flex flex-col gap-1.5">
                         <div
                           class="upload-box is-error"
+                          data-upload-box
                           role="group"
                           aria-describedby="form-upload-error-msg"
                         >
-                          <div class="upload-box__idle">
+                          <div class="upload-box__idle" data-upload-idle>
                             <span class="upload-box__icon" aria-hidden="true">
                               <svg
                                 width="26"
@@ -1895,10 +1896,22 @@
                               Drag and drop your PNG, JPG, WebP, SVG images here
                               or browse
                             </p>
-                            <button type="button" class="upload-box__browse">
+                            <button
+                              type="button"
+                              class="upload-box__browse"
+                              data-upload-browse
+                            >
                               Browse File
                             </button>
                           </div>
+                          <input
+                            type="file"
+                            class="filepond"
+                            name="files-error"
+                            accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                            multiple
+                            data-filepond
+                          />
                         </div>
                         <p id="form-upload-error-msg" class="form-msg--error">
                           Please upload at least one image.
@@ -2173,9 +2186,8 @@
                     <div class="card p-5">
                       <h3 class="mb-4 text-sm font-bold">Forum Stats</h3>
                       <div class="grid grid-cols-2 gap-3">
-                        <div
-                          class="flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3"
-                        >
+                        <a href="member-pg.html"
+                          class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3">
                           <span
                             class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[#2563eb]"
                           >
@@ -2198,10 +2210,9 @@
                               Members
                             </p>
                           </div>
-                        </div>
-                        <div
-                          class="flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3"
-                        >
+                        </a>
+                        <a href="index.html"
+                          class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3">
                           <span
                             class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dcfce7] text-[#16a34a]"
                           >
@@ -2227,10 +2238,9 @@
                               Questions
                             </p>
                           </div>
-                        </div>
-                        <div
-                          class="flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3"
-                        >
+                        </a>
+                        <a href="#viewers"
+                          class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3">
                           <span
                             class="grid size-7 shrink-0 place-items-center rounded-full bg-[#ffedd5] text-[#ea580c]"
                           >
@@ -2253,10 +2263,9 @@
                             Viewers
                             </p>
                           </div>
-                        </div>
-                        <div
-                          class="flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3"
-                        >
+                        </a>
+                        <a href="#replies"
+                          class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3">
                           <span
                             class="grid size-7 shrink-0 place-items-center rounded-full bg-[#f3e8ff] text-[#9333ea]"
                           >
@@ -2299,7 +2308,7 @@
                               Replies
                             </p>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
       

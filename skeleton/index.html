@@ -18,7 +18,7 @@
   </head>
 
   <body class="bg-surface font-sans text-body antialiased">
-    <header class="site-header sticky top-0 z-[100]">
+    <header class="site-header sticky top-0 z-[200]">
       <div class="container flex items-center justify-between">
         <div class="flex w-full items-center justify-between gap-6 xl:w-fit">
           <button
@@ -348,42 +348,15 @@
 
           <div class="tabs-scroll-wrap" data-tabs-scroll>
             <div
-              class="tabs-scroll"
+              class="tabs-scroll flex flex-wrap gap-2"
               role="tablist"
               aria-label="Community groups filter"
+              aria-hidden="true"
             >
-              <button
-                type="button"
-                role="tab"
-                aria-selected="true"
-                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
-              >
-                Popular
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected="false"
-                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
-              >
-                Latest
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected="false"
-                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
-              >
-                Most Answered
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected="false"
-                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
-              >
-                Newest
-              </button>
+              <div class="sk sk-pill h-9 w-20"></div>
+              <div class="sk sk-pill h-9 w-16"></div>
+              <div class="sk sk-pill h-9 w-32"></div>
+              <div class="sk sk-pill h-9 w-20"></div>
             </div>
           </div>
         </div>
@@ -601,22 +574,16 @@
               </div>
 
               <div class="flex flex-col gap-3 sm:flex-row">
-                <div class="flex flex-1 items-center gap-3 rounded-full border border-border bg-white px-4 py-3">
-                  <svg class="size-5 shrink-0 text-body" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
-                  <input type="search" placeholder="Search discussions, questions, topics..." class="w-full bg-transparent text-sm outline-none" disabled />
-                </div>
-                <button type="button" class="btn btn-secondary" disabled>
-                  <span>Most Answered</span>
-                  <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
-                </button>
+                <div class="sk h-12 min-w-0 flex-1 rounded-full" aria-hidden="true"></div>
+                <div class="sk h-12 w-full shrink-0 rounded-full sm:w-[160px]" aria-hidden="true"></div>
               </div>
 
-              <div class="flex flex-wrap gap-2">
-                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>All</button>
-                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>Recent</button>
-                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>Solved</button>
-                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>Unanswered</button>
-                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>Following</button>
+              <div class="flex flex-wrap gap-2" aria-hidden="true">
+                <div class="sk sk-pill h-9 w-14"></div>
+                <div class="sk sk-pill h-9 w-20"></div>
+                <div class="sk sk-pill h-9 w-16"></div>
+                <div class="sk sk-pill h-9 w-28"></div>
+                <div class="sk sk-pill h-9 w-24"></div>
               </div>
 
               <!-- Question cards -->
@@ -720,7 +687,7 @@
               <div class="card p-5">
                 <h3 class="mb-4 text-sm font-bold">Forum Stats</h3>
                 <div class="grid grid-cols-2 gap-3">
-                  <div class="flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3">
+                  <div class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3" aria-hidden="true">
                     <span
                       class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[#2563eb]"
                     >
@@ -736,7 +703,7 @@
                       <p class="text-[11px] leading-tight">Members</p>
                     </div>
                   </div>
-                  <div class="flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3">
+                  <div class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3" aria-hidden="true">
                     <span
                       class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dcfce7] text-[#16a34a]"
                     >
@@ -753,7 +720,7 @@
                       <p class="text-[11px] leading-tight">Questions</p>
                     </div>
                   </div>
-                  <div class="flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3">
+                  <div class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3" aria-hidden="true">
                     <span
                       class="grid size-7 shrink-0 place-items-center rounded-full bg-[#ffedd5] text-[#ea580c]"
                     >
@@ -767,7 +734,7 @@
                       <p class="text-[11px] leading-tight">Viewers</p>
                     </div>
                   </div>
-                  <div class="flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3">
+                  <div class="forum-stat flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3" aria-hidden="true">
                     <span
                       class="grid size-7 shrink-0 place-items-center rounded-full bg-[#f3e8ff] text-[#9333ea]"
                     >

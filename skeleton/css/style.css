@@ -33,6 +33,19 @@
   border: 1px solid var(--color-border);
 }
 
+/* Forum stats are non-interactive while skeleton is showing */
+.forum-stat {
+  pointer-events: none;
+  cursor: default;
+}
+
+.upload-box,
+.upload-box__idle,
+.upload-box__browse {
+  pointer-events: none;
+  cursor: default;
+}
+
 @keyframes sk-shimmer {
   0% {
     background-position: 200% 0;

@@ -223,8 +223,9 @@
   .btn-fill:focus-visible .btn__ripple,
   .btn-secondary:hover .btn__ripple,
   .btn-secondary:focus-visible .btn__ripple {
-    width: 28rem;
+    width: 60rem;
     height: 28rem;
+    overflow: hidden;
   }
 
   .btn-fill:focus-visible,
@@ -258,6 +259,18 @@
   .like-btn:hover,
   .like-btn[aria-pressed="true"] {
     color: var(--color-primary);
+  }
+
+  .like-btn:disabled,
+  .like-btn[disabled],
+  .like-btn[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  .like-btn:disabled:hover,
+  .like-btn[disabled]:hover,
+  .like-btn[aria-disabled="true"]:hover {
+    color: var(--color-body);
   }
 
   .like-btn__icon {
@@ -427,7 +440,7 @@
   }
 
   .btn-load-more {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
@@ -442,7 +455,7 @@
     font-weight: 700;
     line-height: 1.2;
     cursor: pointer;
-    transition: opacity 0.2s ease, border-color 0.2s ease;
+    transition: opacity 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
 
   .btn-load-more:hover {
@@ -450,11 +463,32 @@
     border-color: color-mix(in oklab, var(--color-primary) 80%, black);
   }
 
+  .btn-load-more.is-loading,
+  .btn-load-more:disabled,
+  .btn-load-more[aria-busy="true"] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .btn-load-more.is-loading:hover,
+  .btn-load-more:disabled:hover,
+  .btn-load-more[aria-busy="true"]:hover {
+    opacity: 0.45;
+    border-color: var(--color-primary);
+  }
+
   .btn-load-more__spinner {
+    display: none;
     width: 19px;
     height: 19px;
     flex-shrink: 0;
     color: #000;
+  }
+
+  .btn-load-more.is-loading .btn-load-more__spinner,
+  .btn-load-more[aria-busy="true"] .btn-load-more__spinner {
+    display: inline-block;
     animation: load-more-spin 0.9s linear infinite;
   }
 
@@ -621,7 +655,7 @@
   .site-header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 200;
     background-color: var(--color-white);
     border-bottom: 1px solid var(--color-border);
   }
@@ -727,7 +761,7 @@
     .header-slide-overlay {
       position: fixed;
       inset: 0;
-      z-index: 190;
+      z-index: 210;
       display: block;
       background: rgb(0 0 0 / 40%);
       opacity: 0;
@@ -744,7 +778,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 200;
+      z-index: 220;
       display: flex;
       flex-direction: column;
       width: min(19.5rem, 88vw);
@@ -1187,6 +1221,26 @@
     color: var(--color-primary);
   }
 
+  .forum-stat {
+    color: inherit;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      filter 0.2s ease;
+  }
+
+  .forum-stat:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.96);
+    box-shadow: 0 4px 12px rgb(15 23 42 / 0.08);
+  }
+
+  .forum-stat:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
   .menu-item {
     display: flex;
     align-items: center;
@@ -1218,8 +1272,9 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    min-width: 0;
-    flex: 1;
+    flex: 0 0 auto;
+    width: fit-content;
+    max-width: 100%;
     color: inherit;
   }
 
@@ -1574,7 +1629,24 @@
 
   .user-hover:hover,
   .user-hover:focus-within {
-    z-index: 50;
+    z-index: 20;
+  }
+
+  /* Lift whole card / sticky aside above siblings + group cards while tooltip is open */
+  .question-card:has(.user-hover:hover),
+  .question-card:has(.user-hover:focus-within),
+  .card:has(> .user-hover:hover),
+  .card:has(> .user-hover:focus-within),
+  .card:has(.user-hover:hover),
+  .card:has(.user-hover:focus-within),
+  .answer-item:has(.user-hover:hover),
+  .answer-item:has(.user-hover:focus-within),
+  aside:has(.user-hover:hover),
+  aside:has(.user-hover:focus-within),
+  .col-lg-3:has(.user-hover:hover),
+  .col-lg-3:has(.user-hover:focus-within) {
+    position: relative;
+    z-index: 120;
   }
 
   .user-hover--right .user-card {
@@ -1586,7 +1658,7 @@
     position: absolute;
     bottom: calc(100% + 12px);
     left: 0;
-    z-index: 60;
+    z-index: 30;
     width: 360px;
     border-radius: 10px;
     background: var(--color-white);
@@ -2912,6 +2984,15 @@
     display: block;
   }
 
+  /* Keep category card z-10 info panels inside their own stacking context
+     so they don't cover Online Users / user-card tooltips */
+  #groups-grid > a.group,
+  a.group:has(> .img-placeholder) {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+  }
+
   /* Category card body — lift on hover */
   .group > .img-placeholder + div {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -3214,11 +3295,6 @@ Unique positioning ya effects */
     margin: 0 !important;
   }
 
-  /* 1 file → full width */
-  .upload-box[data-files-count="1"] .filepond--list {
-    grid-template-columns: 1fr;
-  }
-
   /* 2 files → 2 columns on desktop */
   .upload-box[data-files-count="2"] .filepond--list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3232,11 +3308,6 @@ Unique positioning ya effects */
     border-radius: 10px;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-  }
-
-  .upload-box[data-files-count="1"] .filepond--item {
-    aspect-ratio: 16 / 9;
-    min-height: 260px;
   }
 
   .upload-box .filepond--item > .filepond--panel {
@@ -3721,12 +3792,9 @@ Unique positioning ya effects */
 
   @media (width < 48rem) {
     .upload-box .filepond--list,
+    .upload-box[data-files-count="1"] .filepond--list,
     .upload-box[data-files-count="2"] .filepond--list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .upload-box[data-files-count="1"] .filepond--list {
-      grid-template-columns: 1fr;
     }
   }
 
@@ -3918,14 +3986,36 @@ Unique positioning ya effects */
   padding: 0.5rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-10);
+  color: inherit;
   text-align: center;
+  text-decoration: none;
   transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.question-replies:hover {
+  border-color: color-mix(in oklab, var(--color-body) 18%, var(--color-border));
+  background-color: color-mix(in oklab, var(--color-body) 4%, #fff);
+}
+
+.question-replies:hover .reply-label {
+  color: color-mix(in oklab, var(--color-body) 75%, transparent);
+}
+
+.question-replies:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--color-body) 25%, transparent);
+  outline-offset: 2px;
 }
 
 .question-area .question-card,
 .question-card {
   padding: 20px 20px 20px 76px;
   position: relative;
+  z-index: 0;
+  overflow: visible;
+}
+
+.question-area {
+  overflow: visible;
 }
 
 .question-card__avatar {
