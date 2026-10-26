@@ -1,0 +1,50 @@
+/* Skeleton shimmer only — theme/layout from assets/frontend/css/style.css */
+
+.sk {
+  display: block;
+  flex-shrink: 0;
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 0%,
+    #f3f4f6 40%,
+    #e5e7eb 80%
+  );
+  background-size: 200% 100%;
+  animation: sk-shimmer 1.25s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.sk.flex-1,
+.sk.min-w-0 {
+  flex-shrink: 1;
+}
+
+.sk-circle {
+  border-radius: 9999px;
+}
+
+.sk-pill {
+  border-radius: 9999px;
+}
+
+.sk-card {
+  border-radius: var(--radius-10);
+  background: #fff;
+  border: 1px solid var(--color-border);
+}
+
+@keyframes sk-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk {
+    animation: none;
+    background: #e5e7eb;
+  }
+}

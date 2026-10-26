@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading… | Datarecovee Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="module">
+      import "../assets/frontend/js/main.js";
+      import "./css/style.css";
+    </script>
+  </head>
+
+  <body class="bg-surface font-sans text-body antialiased">
+    <header class="site-header sticky top-0 z-[100]">
+      <div class="container flex items-center justify-between">
+        <div class="flex w-full items-center justify-between gap-6 xl:w-fit">
+          <button
+            type="button"
+            class="toggle-slide-btn block xl:hidden"
+            aria-label="Open menu"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 512 512"
+              fill="#000"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m64 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32m384 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"
+              />
+            </svg>
+          </button>
+
+          <a href="../index.html" class="logo shrink-0">
+            <img
+              src="https://ask.datarecovee.com/storage/branding/logo/logo.svg"
+              alt="Data Recovee Community"
+              class="img-fluid"
+            />
+          </a>
+
+          <form
+            action="#"
+            role="search"
+            class="search-bar w-full items-center gap-3 rounded-full border border-gray-200 bg-[#f3f3f6] lg:py-[4px] pr-2 pl-4 xl:w-[332px]"
+          >
+            <input
+              type="search"
+              name="s"
+              value=""
+              placeholder="Have A Questions? Ask..."
+              class="w-full text-sm text-gray-500 outline-none placeholder:text-gray-800"
+              required
+            />
+            <button
+              type="submit"
+              class="btn btn-secondary size-8 shrink-0 !p-0"
+              aria-label="Search"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="#fff"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </button>
+          </form>
+
+          <button
+            type="button"
+            class="search-btn shrink-0 xl:hidden"
+            aria-label="Open search"
+            aria-expanded="false"
+          >
+            <span class="search-btn-icon search-btn-icon--open" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </span>
+            <span class="search-btn-icon search-btn-icon--close hidden" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="header-slide-overlay" aria-hidden="true"></div>
+        <div class="header-slide" id="header-slide">
+          <div class="header-slide-top">
+            <a href="../index.html" class="logo shrink-0">
+              <img
+                src="https://ask.datarecovee.com/storage/branding/logo/logo.svg"
+                alt="Data Recovee Community"
+                class="img-fluid"
+              />
+            </a>
+            <button
+              type="button"
+              class="header-slide-close"
+              aria-label="Close menu"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <nav class="nav-head" aria-label="Primary">
+            <ul>
+              <li>
+                <a href="../index.html">Home</a>
+              </li>
+              <li>
+                <a href="https://datarecovee.com/about-us/">About Us</a>
+              </li>
+              <li>
+                <a href="https://datarecovee.com/knowledge-base/">Knowledge Base</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header-slide-actions flex gap-3">
+            <button
+              type="button"
+              class="openSignup cursor-pointer rounded-full bg-gray-100 px-5 py-2 text-[15px] font-medium text-gray-700 transition-colors hover:bg-gray-200"
+            >
+              Sign Up
+            </button>
+            <button type="button" class="openLogin btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+                />
+              </svg>
+              Log In
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="home-hero bg-gradient-image">
+      <div class="container py-8 sm:py-12">
+        <div class="row row-gap lg:!gap-0 items-center">
+          <div class="col-lg-6">
+            <p class="mb-1 text-sm font-bold text-primary">
+              Welcome To Datarecovee,
+            </p>
+
+            <h1 class="hero-title max-w-xl font-bold">
+              Community: Get Help &amp;
+              <span class="text-primary">Find Solutions</span>
+            </h1>
+
+            <p class="mt-3 text-sm text-body sm:mt-4 sm:text-base">
+              Ask questions, find support, and connect with the community.
+            </p>
+
+            <div
+              class="mt-6 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5"
+            >
+              <a href="#ask" class="btn btn-fill w-auto">
+                <svg
+                  class="size-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                </svg>
+                Ask a Question
+              </a>
+
+              <div class="flex items-center gap-3">
+                <div class="hero-avatars flex -space-x-3">
+                  <div class="sk sk-circle size-8 border-2 border-white sm:size-9"></div>
+                  <div class="sk sk-circle size-8 border-2 border-white sm:size-9"></div>
+                  <div class="sk sk-circle size-8 border-2 border-white sm:size-9"></div>
+                  <div class="sk sk-circle size-8 border-2 border-white sm:size-9"></div>
+                  <div
+                    class="hero-avatar-extra sk sk-circle size-8 border-2 border-white sm:size-9"
+                  ></div>
+                  <div
+                    class="hero-avatar-extra sk sk-circle size-8 border-2 border-white sm:size-9"
+                  ></div>
+                </div>
+                <p class="text-xs font-bold sm:text-sm">Join Over 3000+ Users</p>
+              </div>
+            </div>
+
+            <ul class="home-hero-features mt-8 hidden lg:mt-12 lg:flex">
+              <li>
+                <span
+                  class="icon-circle grid size-11 place-items-center rounded-full text-primary"
+                >
+                  <svg
+                    class="size-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"
+                    />
+                  </svg>
+                </span>
+                <span class="text-sm leading-tight"
+                  ><strong>Ask</strong><br />Questions</span
+                >
+              </li>
+              <li>
+                <span
+                  class="icon-circle grid size-11 place-items-center rounded-full text-primary"
+                >
+                  <svg
+                    class="size-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 18h6" />
+                    <path d="M10 22h4" />
+                    <path
+                      d="M12 2a7 7 0 0 0-4 12c.6.6 1 1.4 1 2.2V17h6v-.8c0-.8.4-1.6 1-2.2A7 7 0 0 0 12 2z"
+                    />
+                  </svg>
+                </span>
+                <span class="text-sm leading-tight"
+                  ><strong>Get</strong><br />Solutions</span
+                >
+              </li>
+              <li>
+                <span
+                  class="icon-circle grid size-11 place-items-center rounded-full text-primary"
+                >
+                  <svg
+                    class="size-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </span>
+                <span class="text-sm leading-tight"
+                  ><strong>Connect</strong><br />With Community</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="home-login lg:justify-self-end">
+              <div class="rounded-10 border border-border bg-white">
+                <div class="space-y-4 p-5 sm:p-7">
+                  <div class="space-y-2">
+                    <div class="sk h-7 w-28 sm:h-8 sm:w-32"></div>
+                    <div class="sk h-3 w-full max-w-xs"></div>
+                  </div>
+                  <div class="space-y-2">
+                    <div class="sk h-3 w-20"></div>
+                    <div class="sk h-12 w-full rounded-10"></div>
+                  </div>
+                  <div class="space-y-2">
+                    <div class="sk h-3 w-20"></div>
+                    <div class="sk h-12 w-full rounded-10"></div>
+                  </div>
+                  <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div class="sk h-4 w-28"></div>
+                    <div class="sk sk-pill h-11 w-full sm:w-28"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col gap-3 border-t border-border px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-5"
+                >
+                  <div class="sk h-3 w-40"></div>
+                  <div class="sk h-3 w-36"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section py-10 sm:py-16">
+      <div class="container">
+        <div
+          class="mb-6 flex flex-col gap-4 sm:mb-8 lg:flex-row lg:flex-wrap lg:items-center lg:justify-between"
+        >
+          <h2 class="shrink-0 text-xl font-bold sm:text-2xl">Community Groups</h2>
+
+          <div class="tabs-scroll-wrap" data-tabs-scroll>
+            <div
+              class="tabs-scroll"
+              role="tablist"
+              aria-label="Community groups filter"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected="true"
+                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              >
+                Popular
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              >
+                Latest
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              >
+                Most Answered
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                class="tab-btn rounded-full px-4 py-2 text-sm font-medium transition"
+              >
+                Newest
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div class="block">
+            <div class="sk h-36 w-full rounded-10 sm:h-40"></div>
+            <div
+              class="relative z-10 mx-3 -mt-14 space-y-3 rounded-10 border border-border bg-white p-[14px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <div class="sk sk-circle size-9 shrink-0"></div>
+                <div class="sk h-4 min-w-0 flex-1"></div>
+              </div>
+              <div class="flex items-center justify-between gap-2 border-t border-border pt-2">
+                <div class="sk h-3 w-24"></div>
+                <div class="sk sk-circle size-8"></div>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="sk h-36 w-full rounded-10 sm:h-40"></div>
+            <div
+              class="relative z-10 mx-3 -mt-14 space-y-3 rounded-10 border border-border bg-white p-[14px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <div class="sk sk-circle size-9 shrink-0"></div>
+                <div class="sk h-4 min-w-0 flex-1"></div>
+              </div>
+              <div class="flex items-center justify-between gap-2 border-t border-border pt-2">
+                <div class="sk h-3 w-24"></div>
+                <div class="sk sk-circle size-8"></div>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="sk h-36 w-full rounded-10 sm:h-40"></div>
+            <div
+              class="relative z-10 mx-3 -mt-14 space-y-3 rounded-10 border border-border bg-white p-[14px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <div class="sk sk-circle size-9 shrink-0"></div>
+                <div class="sk h-4 min-w-0 flex-1"></div>
+              </div>
+              <div class="flex items-center justify-between gap-2 border-t border-border pt-2">
+                <div class="sk h-3 w-24"></div>
+                <div class="sk sk-circle size-8"></div>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="sk h-36 w-full rounded-10 sm:h-40"></div>
+            <div
+              class="relative z-10 mx-3 -mt-14 space-y-3 rounded-10 border border-border bg-white p-[14px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <div class="sk sk-circle size-9 shrink-0"></div>
+                <div class="sk h-4 min-w-0 flex-1"></div>
+              </div>
+              <div class="flex items-center justify-between gap-2 border-t border-border pt-2">
+                <div class="sk h-3 w-24"></div>
+                <div class="sk sk-circle size-8"></div>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="sk h-36 w-full rounded-10 sm:h-40"></div>
+            <div
+              class="relative z-10 mx-3 -mt-14 space-y-3 rounded-10 border border-border bg-white p-[14px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <div class="sk sk-circle size-9 shrink-0"></div>
+                <div class="sk h-4 min-w-0 flex-1"></div>
+              </div>
+              <div class="flex items-center justify-between gap-2 border-t border-border pt-2">
+                <div class="sk h-3 w-24"></div>
+                <div class="sk sk-circle size-8"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-discussions bg-surface py-10 sm:py-16 pb-28 lg:pb-16">
+      <div class="container">
+        <div class="row row-gap">
+          <div class="col-lg-2 discussions-sheet-col">
+            <aside
+              id="discussions-sheet"
+              class="discussions-sheet space-y-4 lg:sticky lg:top-24 lg:self-start"
+            >
+              <a href="#start-discussion" class="btn btn-fill hidden lg:flex w-full">
+                <svg
+                  class="size-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                </svg>
+                Start a Discussion
+              </a>
+
+              <nav class="lg:mb-6" aria-label="Discussions">
+                <ul class="sidebar-nav-list flex flex-col gap-1">
+                  <li>
+                    <a
+                      class="menu-item menu-item-active"
+                      href="#all"
+                      aria-current="page"
+                    >
+                      <span class="menu-item-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#sk-home-icon)" fill="currentColor">
+                            <path d="m10 5.255 7.133 5.88q0 .012.006.037l.006.037v5.955a.76.76 0 0 1-.235.558.76.76 0 0 1-.559.236h-4.763v-4.764H8.412v4.764H3.649a.76.76 0 0 1-.559-.236.76.76 0 0 1-.236-.558v-5.955q0-.05.013-.074z" />
+                            <path d="m.138 9.795 2.717-2.257V2.476q0-.173.111-.285a.4.4 0 0 1 .286-.112h2.381q.174 0 .286.112t.111.285v2.42l3.027-2.531q.396-.324.943-.323.546 0 .943.323l8.92 7.43a.36.36 0 0 1 .136.267.4.4 0 0 1-.087.292l-.77.918a.42.42 0 0 1-.26.136.46.46 0 0 1-.298-.087L10 4.163l-8.584 7.158a.38.38 0 0 1-.261.087h-.037a.42.42 0 0 1-.26-.136l-.77-.918a.4.4 0 0 1-.087-.292.36.36 0 0 1 .137-.267" />
+                          </g>
+                          <defs>
+                            <clipPath id="sk-home-icon">
+                              <path fill="#fff" d="M20 0H0v20h20z" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">All Discussions</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#categories">
+                      <span class="menu-item-icon">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.59 1.38v4.83a1.38 1.38 0 0 1-1.38 1.38H1.38A1.38 1.38 0 0 1 0 6.21V1.38A1.38 1.38 0 0 1 1.38 0h4.83a1.38 1.38 0 0 1 1.38 1.38M15.87 0h-4.83a1.38 1.38 0 0 0-1.38 1.38v4.83a1.38 1.38 0 0 0 1.38 1.38h4.83a1.38 1.38 0 0 0 1.38-1.38V1.38A1.38 1.38 0 0 0 15.87 0M6.21 9.66H1.38A1.38 1.38 0 0 0 0 11.04v4.83a1.38 1.38 0 0 0 1.38 1.38h4.83a1.38 1.38 0 0 0 1.38-1.38v-4.83a1.38 1.38 0 0 0-1.38-1.38m7.245 0a3.795 3.795 0 1 0 0 7.59 3.795 3.795 0 0 0 0-7.59" fill="currentColor" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Categories</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#unanswered">
+                      <span class="menu-item-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M12.031 6.227a1.935 1.935 0 0 1-2.738 0 1.939 1.939 0 0 1 0-2.741 1.934 1.934 0 0 1 2.738 0 1.939 1.939 0 0 1 0 2.741M14.591 0H8.088c-.514 0-.607.224-1.096.736L2.152 5.562l7.814 7.814 4.854-4.839c.411-.411.703-.616.703-1.128V.926A.922.922 0 0 0 14.593 0m-4.614 4.171a.968.968 0 1 0 1.37 1.369.968.968 0 0 0-1.37-1.369M.589 7.119a2 2 0 0 0 0 2.836l4.98 4.967a2.018 2.018 0 0 0 2.845 0l.862-.86-7.814-7.814z" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Unanswered</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#solved">
+                      <span class="menu-item-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 6.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6m6 5a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v3h12z" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Solved</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#guides">
+                      <span class="menu-item-icon">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14.582 6.729H10.62a3.38 3.38 0 0 0-2.765-2.766V0a7.314 7.314 0 0 1 6.728 6.729m0 1.125a7.31 7.31 0 0 1-6.728 6.728V10.62a3.38 3.38 0 0 0 2.765-2.765zm-14.58 0h3.963a3.38 3.38 0 0 0 2.764 2.765v3.963A7.31 7.31 0 0 1 0 7.854zm0-1.125A7.314 7.314 0 0 1 6.728 0v3.963A3.38 3.38 0 0 0 3.963 6.73H0z" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Guides &amp; Tutorials</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#support">
+                      <span class="menu-item-icon">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14.582 6.729H10.62a3.38 3.38 0 0 0-2.765-2.766V0a7.314 7.314 0 0 1 6.728 6.729m0 1.125a7.31 7.31 0 0 1-6.728 6.728V10.62a3.38 3.38 0 0 0 2.765-2.765zm-14.58 0h3.963a3.38 3.38 0 0 0 2.764 2.765v3.963A7.31 7.31 0 0 1 0 7.854zm0-1.125A7.314 7.314 0 0 1 6.728 0v3.963A3.38 3.38 0 0 0 3.963 6.73H0z" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Product Support</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#news">
+                      <span class="menu-item-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4 14h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v11a1 1 0 0 1-1 1Zm0 0a1 1 0 0 1-1-1V7" />
+                          <path d="M10 9H6M9 11H6M6 4h5v2H6V4Z" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">News &amp; Updates</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item" href="#rules">
+                      <span class="menu-item-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 2H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5L9 2Z" />
+                          <path d="M9 2v3h3M10 8H6M10 11H6M7 5H6" />
+                        </svg>
+                      </span>
+                      <span class="menu-item-text label">Community Rules</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="space-y-4">
+              <div class="mobile-bottom-bar lg:hidden">
+                <button type="button" class="discussions-sheet-btn" aria-expanded="false">
+                  <span class="discussions-sheet-btn__label">All Discussions</span>
+                </button>
+                <a href="#start-discussion" class="btn btn-fill mobile-bottom-bar__ask">Ask Question</a>
+              </div>
+
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <div class="flex flex-1 items-center gap-3 rounded-full border border-border bg-white px-4 py-3">
+                  <svg class="size-5 shrink-0 text-body" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+                  <input type="search" placeholder="Search discussions, questions, topics..." class="w-full bg-transparent text-sm outline-none" disabled />
+                </div>
+                <button type="button" class="btn btn-secondary" disabled>
+                  <span>Most Answered</span>
+                  <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+                </button>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>All</button>
+                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>Recent</button>
+                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>Solved</button>
+                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>Unanswered</button>
+                <button type="button" class="chip-btn rounded-full border px-4 py-2 text-sm font-medium" disabled>Following</button>
+              </div>
+
+              <!-- Question cards -->
+              <article class="sk-card flex gap-3 p-4 sm:p-5">
+                <div class="sk sk-circle size-10 shrink-0 sm:size-11"></div>
+                <div class="min-w-0 flex-1 space-y-2.5">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <div class="sk h-4 w-10 rounded"></div>
+                    <div class="sk h-3 w-28"></div>
+                    <div class="sk h-3 w-20"></div>
+                  </div>
+                  <div class="sk h-5 w-[90%]"></div>
+                  <div class="sk h-3 w-full"></div>
+                  <div class="sk h-3 w-[80%]"></div>
+                  <div class="flex flex-wrap gap-2 pt-1">
+                    <div class="sk sk-pill h-6 w-24"></div>
+                    <div class="sk sk-pill h-6 w-20"></div>
+                  </div>
+                  <div class="flex items-center gap-4 pt-1">
+                    <div class="sk h-4 w-14"></div>
+                    <div class="sk h-4 w-12"></div>
+                    <div class="flex -space-x-2">
+                      <div class="sk sk-circle size-7 border-2 border-white"></div>
+                      <div class="sk sk-circle size-7 border-2 border-white"></div>
+                      <div class="sk sk-circle size-7 border-2 border-white"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sk hidden h-16 w-14 shrink-0 rounded-10 sm:block"></div>
+              </article>
+
+              <article class="sk-card flex gap-3 p-4 sm:p-5">
+                <div class="sk sk-circle size-10 shrink-0 sm:size-11"></div>
+                <div class="min-w-0 flex-1 space-y-2.5">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <div class="sk h-4 w-10 rounded"></div>
+                    <div class="sk h-3 w-24"></div>
+                    <div class="sk h-3 w-16"></div>
+                  </div>
+                  <div class="sk h-5 w-[85%]"></div>
+                  <div class="sk h-3 w-full"></div>
+                  <div class="sk h-3 w-[60%]"></div>
+                  <div class="flex flex-wrap gap-2 pt-1">
+                    <div class="sk sk-pill h-6 w-28"></div>
+                  </div>
+                  <div class="flex items-center gap-4 pt-1">
+                    <div class="sk h-4 w-14"></div>
+                    <div class="sk h-4 w-12"></div>
+                  </div>
+                </div>
+                <div class="sk hidden h-16 w-14 shrink-0 rounded-10 sm:block"></div>
+              </article>
+
+              <article class="sk-card flex gap-3 p-4 sm:p-5">
+                <div class="sk sk-circle size-10 shrink-0 sm:size-11"></div>
+                <div class="min-w-0 flex-1 space-y-2.5">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <div class="sk h-4 w-10 rounded"></div>
+                    <div class="sk h-3 w-32"></div>
+                  </div>
+                  <div class="sk h-5 w-[78%]"></div>
+                  <div class="sk h-3 w-full"></div>
+                  <div class="sk h-3 w-[65%]"></div>
+                  <div class="flex flex-wrap gap-2 pt-1">
+                    <div class="sk sk-pill h-6 w-20"></div>
+                    <div class="sk sk-pill h-6 w-24"></div>
+                  </div>
+                  <div class="flex items-center gap-4 pt-1">
+                    <div class="sk h-4 w-14"></div>
+                    <div class="sk h-4 w-12"></div>
+                  </div>
+                </div>
+                <div class="sk hidden h-16 w-14 shrink-0 rounded-10 sm:block"></div>
+              </article>
+
+              <div class="flex justify-center pt-2">
+                <button type="button" class="btn-load-more mx-auto" disabled>Load More</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <aside class="space-y-4 lg:sticky lg:top-24 lg:self-start">
+              <div class="card p-5">
+                <div class="mb-4 flex items-center justify-between gap-2">
+                  <h3 class="text-sm font-bold">Online Users</h3>
+                  <span class="text-xs font-medium text-success">• 24 Online</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <div class="sk sk-circle size-10"></div>
+                  <div class="sk sk-circle size-10"></div>
+                  <div class="sk sk-circle size-10"></div>
+                  <div class="sk sk-circle size-10"></div>
+                  <div class="sk sk-circle size-10"></div>
+                  <div class="sk sk-circle size-10"></div>
+                  <div class="sk sk-circle size-10"></div>
+                  <div class="sk sk-circle size-10"></div>
+                </div>
+              </div>
+
+              <div class="card p-5">
+                <h3 class="mb-4 text-sm font-bold">Forum Stats</h3>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="flex items-center gap-2.5 rounded-10 bg-[#eff6ff] p-3">
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[#2563eb]"
+                    >
+                      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
+                    </span>
+                    <div class="min-w-0 space-y-1.5">
+                      <div class="sk h-3.5 w-10"></div>
+                      <p class="text-[11px] leading-tight">Members</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2.5 rounded-10 bg-[#f0fdf4] p-3">
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-full bg-[#dcfce7] text-[#16a34a]"
+                    >
+                      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <path d="M14 2v6h6" />
+                        <path d="M16 13H8" />
+                        <path d="M16 17H8" />
+                        <path d="M10 9H8" />
+                      </svg>
+                    </span>
+                    <div class="min-w-0 space-y-1.5">
+                      <div class="sk h-3.5 w-12"></div>
+                      <p class="text-[11px] leading-tight">Questions</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2.5 rounded-10 bg-[#fff7ed] p-3">
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-full bg-[#ffedd5] text-[#ea580c]"
+                    >
+                      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </span>
+                    <div class="min-w-0 space-y-1.5">
+                      <div class="sk h-3.5 w-10"></div>
+                      <p class="text-[11px] leading-tight">Viewers</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2.5 rounded-10 bg-[#faf5ff] p-3">
+                    <span
+                      class="grid size-7 shrink-0 place-items-center rounded-full bg-[#f3e8ff] text-[#9333ea]"
+                    >
+                      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+                      </svg>
+                    </span>
+                    <div class="min-w-0 space-y-1.5">
+                      <div class="sk h-3.5 w-12"></div>
+                      <p class="text-[11px] leading-tight">Replies</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-5">
+                <h3 class="mb-4 text-sm font-bold">Top Posters This Month</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3">
+                    <span class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold">1</span>
+                    <div class="sk sk-circle size-9 shrink-0"></div>
+                    <div class="min-w-0 flex-1 space-y-1.5">
+                      <div class="sk h-3 w-24"></div>
+                      <div class="sk h-2.5 w-16"></div>
+                    </div>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold">2</span>
+                    <div class="sk sk-circle size-9 shrink-0"></div>
+                    <div class="min-w-0 flex-1 space-y-1.5">
+                      <div class="sk h-3 w-20"></div>
+                      <div class="sk h-2.5 w-14"></div>
+                    </div>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-xs font-bold">3</span>
+                    <div class="sk sk-circle size-9 shrink-0"></div>
+                    <div class="min-w-0 flex-1 space-y-1.5">
+                      <div class="sk h-3 w-28"></div>
+                      <div class="sk h-2.5 w-16"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-footer text-white">
+      <div class="container py-10 sm:py-14 lg:py-16">
+        <div class="footer-layout row">
+          <div class="footer-col col-lg-5">
+            <div class="footer-title">Find your Topic</div>
+            <div class="footer-topics">
+              <a href="#backup-storage" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 10H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7h.01M7 17h.01" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h3m-3 10h3" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Backup &amp; Storage</span>
+                <svg class="size-3.5 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6" /></svg>
+              </a>
+              <a href="#mac" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 3h-11A1.5 1.5 0 0 0 5 4.5v10A1.5 1.5 0 0 0 6.5 16h11a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 17.5 3M3 20h18l-2-4H5z" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 18h4" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Mac</span>
+                <svg class="size-3.5 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6" /></svg>
+              </a>
+              <a href="#iphone" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2H9a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 5h4" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19h4" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Iphone</span>
+                <svg class="size-3.5 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6" /></svg>
+              </a>
+              <a href="#general" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.999 11a8 8 0 0 1-8 8h-6l-4 3v-6a8 8 0 0 1-1-4V9a7 7 0 0 1 7-7h5a7 7 0 0 1 7 7z" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10h.01M12 10h.01M17 10h.01" stroke="#f05258" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>General Discussion</span>
+                <svg class="size-3.5 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6" /></svg>
+              </a>
+              <a href="#windows" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#sk-footer-win)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 4 8-1v8H3zm0 9h8v8l-8-1zm10 0h8v10l-8-1z" stroke="#d9d9d9"/><path d="m13 3 8-1v9h-8z" stroke="#f05258"/></g><defs><clipPath id="sk-footer-win"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></svg>
+                <span>Windows</span>
+                <svg class="size-3.5 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6" /></svg>
+              </a>
+              <a href="#productivity" class="footer-topic">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 7 1 1 2-2m-3 6 1 1 2-2m-3 6 1 1 2-2" stroke="#f05258" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 7h4m-4 5h4m-4 5h4" stroke="#d9d9d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Digital Productivity</span>
+                <svg class="size-3.5 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col col-lg-5">
+            <div class="footer-title">Explore Datarecovee</div>
+            <ul class="footer-list">
+              <li><a href="#about" class="footer-link" title="About Us">About Us</a></li>
+              <li><a href="#privacy" class="footer-link" title="Privacy Policy">Privacy Policy</a></li>
+              <li><a href="#categories" class="footer-link" title="Categories">Categories</a></li>
+              <li><a href="#terms" class="footer-link" title="Terms of Use">Terms of Use</a></li>
+              <li><a href="#popular" class="footer-link" title="Popular Questions">Popular Questions</a></li>
+              <li><a href="#faqs" class="footer-link" title="Help & Faqs">Help &amp; Faqs</a></li>
+              <li><a href="#contact" class="footer-link" title="Contact Us">Contact Us</a></li>
+              <li><a href="#rules" class="footer-link" title="Community Rules">Community Rules</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-socials col-lg-2">
+            <a href="#instagram" class="footer-social">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.002 3.898A4.095 4.095 0 0 0 3.9 8a4.095 4.095 0 0 0 4.102 4.102A4.095 4.095 0 0 0 12.103 8a4.095 4.095 0 0 0-4.101-4.102m0 6.769A2.67 2.67 0 0 1 5.335 8a2.67 2.67 0 0 1 2.667-2.667A2.67 2.67 0 0 1 10.668 8c0 1.47-1.2 2.667-2.666 2.667m5.225-6.937a.954.954 0 0 1-.956.957.957.957 0 1 1 .957-.957m2.717.971c-.06-1.282-.354-2.417-1.292-3.352C13.717.413 12.582.12 11.3.056c-1.32-.075-5.28-.075-6.6 0-1.278.06-2.413.354-3.352 1.29C.41 2.28.12 3.415.056 4.697c-.075 1.32-.075 5.28 0 6.6.06 1.283.354 2.418 1.292 3.353.94.936 2.07 1.229 3.352 1.293 1.32.075 5.28.075 6.6 0 1.281-.06 2.416-.354 3.352-1.293.935-.935 1.228-2.07 1.292-3.352.075-1.321.075-5.277 0-6.598m-1.706 8.015a2.7 2.7 0 0 1-1.521 1.521c-1.053.418-3.552.322-4.715.322-1.164 0-3.666.092-4.715-.322a2.7 2.7 0 0 1-1.521-1.52C1.348 11.662 1.445 9.163 1.445 8s-.093-3.667.321-4.716a2.7 2.7 0 0 1 1.52-1.521c1.054-.418 3.552-.322 4.716-.322 1.163 0 3.666-.092 4.715.322a2.7 2.7 0 0 1 1.52 1.52c.418 1.054.322 3.553.322 4.717s.096 3.667-.321 4.716" fill="#fff"/></svg>
+              instagram
+            </a>
+            <a href="#linkedin" class="footer-social">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.582 16H.264V5.318h3.318zM1.922 3.86C.86 3.86 0 2.982 0 1.921a1.921 1.921 0 0 1 3.842 0c0 1.06-.86 1.94-1.92 1.94M15.996 16h-3.31v-5.2c0-1.24-.025-2.829-1.725-2.829-1.725 0-1.989 1.347-1.989 2.74V16H5.66V5.318h3.182v1.457h.046c.443-.84 1.525-1.725 3.139-1.725C15.383 5.05 16 7.26 16 10.132V16z" fill="#fff"/></svg>
+              Linkedin
+            </a>
+            <a href="#x" class="footer-social">
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.704 0h2.475L9.773 6.264l6.36 8.524h-4.978L7.253 9.62l-4.46 5.17H.316l5.781-6.702L0 0h5.104l3.523 4.724zm-.87 13.288h1.371L4.357 1.422H2.885z" fill="#fff"/></svg>
+              X.com
+            </a>
+            <a href="#facebook" class="footer-social">
+              <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.744 9.023 9.23 6.12H6.196V4.236c0-.794.423-1.568 1.782-1.568h1.38V.196S8.106 0 6.909 0C4.411 0 2.777 1.39 2.777 3.908V6.12H0v2.903h2.777v7.018h3.419V9.023z" fill="#fff"/></svg>
+              facebook
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10">
+        <div class="container py-5">
+          <div class="footer-bottom">
+            <div class="site-logo">
+              <a href="https://datarecovee.com/">
+                <img
+                  src="../assets/images/logo-white.svg"
+                  alt="logo"
+                  width="100%"
+                  height="100%"
+                  class="img-fluid"
+                  aria-label="logo"
+                />
+              </a>
+            </div>
+            <p class="footer-copy text-sm text-white/60">
+              © 2026 <span class="text-primary">Datarecovee</span>. All Rights
+              Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="fixed inset-x-0 bottom-0 z-50 flex gap-2 border-t border-border bg-white p-3 lg:hidden"
+      aria-hidden="true"
+    >
+      <div class="sk sk-pill h-11 flex-1"></div>
+      <div class="sk sk-pill h-11 flex-1"></div>
+    </div>
+  </body>
+</html>
