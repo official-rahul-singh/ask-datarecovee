@@ -7,23 +7,242 @@ import {
   Heading,
   List,
   Undo,
+  Link,
+  AutoLink,
+  BlockQuote,
+  Code,
+  CodeBlock,
+  Image,
+  ImageCaption,
+  ImageStyle,
+  ImageToolbar,
+  ImageUpload,
+  ImageInsertViaUrl,
+  ImageResize,
+  LinkImage,
+  Plugin,
+  FileRepository,
 } from "ckeditor5";
 import "ckeditor5/ckeditor5.css";
 
+const UPLOAD_URL = "/api/upload-image";
+
+/**
+ * Stores selected files locally and shows blob: preview URLs.
+ * Real upload runs only when flushPendingUploads() is called (form submit).
+ */
+class DeferredImageUpload extends Plugin {
+  static get requires() {
+    return [FileRepository];
+  }
+
+  static get pluginName() {
+    return "DeferredImageUpload";
+  }
+
+  init() {
+    const editor = this.editor;
+    const pending = new Map();
+    editor._pendingImages = pending;
+
+    editor.plugins.get(FileRepository).createUploadAdapter = (loader) => ({
+      upload: () =>
+        loader.file.then(
+          (file) =>
+            new Promise((resolve) => {
+              const previewUrl = URL.createObjectURL(file);
+              pending.set(previewUrl, { file, previewUrl });
+              resolve({ default: previewUrl });
+            }),
+        ),
+      abort: () => {},
+    });
+  }
+
+  destroy() {
+    const pending = this.editor._pendingImages;
+    if (!pending) return;
+    for (const { previewUrl } of pending.values()) {
+      URL.revokeObjectURL(previewUrl);
+    }
+    pending.clear();
+  }
+}
+
 const baseConfig = {
   licenseKey: "GPL",
-  plugins: [Essentials, Bold, Italic, Paragraph, Heading, List, Undo],
+  plugins: [
+    Essentials,
+    Bold,
+    Italic,
+    Paragraph,
+    Heading,
+    List,
+    Undo,
+    Link,
+    AutoLink,
+    BlockQuote,
+    Code,
+    CodeBlock,
+    Image,
+    ImageCaption,
+    ImageStyle,
+    ImageToolbar,
+    ImageUpload,
+    ImageInsertViaUrl,
+    ImageResize,
+    LinkImage,
+    DeferredImageUpload,
+  ],
   toolbar: [
     "heading",
     "|",
     "bold",
     "italic",
+    "code",
+    "|",
+    "link",
+    "insertImage",
+    "blockQuote",
+    "codeBlock",
+    "|",
     "bulletedList",
     "numberedList",
+    "|",
     "undo",
     "redo",
   ],
+  image: {
+    toolbar: [
+      "imageStyle:inline",
+      "imageStyle:block",
+      "imageStyle:side",
+      "|",
+      "toggleImageCaption",
+      "imageTextAlternative",
+      "|",
+      "linkImage",
+    ],
+    insert: {
+      integrations: ["upload", "url"],
+      type: "auto",
+    },
+  },
 };
+
+/**
+ * Upload deferred blob images to the server and replace preview URLs in content.
+ */
+export async function flushPendingUploads(editor, uploadUrl = UPLOAD_URL) {
+  if (!editor) return "";
+
+  const pending = editor._pendingImages;
+  let html = editor.getData();
+
+  if (!pending?.size) return html;
+
+  const replacements = [];
+
+  for (const [previewUrl, { file }] of pending.entries()) {
+    if (!previewUrl.startsWith("blob:")) continue;
+
+    const formData = new FormData();
+    formData.append("upload", file);
+
+    try {
+      const res = await fetch(uploadUrl, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        throw new Error(`Upload failed (${res.status})`);
+      }
+
+      const data = await res.json();
+      const url = data?.url || data?.urls?.default;
+
+      if (!url) {
+        throw new Error("Upload response missing url");
+      }
+
+      replacements.push({ previewUrl, url });
+    } catch (err) {
+      // Frontend placeholder: keep local preview if API is not ready yet.
+      console.warn(
+        "[CKEditor] Image will stay as local preview until upload API is ready.",
+        err,
+      );
+    }
+  }
+
+  for (const { previewUrl, url } of replacements) {
+    html = html.split(previewUrl).join(url);
+    URL.revokeObjectURL(previewUrl);
+    pending.delete(previewUrl);
+  }
+
+  if (replacements.length) {
+    editor.setData(html);
+  }
+
+  return editor.getData();
+}
+
+function syncEditorToTextarea(editor, element) {
+  if (!editor || !element) return;
+  if (element.tagName === "TEXTAREA") {
+    element.value = editor.getData();
+  }
+}
+
+function bindEditorSubmit(editor, element) {
+  const form = element?.closest?.("form");
+  if (!form || form._ckSubmitBound) return;
+
+  form._ckSubmitBound = true;
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const submitBtn = form.querySelector('[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.setAttribute("aria-busy", "true");
+    }
+
+    try {
+      const editors = [];
+
+      if (form._ckEditor) editors.push(form._ckEditor);
+      form.querySelectorAll(".js-ckeditor, .js-reply-editor").forEach((el) => {
+        if (el._ckEditor && !editors.includes(el._ckEditor)) {
+          editors.push(el._ckEditor);
+        }
+      });
+
+      for (const ed of editors) {
+        await flushPendingUploads(ed);
+        const sourceEl =
+          ed.sourceElement ||
+          form.querySelector(".js-ckeditor, .js-reply-editor");
+        syncEditorToTextarea(ed, sourceEl);
+      }
+
+      // Demo / static pages: no real POST target yet.
+      if (!form.getAttribute("action") || form.getAttribute("action") === "#") {
+        console.info("[CKEditor] Submit ready (images uploaded or preview kept).");
+        return;
+      }
+
+      form.submit();
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute("aria-busy");
+      }
+    }
+  });
+}
 
 export function createForumEditor(element, options = {}) {
   if (!element) return Promise.resolve(null);
@@ -31,10 +250,18 @@ export function createForumEditor(element, options = {}) {
   return ClassicEditor.create(element, {
     ...baseConfig,
     placeholder: options.placeholder || "",
-  }).catch((err) => {
-    console.error("CKEditor failed to load", err);
-    return null;
-  });
+  })
+    .then((editor) => {
+      element._ckEditor = editor;
+      const form = element.closest("form");
+      if (form) form._ckEditor = editor;
+      bindEditorSubmit(editor, element);
+      return editor;
+    })
+    .catch((err) => {
+      console.error("CKEditor failed to load", err);
+      return null;
+    });
 }
 
 export function destroyForumEditor(editor) {
