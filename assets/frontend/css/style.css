@@ -4,6 +4,7 @@
 
 @theme {
   --color-primary: #e11f26;
+  --color-primary-soft: #fce8e9;
   --color-secondary: #000000;
   --color-white: #fff;
   --color-body: #323232;
@@ -11,7 +12,9 @@
   --color-field-border: #e1e1e1;
   --color-surface: #f7f7f7;
   --color-success: #16a34a;
+  --color-error: #e11f26;
   --color-footer: #0e0e0e;
+  --btn-radius: 9999px;
   --radius-10: 10px;
   --color-icon-start: #f6d0d3;
   --color-icon-end: #d7e3f5;
@@ -160,7 +163,7 @@
     padding-block: 10px;
     padding-inline: 16px;
     border: 1px solid transparent;
-    border-radius: 9999px;
+    border-radius: var(--btn-radius);
     color: #fff;
     font-size: 14px;
     font-weight: 600;
@@ -414,6 +417,7 @@
     height: 15px;
     flex-shrink: 0;
     overflow: visible;
+    color: var(--color-primary);
   }
 
   .meta-stat {
@@ -2703,7 +2707,7 @@
     height: 3.5rem;
     margin-inline: auto;
     border-radius: 9999px;
-    background: #fde8ea;
+    background: var(--color-primary-soft);
     color: var(--color-primary);
     font-size: 1.5rem;
     font-weight: 700;
@@ -3143,8 +3147,8 @@ Unique positioning ya effects */
     border-color: var(--color-success);
   }
 
-  div.border.border-primary:has(input[aria-invalid="true"]) {
-    border-color: var(--color-primary);
+  div.border.border-error:has(input[aria-invalid="true"]) {
+    border-color: var(--color-error);
   }
 
   .form-msg--error {
@@ -3152,7 +3156,7 @@ Unique positioning ya effects */
     font-size: 0.75rem;
     font-weight: 500;
     line-height: 1.4;
-    color: var(--color-primary);
+    color: var(--color-error);
   }
 
   .form-msg--success {
@@ -3168,7 +3172,7 @@ Unique positioning ya effects */
   textarea.is-error,
   .form-select.is-error,
   button.is-error {
-    border-color: var(--color-primary) !important;
+    border-color: var(--color-error) !important;
   }
 
   input.is-error:focus,
@@ -3176,20 +3180,20 @@ Unique positioning ya effects */
   textarea.is-error:focus,
   .form-select.is-error:focus,
   button.is-error:focus {
-    border-color: var(--color-primary) !important;
+    border-color: var(--color-error) !important;
   }
 
   .form-control-wrap.is-error {
-    border-color: var(--color-primary) !important;
+    border-color: var(--color-error) !important;
   }
 
   .upload-box.is-error {
-    border-color: var(--color-primary);
-    background-color: color-mix(in srgb, var(--color-primary) 4%, #f8f9fb);
+    border-color: var(--color-error);
+    background-color: color-mix(in srgb, var(--color-error) 4%, #f8f9fb);
   }
 
   .upload-box.is-error .upload-box__icon {
-    color: var(--color-primary);
+    color: var(--color-error);
   }
 
   /* Upload box — idle UI always visible; previews below */
@@ -3646,7 +3650,7 @@ Unique positioning ya effects */
   }
 
   .profile-stat--red {
-    background: #fef2f2;
+    background: var(--color-primary-soft);
     border-color: #fecaca;
   }
 

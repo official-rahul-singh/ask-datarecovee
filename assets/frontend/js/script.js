@@ -397,12 +397,25 @@ function positionUserCard(hoverEl) {
   const card = hoverEl.querySelector(":scope > .user-card");
   if (!card) return;
 
-  // Always open above the avatar; only flip horizontal alignment
   hoverEl.classList.remove("user-hover--below", "user-hover--right");
 
   const trigger = hoverEl.getBoundingClientRect();
   const cardWidth = card.offsetWidth || 360;
+  const cardHeight = card.offsetHeight;
+  const gap = 12;
   const pad = 8;
+
+  // Sticky header (z-index 200) covers the top of the viewport, so space above starts below it
+  const header = document.querySelector(".site-header");
+  const topLimit = header ? Math.max(header.getBoundingClientRect().bottom, 0) : 0;
+
+  const spaceAbove = trigger.top - topLimit;
+  const spaceBelow = window.innerHeight - trigger.bottom;
+  const needed = cardHeight + gap + pad;
+
+  if (spaceAbove < needed && spaceBelow > spaceAbove) {
+    hoverEl.classList.add("user-hover--below");
+  }
 
   if (trigger.left + cardWidth > window.innerWidth - pad) {
     hoverEl.classList.add("user-hover--right");
