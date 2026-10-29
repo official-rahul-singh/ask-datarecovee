@@ -4,7 +4,7 @@
 
 @theme {
   --color-primary: #e11f26;
-  --color-primary-soft: #fce8e9;
+  --color-primary-soft: color-mix(in srgb, var(--color-primary) 10%, white);
   --color-secondary: #000000;
   --color-white: #fff;
   --color-body: #323232;
@@ -1684,8 +1684,7 @@
     transform: translateY(-4px);
   }
 
-  .user-hover:hover .user-card,
-  .user-hover:focus-within .user-card {
+  .user-hover.is-open .user-card {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -1713,7 +1712,7 @@
     gap: 0.9rem;
     padding: 1rem;
     border-radius: 10px 10px 0 0;
-    background: #fd5c6212;
+    background: var(--color-primary-soft);
   }
 
   .user-card__avatar {
@@ -2856,6 +2855,10 @@
   .footer-topic:hover {
     border-color: var(--color-primary);
     background-color: rgb(255 255 255 / 0.04);
+  }
+
+  .footer-topic svg [stroke="#f05258"] {
+    stroke: var(--color-primary);
   }
 
   .footer-topic-icon {

@@ -422,9 +422,30 @@ function positionUserCard(hoverEl) {
   }
 }
 
+const USER_CARD_SHOW_DELAY = 1000;
+
+function showUserCard(hoverEl) {
+  if (hoverEl._showTimer || hoverEl.classList.contains("is-open")) return;
+  hoverEl._showTimer = setTimeout(() => {
+    hoverEl._showTimer = null;
+    positionUserCard(hoverEl);
+    hoverEl.classList.add("is-open");
+  }, USER_CARD_SHOW_DELAY);
+}
+
+function hideUserCard(hoverEl) {
+  clearTimeout(hoverEl._showTimer);
+  hoverEl._showTimer = null;
+  hoverEl.classList.remove("is-open");
+}
+
 document.querySelectorAll(".user-hover").forEach((hoverEl) => {
-  hoverEl.addEventListener("mouseenter", () => positionUserCard(hoverEl));
-  hoverEl.addEventListener("focusin", () => positionUserCard(hoverEl));
+  hoverEl.addEventListener("mouseenter", () => showUserCard(hoverEl));
+  hoverEl.addEventListener("mouseleave", () => hideUserCard(hoverEl));
+  hoverEl.addEventListener("focusin", () => showUserCard(hoverEl));
+  hoverEl.addEventListener("focusout", (e) => {
+    if (!hoverEl.contains(e.relatedTarget)) hideUserCard(hoverEl);
+  });
 });
 
 const signupSwiperEl = document.querySelector(".signup-swiper");
