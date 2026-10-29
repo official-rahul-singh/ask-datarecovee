@@ -4027,6 +4027,13 @@ Unique positioning ya effects */
   overflow: visible;
 }
 
+.question-area .question-card:has(.user-hover:hover),
+.question-area .question-card:has(.user-hover:focus-within),
+.question-card:has(.user-hover:hover),
+.question-card:has(.user-hover:focus-within) {
+  z-index: 120;
+}
+
 .question-area {
   overflow: visible;
 }
